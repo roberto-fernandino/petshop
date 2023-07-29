@@ -10,6 +10,8 @@
 <header>
     <div class="top-container">
         <div class="top-bar">
+            <!--   Home/home -->
+            <a href="{% url 'home:home' %}"> home <i class="fa-solid fa-house"></i></a>
             <!-- ABOUT US-->
             <a href="{% url 'aboutus:aboutus' %}"> sobre nos <i class="fa-solid fa-address-card"></i></a>
             <!-- GALERY -->
@@ -29,6 +31,12 @@
         </div>
     </nav>
 </header>
+
+<div class="slideshow">
+    <div class="slider">
+        <img src="{% static 'foto1.png' %}" class="img" alt="imagem" >
+    </div>
+</div>
 {% endblock %}
 
 

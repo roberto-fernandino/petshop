@@ -8,16 +8,16 @@
     background-color: #fafafa;
     display: flex;
     justify-content: flex-end;
-    padding: 10; }
+    padding: 10px; }
     .top-container .top-bar a {
       transition: 0.3s;
-      font-size: 30px;
-      color: grey;
+      font-size: 20px;
+      color: #fa0303;
       text-decoration: none; }
       .top-container .top-bar a i {
-        padding-left: 10px;
+        padding-left: 40px;
         color: #45d045;
-        font-size: 30px;
+        font-size: 20px;
         padding-right: 40px; }
     .top-container .top-bar a:hover {
       color: greenyellow;
