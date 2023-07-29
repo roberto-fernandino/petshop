@@ -3,9 +3,9 @@ from index import views
 
 # URLS AQUIII
 
-app_name = 'index'
+app_name = 'home'
 
 
 urlpatterns = [
-    path('', views.homeview, name='Home')
+    path('', views.homeview, name='home')
 ]

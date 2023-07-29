@@ -12,3 +12,6 @@ def signupview(request, *args,**kwargs):
 
 def signupview2(request, *args,**kwargs):
     return render(request, "signup2.html", {})
+
+def atendimento(request, *args,**kwargs):
+    return render(request, "atendimento.html", {})

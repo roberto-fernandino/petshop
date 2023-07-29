@@ -9,7 +9,9 @@ app_name = 'loja'
 
 urlpatterns = [
     path('', views.lojaview, name='loja'),
-    path('', views.produtoview, name='produto'),
+    path('produto', views.produtoview, name='produto'),
+    path('carrinho', views.carrinhoview, name='carrinho'),
+
         
         #no futuro ->  path(f'{nomeproduto}', views.produtoview, name='loja')
 

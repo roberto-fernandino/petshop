@@ -6,3 +6,6 @@ def lojaview(request, *args, **kwargs):
 
 def produtoview(request, *args, **kwargs):
     return render(request, 'produto.html', {})
+
+def carrinhoview(request, *args, **kwargs):
+    return render(request, 'carrinho.html', {})
