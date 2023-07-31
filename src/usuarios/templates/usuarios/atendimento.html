@@ -1,0 +1,37 @@
+{% extends 'usuarios/base.html' %} {% block title%} Atendimento {% endblock %}
+{% block content %}
+<div class="atendimento-container">
+  <h1 class="top-title">Atendimento</h1>
+  <div class="information-container">
+    <h4>
+      Caso tenha alguma duvida ou algo pendente a ser resolvido preencha este
+      formulario com suas informacoes que entraremos em contato.
+    </h4>
+    <p>
+      Aqui no Meu Melhor Amigo presamos nao so pelo seu pet mas pelo
+      comprometimento com seus donos!
+    </p>
+    <div class="atendimento-form-container">
+      <form action="{% url 'usuarios/atendimento.html'%}"></form>
+      {% csrf_token %}
+      <div class="input">
+        <label for="email" class="input__label">Email: </label>
+        <input type="email" name="email" class="input__field" />
+      </div>
+      <div class="input">
+        <label for="name" class="input__label">Nome: </label>
+        <input type="text" for="name" class="input__field">
+      </div>
+      <div class="input">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" name="telefone" class="input__field">
+      </div>
+      <div class="input">
+        <label for="message" class="input__label"> Mensagem: </label>
+        <input type="text" name="message" class="input__field">
+      </div>
+      <input type="submit" value="">
+    </div>
+  </div>
+</div>
+{% endblock %}
