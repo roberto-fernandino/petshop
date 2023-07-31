@@ -10,7 +10,7 @@ STATUS_CHOISES = [
     ('r', 'respondida'),
 ]
 
-class AtendimentosPendentes(models.Model):
+class Atendimentos(models.Model):
     nome = models.CharField(max_length=30)
     email = models.EmailField(max_length=150)
     assunto = models.CharField(max_length=40, blank=False, null=True) 

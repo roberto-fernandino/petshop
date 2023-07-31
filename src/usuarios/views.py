@@ -6,9 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 def login(request, *args, **kwargs):
     if request.method == "POST":
         username = request.POST['nome']
-        password = request.POST['password']
-        
-        
+        password = request.POST['password']  
     return render(request, "usuarios/login.html", {})
 
 
@@ -27,5 +25,7 @@ def atendimento(request, *args, **kwargs):
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
-        message = request.POST['message']
+        assunto = request.POST['assunto']
+        message = request.POST['mensagem']
+
     return render(request, "usuarios/atendimento.html", {})

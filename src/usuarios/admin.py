@@ -1,5 +1,5 @@
 from django.contrib import admin
-from usuarios.models import AtendimentosPendentes
+from usuarios.models import Atendimentos
 
 # Register your models here.
 
@@ -8,8 +8,8 @@ def set_respondidos(modeladmin, request, queryset):
     queryset.update(status='r')
 
 class AtendimentoAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'assunto', 'status']
+    list_display = ['nome', 'assunto', 'status', 'data']
     ordering = ['data']
     actions =[set_respondidos]
 
-admin.site.register(AtendimentosPendentes, AtendimentoAdmin)
+admin.site.register(Atendimentos, AtendimentoAdmin)

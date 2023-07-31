@@ -11,27 +11,27 @@
       Aqui no Meu Melhor Amigo presamos nao so pelo seu pet mas pelo
       comprometimento com seus donos!
     </p>
-    <div class="atendimento-form-container">
-      <form action="{% url 'usuarios/atendimento.html'%}"></form>
-      {% csrf_token %}
-      <div class="input">
-        <label for="email" class="input__label">Email: </label>
-        <input type="email" name="email" class="input__field" />
-      </div>
-      <div class="input">
-        <label for="name" class="input__label">Nome: </label>
-        <input type="text" for="name" class="input__field">
-      </div>
-      <div class="input">
-        <label for="telefone">Telefone:</label>
-        <input type="tel" name="telefone" class="input__field">
-      </div>
-      <div class="input">
-        <label for="message" class="input__label"> Mensagem: </label>
-        <input type="text" name="message" class="input__field">
-      </div>
-      <input type="submit" value="">
+  </div>
+  <div class="atendimento-form-container">
+    <form action="{% url 'usuarios:atendimento'%}"></form>
+    {% csrf_token %}
+    <div class="input">
+      <input type="text" name="nome" class="input-field" />
+      <label for="nome">Nome</label>
     </div>
+    <div class="input">
+      <input type="email" name="email" class="input-field"/>
+      <label for="email">Email</label>
+    </div>
+    <div class="input">
+      <input type="text" name="assunto" class="input-field">
+      <label for="assunto">Assunto</label>
+    </div>
+    <div class="input">
+      <textarea name="mensagem" class="large-input-field" rows="6"></textarea>
+      <label for="mensagem">Mensagem</label>
+    </div>
+    <input type="submit" value="Enviar" />
   </div>
 </div>
 {% endblock %}
