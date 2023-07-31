@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.top-container {
+  margin: 0 auto; }
+  .top-container .top-bar {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: flex-end; }
+    .top-container .top-bar a {
+      transition: 0.3s;
+      font-size: 20px;
+      color: grey;
+      text-decoration: none; }
+      .top-container .top-bar a i {
+        padding-left: 10px;
+        color: #45d045;
+        font-size: 20px;
+        padding-right: 40px; }
+    .top-container .top-bar a:hover {
+      color: greenyellow;
+      transform: translateY(-4px); }
+
+.navbar {
+  background-color: #45d045; }
+  .navbar .nav-title a {
+    padding: 3;
+    margin: 4;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.5s; }
+    .navbar .nav-title a h1 {
+      padding: 20px;
+      font-weight: bold; }
+  .navbar .nav-title a:hover {
+    opacity: 0.6; }
+  .navbar .nav-icons-container {
+    display: flex; }
+    .navbar .nav-icons-container .nav-icon-login {
+      color: white;
+      padding-right: 40px;
+      font-size: 30px;
+      text-decoration: none;
+      transition: color 0.3s; }
+      .navbar .nav-icons-container .nav-icon-login i {
+        color: white;
+        font-size: 40px;
+        transition: color 0.3s; }
+    .navbar .nav-icons-container .nav-icon-login:hover, .navbar .nav-icons-container i:hover {
+      color: greenyellow; }
+    .navbar .nav-icons-container .nav-icon {
+      color: white;
+      font-size: 30px;
+      padding-right: 40px;
+      padding-left: 10;
+      transition: 0.3s; }
+    .navbar .nav-icons-container .nav-icon:hover {
+      color: greenyellow; }
