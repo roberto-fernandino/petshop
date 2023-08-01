@@ -2,31 +2,62 @@
   margin: 0;
   padding: 0; }
 
+body hr {
+  color: #45d045;
+  margin-top: 150px; }
+
 /* inicio da parte superior */
 .top-container {
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 50px; }
   .top-container .top-bar {
+    padding: 20px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
     background-color: #fafafa;
     display: flex;
-    justify-content: flex-end;
-    padding: 10px; }
+    justify-content: flex-end; }
     .top-container .top-bar a {
       transition: 0.3s;
-      font-size: 20px;
+      font-size: 15px;
       color: grey;
       text-decoration: none; }
       .top-container .top-bar a i {
         padding-left: 20px;
         color: #45d045;
         font-size: 20px;
-        padding-right: 40px; }
+        padding-right: 20px; }
     .top-container .top-bar a:hover {
-      color: greenyellow;
+      color: #45d045;
       transform: translateY(-4px); }
 
-.navbar {
-  background-color: #45d045; }
-  .navbar .nav-title a {
+.navnav {
+  background-color: #45d045;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; }
+  .navnav .dropdown {
+    display: flex;
+    padding-top: 60px; }
+    .navnav .dropdown .dropdown-toggle {
+      background-color: #45d045;
+      border: none;
+      transition: 0.5s; }
+    .navnav .dropdown .dropdown-toggle:hover {
+      opacity: 0.7; }
+    .navnav .dropdown .dropdown-menu {
+      background-color: white; }
+      .navnav .dropdown .dropdown-menu li a {
+        color: #45d045;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
+  .navnav a {
     padding: 3;
     margin: 4;
     font-size: 35px;
@@ -37,20 +68,58 @@
     letter-spacing: 2px;
     text-decoration: none;
     transition: 0.5s; }
-    .navbar .nav-title a h1 {
+    .navnav a h1 {
       padding: 20px;
       font-weight: bold; }
-  .navbar .nav-title a:hover {
+  .navnav a:hover {
     opacity: 0.6; }
-  .navbar .nav-icons-container {
-    display: flex; }
-    .navbar .nav-icons-container .nav-icon {
-      color: white;
-      font-size: 30px;
-      padding-right: 40px;
-      padding-left: 10;
-      transition: 0.3s; }
-    .navbar .nav-icons-container .nav-icon:hover {
-      color: greenyellow; }
+  .navnav .nav-icon {
+    color: white;
+    font-size: 30px;
+    padding-right: 40px;
+    padding-left: 10;
+    transition: 0.3s; }
+  .navnav .nav-icon:hover {
+    color: greenyellow; }
 
 /* fim da parte superior */
+/* slide show */
+.all {
+  margin-top: 100px; }
+  .all .title {
+    padding: 50px; }
+    .all .title h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px; }
+
+/* pe do site */
+.pedosite {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center; }
+  .pedosite .emailcontainer {
+    color: #45d045;
+    margin-top: 10px; }
+    .pedosite .emailcontainer span {
+      font-size: 19px;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px; }
+    .pedosite .emailcontainer button {
+      background-color: transparent;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      position: relative; }
+      .pedosite .emailcontainer button i {
+        color: #45d045;
+        transition: 0.3s; }
+      .pedosite .emailcontainer button i:hover {
+        color: grey;
+        transform: translateY(-4px); }
