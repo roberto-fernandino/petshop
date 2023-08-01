@@ -8,7 +8,7 @@
       formulario com suas informacoes que entraremos em contato.
     </h4>
     <br>
-    <h5>
+    <p>
       Aqui no Meu Melhor Amigo presamos nao so pelo seu pet mas pelo
       comprometimento com seus donos!
     </p>
@@ -18,19 +18,21 @@
     {% csrf_token %}
     <div class="input">
       <input type="text" name="nome" class="input-field" required/>
-      <label class="input-label" for="nome">Nome</label>
+      <label class="input-label" for="nome">
+        <span>Nome</span>
+      </label>
     </div>
     <div class="input">
       <input type="email" name="email" class="input-field" required/>
-      <label class="input-label" for="email">Email</label>
+      <label class="input-label" for="email"><span>Email</span></label>
     </div>
     <div class="input">
-      <input type="text" name="assunto" class="input-field">
-      <label class="input-label" for="assunto">Assunto</label>
+      <input type="text" name="assunto" class="input-field" required/>
+      <label class="input-label" for="assunto"><span>Assunto</span></label>
     </div>
     <div class="input">
-      <textarea name="mensagem" class="input-field" rows="6"></textarea>
-      <label class="input-label" for="mensagem">Mensagem</label>
+      <textarea name="mensagem" class="input-field" rows="6" required></textarea>
+      <label class="input-label" for="mensagem"><span>Mensagem</span></label>
     </div>
     <button class="SubmitButton" type="submit">Enviar</button>
   </div>
