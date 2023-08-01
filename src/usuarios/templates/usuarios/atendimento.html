@@ -7,6 +7,7 @@
       Caso tenha alguma duvida ou algo pendente a ser resolvido preencha este
       formulario com suas informacoes que entraremos em contato.
     </h4>
+    <br>
     <p>
       Aqui no Meu Melhor Amigo presamos nao so pelo seu pet mas pelo
       comprometimento com seus donos!
@@ -16,22 +17,24 @@
     <form action="{% url 'usuarios:atendimento'%}"></form>
     {% csrf_token %}
     <div class="input">
-      <input type="text" name="nome" class="input-field" />
-      <label for="nome">Nome</label>
+      <input type="text" name="nome" class="input-field" required/>
+      <label class="input-label" for="nome">
+        <span>Nome</span>
+      </label>
     </div>
     <div class="input">
-      <input type="email" name="email" class="input-field"/>
-      <label for="email">Email</label>
+      <input type="email" name="email" class="input-field" required/>
+      <label class="input-label" for="email"><span>Email</span></label>
     </div>
     <div class="input">
-      <input type="text" name="assunto" class="input-field">
-      <label for="assunto">Assunto</label>
+      <input type="text" name="assunto" class="input-field" required/>
+      <label class="input-label" for="assunto"><span>Assunto</span></label>
     </div>
     <div class="input">
-      <textarea name="mensagem" class="large-input-field" rows="6"></textarea>
-      <label for="mensagem">Mensagem</label>
+      <textarea name="mensagem" class="input-field" rows="6" required></textarea>
+      <label class="input-label" for="mensagem"><span>Mensagem</span></label>
     </div>
-    <input type="submit" value="Enviar" />
+    <button class="SubmitButton" type="submit">Enviar</button>
   </div>
 </div>
 {% endblock %}
