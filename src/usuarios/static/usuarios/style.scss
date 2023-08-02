@@ -218,7 +218,8 @@ body {
             width: 100%;
             transition: 0.5s;
         }
-        .SubmitButton:hover{
+
+        .SubmitButton:hover {
             opacity: 0.6;
         }
     }
@@ -239,10 +240,11 @@ body {
 
     .author {
         .emailcontainer {
-            color: #45d045;
+            color: $primarycolor;
             margin: 0;
             padding: 0;
             margin-top: 10px;
+
             span {
                 font-size: 19px;
                 background-color: transparent;
@@ -251,9 +253,11 @@ body {
                 border-radius: 4px;
                 padding: 4px 8px;
             }
-            i{
+
+            i {
                 color: $secondcolor;
             }
+
             button {
                 background-color: transparent;
                 font-size: 20px;
@@ -278,6 +282,7 @@ body {
 
     div {
         margin: 20px;
+
         button {
             background-color: transparent;
             font-size: 20px;

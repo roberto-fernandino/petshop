@@ -59,6 +59,23 @@
             />
           </a>
         </div>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Racoes
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Cachorro</a></li>
+            <li><a class="dropdown-item" href="#">Felinos</a></li>
+            <li><a class="dropdown-item" href="#">Roedores</a></li>
+            <li><a class="dropdown-item" href="#">Aquaticos</a></li>
+            <li><a class="dropdown-item" href="#">Passaros</a></li>
+          </ul>
+        </div>
         <div class="nav-icons">
           <a href="{% url 'usuarios:login' %}" class="nav-icon">
             <i class="fa-regular fa-user"></i
@@ -72,22 +89,30 @@
     </header>
 
     {% block content %} {% endblock %}
-    <hr />
+
   </body>
 
   <footer class="pedosite">
-    Author: Diego Cheib / Roberto Fernandino <br />
-    &copy; Copyright Reserved <br />
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> diegocheib@gmail.com</span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div>
+      <Address>
+        R. Melhores Amigos, 333 - Savassi <br>
+        Belo Horizonte - MG, 3333333-333
+      </Address>
+      <p>(31)-999999-9999</p>
     </div>
-
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> romfernandno@gmail.com </span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div class="author">
+      Author: Diego Cheib / Roberto Fernandino <br />
+      &copy; Copyright Reserved <br />
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> diegocheib@gmail.com</span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> romfernandno@gmail.com </span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
     </div>
   </footer>
 </html>

@@ -127,3 +127,8 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# CHANGED DEFAULT USERMODEL TO CUSTOM ONE TO USE EMAIL TO LOGIN WITH USER FUNCTIONS BUILT IN DJANGO
+
+AUTH_USER_MODEL = "usuarios.Account"

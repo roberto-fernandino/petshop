@@ -10,7 +10,7 @@
       href="{% static 'usuarios/favicon.ico' %}"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="{% static 'index/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'usuarios/style.css' %}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -40,9 +40,7 @@
             home <i class="fa-solid fa-house"></i
           ></a>
           <!-- ABOUT US-->
-          <a href="{% url 'home:about' %}">
-            sobre nos <i class="fa-solid fa-address-card"></i
-          ></a>
+          <a href=""> sobre nos <i class="fa-solid fa-address-card"></i></a>
           <!-- GALERY -->
           <a href=""> galeria <i class="fa-solid fa-images"></i></a>
           <!-- Contact us-->
@@ -51,56 +49,23 @@
           </a>
         </div>
       </div>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid" style="background-color: #45d045">
-          <a class="navbar-brand" href="#">
-            <img
-              src="{% static 'index/logosmall.png' %}"
-              alt="Icone Principal"
-            />
-          </a>
-          <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Racoes
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Cachorro</a></li>
-              <li><a class="dropdown-item" href="#">Felinos</a></li>
-              <li><a class="dropdown-item" href="#">Roedores</a></li>
-              <li><a class="dropdown-item" href="#">Aquaticos</a></li>
-              <li><a class="dropdown-item" href="#">Passaros</a></li>
-  
-            </ul>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Racoes
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Cachorro</a></li>
-              <li><a class="dropdown-item" href="#">Felinos</a></li>
-              <li><a class="dropdown-item" href="#">Roedores</a></li>
-              <li><a class="dropdown-item" href="#">Aquaticos</a></li>
-              <li><a class="dropdown-item" href="#">Passaros</a></li>
-  
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <!--  
       <nav class="navnav">
         <div>
           <a href="">
             <img
-              src="{% static 'usuarios/iconeoprincipal.png' %}"
+              src="{% static 'usuarios/logosmall.png' %}"
               alt="iconeoprincipal"
               height="100px"
             />
           </a>
         </div>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Racoes
           </button>
           <ul class="dropdown-menu">
@@ -109,7 +74,6 @@
             <li><a class="dropdown-item" href="#">Roedores</a></li>
             <li><a class="dropdown-item" href="#">Aquaticos</a></li>
             <li><a class="dropdown-item" href="#">Passaros</a></li>
-
           </ul>
         </div>
         <div class="nav-icons">
@@ -121,27 +85,33 @@
           ></a>
         </div>
       </nav>
-      -->
       <!-- DROPDOWN HERE! RATO DESGRACADO -->
     </header>
 
     {% block content %} {% endblock %}
-    <hr />
   </body>
 
   <footer class="pedosite">
-    Author: Diego Cheib / Roberto Fernandino <br />
-    &copy; Copyright Reserved <br />
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> diegocheib@gmail.com</span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div>
+      <address>
+        R. Melhores Amigos, 333 - Savassi <br />
+        Belo Horizonte - MG, 3333333-333
+      </address>
+      <p>(31)-999999-9999</p>
     </div>
-
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> romfernandno@gmail.com </span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div class="author">
+      Author: Diego Cheib / Roberto Fernandino <br />
+      &copy; Copyright Reserved <br />
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> diegocheib@gmail.com</span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> romfernandno@gmail.com </span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
     </div>
   </footer>
 </html>
