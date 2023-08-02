@@ -7,16 +7,19 @@ $fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     margin: 0;
     padding: 0;
 }
-body{
-    hr{
-    color: $primarycolor;
-    margin-top: 150px;
+
+body {
+    hr {
+        color: $primarycolor;
+        margin-top: 150px;
+    }
 }
-}
+
 /* inicio da parte superior */
 .top-container {
     margin: 0 auto;
     padding-bottom: 50px;
+
     .top-bar {
         padding: 20px;
         position: fixed;
@@ -25,6 +28,7 @@ body{
         background-color: rgb(250, 250, 250);
         display: flex;
         justify-content: flex-end;
+
         a {
             transition: 0.3s;
             font-size: 15px;
@@ -55,21 +59,26 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    .dropdown{
+
+    .dropdown {
         display: flex;
         padding-top: 60px;
-        .dropdown-toggle{
+
+        .dropdown-toggle {
             background-color: $primarycolor;
             border: none;
             transition: 0.5s;
         }
-        .dropdown-toggle:hover{
+
+        .dropdown-toggle:hover {
             opacity: 0.7;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             background-color: $secondcolor;
-            li{
-                a{
+
+            li {
+                a {
                     color: $primarycolor;
                     text-transform: capitalize;
                     font-size: 20px;
@@ -77,6 +86,7 @@ body{
             }
         }
     }
+
     a {
         padding: 3;
         margin: 4;
@@ -88,27 +98,29 @@ body{
         letter-spacing: 2px;
         text-decoration: none;
         transition: 0.5s;
+
         h1 {
             padding: 20px;
             font-weight: bold;
         }
     }
 
-        a:hover {
-            opacity: 0.6;
-        }
-        .nav-icon {
-            color: $secondcolor;
-            font-size: 30px;
-            padding-right: 40px;
-            padding-left: 10;
-            transition: 0.3s;
-        }
+    a:hover {
+        opacity: 0.6;
+    }
 
-        .nav-icon:hover {
-            color: greenyellow;
-        }
-    
+    .nav-icon {
+        color: $secondcolor;
+        font-size: 30px;
+        padding-right: 40px;
+        padding-left: 10;
+        transition: 0.3s;
+    }
+
+    .nav-icon:hover {
+        color: greenyellow;
+    }
+
 }
 
 /* fim da parte superior */
@@ -120,15 +132,19 @@ body{
     justify-items: center;
     justify-content: center;
     align-content: center;
-    margin-top: 200px;
+    margin-top: 160px;
+
     .top-title {
         display: grid;
         color: $primarycolor;
+        margin-bottom: 40px;
+        font-size: 75px;
     }
 
     .information-container {
         display: grid;
         width: 450px;
+
         h4 {
             font-family: $fontclean;
             font-size: larger;
@@ -138,14 +154,17 @@ body{
             font-size: small;
         }
     }
-    .atendimento-form-container{
+
+    .atendimento-form-container {
         display: grid;
         margin-top: 75px;
         justify-content: center;
+
         .input {
             position: relative;
-            width: 450px ;
+            width: 450px;
             margin-bottom: 30px;
+
             .input-field {
                 width: 100%;
                 padding: 15px;
@@ -155,45 +174,55 @@ body{
                 color: $primarycolor;
                 background-color: transparent;
                 border: 2px solid #d6d6d6;
-                
+
             }
-            
-           
-            .input-label{
+
+
+            .input-label {
                 position: absolute;
                 top: 0;
                 left: 0;
                 transform: translate(10px, 10px);
                 transform-origin: left;
                 transition: transform 0.25s;
-                span{
+
+                span {
                     user-select: none;
-                    -moz-user-select: none; /* Firefox */
-                    -ms-user-select: none; /* Internet Explorer */
-                    -webkit-user-select: none; /* Safari */
+                    -moz-user-select: none;
+                    /* Firefox */
+                    -ms-user-select: none;
+                    /* Internet Explorer */
+                    -webkit-user-select: none;
+                    /* Safari */
                 }
             }
-            .input-field:focus-visible ~ .input-label,
-            .input-field:valid ~.input-label {
-                transform: translate(0, -30px) scale(0.8);        
+
+            .input-field:focus-visible~.input-label,
+            .input-field:valid~.input-label {
+                transform: translate(0, -30px) scale(0.8);
                 color: #45d045;
             }
-            .input-field:is(:focus-visible, :valid){
+
+            .input-field:is(:focus-visible, :valid) {
                 outline-color: #45d045;
             }
         }
+
         .SubmitButton {
             background-color: #45d045;
             border: none;
             padding: 10px;
             text-decoration: none;
             cursor: pointer;
-            transition: background .3s;
             border-radius: 5px;
             width: 100%;
+            transition: 0.5s;
+        }
+        .SubmitButton:hover{
+            opacity: 0.6;
         }
     }
-    
+
 }
 
 /* pe do site */
@@ -202,36 +231,69 @@ body{
 .pedosite {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
+    flex-direction: row;
     align-items: center;
-    .emailcontainer{
-        color: $primarycolor;
-        margin-top: 10px;
-        span {
-            font-size: 19px;
-            background-color: $secondcolor;
-            color: black;
-            border: none;
-            border-radius: 4px;
-            padding: 4px 8px;
+    justify-content: space-around;
+    margin-top: 170px;
+    background-color: $primarycolor;
+
+    .author {
+        .emailcontainer {
+            color: #45d045;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+            span {
+                font-size: 19px;
+                background-color: transparent;
+                color: black;
+                border: none;
+                border-radius: 4px;
+                padding: 4px 8px;
+            }
+            i{
+                color: $secondcolor;
+            }
+            button {
+                background-color: transparent;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                position: relative;
+
+                i {
+                    padding: 5px;
+                    color: $secondcolor;
+                    transition: 0.5s;
+                }
+
+                i:hover {
+                    color: grey;
+                    transform: translateY(-4px);
+                }
+            }
+
         }
+    }
+
+    div {
+        margin: 20px;
         button {
             background-color: transparent;
             font-size: 20px;
             border: none;
             cursor: pointer;
             position: relative;
-            i
-            {
+
+            i {
                 color: $primarycolor;
                 transition: 0.3s;
             }
+
             i:hover {
                 color: grey;
                 transform: translateY(-4px);
             }
         }
-    
     }
 }

@@ -11,4 +11,5 @@ urlpatterns = [
     path('signup', signup, name='signup'),
     path('signupfinal', signup2, name='signup2'),
     path('atendimento', atendimento, name='atendimento'),
+    path('atendimento/enviado', atendimentoSubmited, name='atendimento-enviado')
     ]

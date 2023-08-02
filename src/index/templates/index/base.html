@@ -40,7 +40,9 @@
             home <i class="fa-solid fa-house"></i
           ></a>
           <!-- ABOUT US-->
-          <a href="{% url 'home:about' %}"> sobre nos <i class="fa-solid fa-address-card"></i></a>
+          <a href="{% url 'home:about' %}">
+            sobre nos <i class="fa-solid fa-address-card"></i
+          ></a>
           <!-- GALERY -->
           <a href=""> galeria <i class="fa-solid fa-images"></i></a>
           <!-- Contact us-->
@@ -49,6 +51,44 @@
           </a>
         </div>
       </div>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" style="background-color: #45d045">
+          <a class="navbar-brand" href="#">
+            <img
+              src="{% static 'index/logosmall.png' %}"
+              alt="Icone Principal"
+            />
+          </a>
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Racoes
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Cachorro</a></li>
+              <li><a class="dropdown-item" href="#">Felinos</a></li>
+              <li><a class="dropdown-item" href="#">Roedores</a></li>
+              <li><a class="dropdown-item" href="#">Aquaticos</a></li>
+              <li><a class="dropdown-item" href="#">Passaros</a></li>
+  
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Racoes
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Cachorro</a></li>
+              <li><a class="dropdown-item" href="#">Felinos</a></li>
+              <li><a class="dropdown-item" href="#">Roedores</a></li>
+              <li><a class="dropdown-item" href="#">Aquaticos</a></li>
+              <li><a class="dropdown-item" href="#">Passaros</a></li>
+  
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!--  
       <nav class="navnav">
         <div>
           <a href="">
@@ -81,6 +121,7 @@
           ></a>
         </div>
       </nav>
+      -->
       <!-- DROPDOWN HERE! RATO DESGRACADO -->
     </header>
 

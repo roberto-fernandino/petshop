@@ -20,5 +20,4 @@ class Atendimentos(models.Model):
     
 
     def __str__(self) -> str:
-        return f'{self.nome} -> {self.assunto} {self.status}'
-    
+        return f'Nome: {self.nome} -- Assunto: {self.assunto}  -- Status: {self.get_status_display()}'
