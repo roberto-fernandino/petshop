@@ -5,22 +5,29 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
-def login(request, *args, **kwargs):
-    if request.method == "POST":
+def login_view(request, *args, **kwargs):
+    if request.user.is_authenticated:
+        return redirect("usuarios:usuario")
+    elif request.method == "POST":
         email = request.POST["email"]
         password = request.POST["password"]
         user = authenticate(request, email=email, password=password)
         if user is not None:
-            return redirect("usuarios:login_sucess")
-        else:
-            return render(request, 'usuarios/login.html', {
-                "message": "Email ou senha invalidos"
+            login(request, user)
+            return render(request, "usuarios/user.html", {
+                "message": "Bem vindo de volta "
             })
+        else:
+            return render(
+                request, "usuarios/login.html", {"message": "Email ou senha invalidos"}
+            )
     return render(request, "usuarios/login.html", {})
 
 
 def login_sucess(request):
-    return render(request,"usuarios/loginsucess.html")
+    if request.user.is_authenticated:
+        return render(request, "usuarios/loginsucess.html")
+
 
 def signup(request, *args, **kwargs):
     if request.method == "POST":
@@ -28,12 +35,17 @@ def signup(request, *args, **kwargs):
     return render(request, "usuarios/singup.html", {})
 
 
+def user_view(request):
+    return render(request, "usuarios/user.html", {})
+
+
 def signup2(request, *args, **kwargs):
     return render(request, "usuarios/signup2.html", {})
 
 
-def logout(request):
-    return render(request)
+def logout_view(request):
+    logout(request)
+    return render(request, "index/index.html", {"message": "Deslogado com sucesso!"})
 
 
 def atendimento(request, *args, **kwargs):

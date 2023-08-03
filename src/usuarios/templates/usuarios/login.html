@@ -3,7 +3,7 @@
 
 <div class="form-container">
   {% if message %}
-  <div class="error">{{message}}</div>
+  <div class="alert alert-danger">{{message}}</div>
   {% endif %}
   <form action="{% url 'usuarios:login' %}" method="POST" class="form-centered">
     {% csrf_token %}

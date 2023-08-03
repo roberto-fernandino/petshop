@@ -1,0 +1,19 @@
+{% extends 'usuarios/base.html' %}
+{% block title %} Ola, {{ request.user.username }} {% endblock %}
+{% block content %} 
+<div class="form-container">
+    {% if message %}
+        <div class="alert alert-success">{{ message }} {{ request.user.username }}</div>
+    {% endif %}
+    <h1>
+        
+     {{ request.user.username}}
+     {{ request.user.email}}
+    </h1>
+    <div>
+        <a class="btn btn-danger" href="{% url 'usuarios:logout' %}">Logout</a>
+    </div>
+</div>
+
+
+{% endblock %} 

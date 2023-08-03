@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = "maindjango.urls"
@@ -132,3 +133,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # CHANGED DEFAULT USERMODEL TO CUSTOM ONE TO USE EMAIL TO LOGIN WITH USER FUNCTIONS BUILT IN DJANGO
 
 AUTH_USER_MODEL = "usuarios.Account"
+
+
+
+# DEFINE A AUTENTICACAO DE SESSAO COMO PADRAO
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+# DEFINE O ARMAZENAMENTO DE SESSAO COMO PADRAO NO BANCO DE DADOS E TEMPO EM SEGUNDOS PARA TIMEOUT AUTOMATICO
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 1209600 #2 semanas
