@@ -1,9 +1,11 @@
-{% extends 'index/base.html' %} {% block title %} Melhor Amigo {% endblock%}
+{% extends 'index/base.html' %} {% block title %} Melhor Amigo {% endblock%} 
 {% block content %} {% load static %}
 <link rel="stylesheet" href="{%  static 'index/style.css' %}" />
 <div class="all">
   <div class="title">
-    <h1>Bem-vindo ao Petshop "Melhor Amigo"!</h1>
+    <div class="slogan">
+      <img src="{% static 'index/sloganpetshop.png' %}" alt="Imagem Slogan" />
+    </div>
   </div>
   <div class="slide-carrousel">
     <div

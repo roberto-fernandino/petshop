@@ -134,12 +134,11 @@ body {
     .title {
         padding: 50px;
 
-        h1 {
+        h1
+         {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
-            color: $primarycolor;
         }
     }
 }

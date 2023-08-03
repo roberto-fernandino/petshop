@@ -14,6 +14,7 @@ class AccountManager(BaseUserManager):
         email,
         username,
         data_nascimento,
+        data_criacao,
         cpf,
         password=None,
     ):
@@ -21,23 +22,27 @@ class AccountManager(BaseUserManager):
             raise ValueError("Email obrigatorio")
         if not username:
             raise ValueError("Username obrigatorio")
+        if not data_nascimento:
+            raise ValueError("Data de nascimento obrigatoria")
 
         user = self.model(
             email=self.normalize_email(email),
             username=username,
             data_nascimento=data_nascimento,
+            data_criacao=data_criacao,
             cpf=cpf,
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, data_nascimento, cpf, password):
+    def create_superuser(self, email, username, data_nascimento, data_criacao, cpf, password):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
             password=password,
             data_nascimento=data_nascimento,
+            data_criacao=data_criacao,
             cpf=cpf,
         )
         user.is_admin = True
@@ -76,7 +81,7 @@ class Account(AbstractBaseUser):
     username = models.CharField(max_length=30, unique=True, blank=False)
     cpf = models.CharField(max_length=13, unique=True, blank=False, null=True)
     data_nascimento = models.DateField(blank=False, null=True)
-
+    data_criacao = models.DateTimeField(auto_now_add=True, blank=False, null=True)
     # Acount Manager aqui
     objects = AccountManager()
 
