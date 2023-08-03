@@ -3,13 +3,17 @@
 
 {% extends 'usuarios/base.html' %}
 
-{% block title %} Bem vindo de volta!{ %endblock% }
+{% block title %} Bem vindo de volta!{% endblock %}
 {% block content %} 
 
 
-<div>
+<div class="form-container">
     <h1>Logado com sucesso!</h1>
+    {{ request.user.username }}
+    {{ request.user.email }}
+    {{ request.user.cpf }}
+    {{ request.user. }}
 </div>
 
 
-{ %endblock% } 
+{% endblock %} 

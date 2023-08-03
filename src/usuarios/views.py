@@ -9,15 +9,18 @@ def login(request, *args, **kwargs):
     if request.method == "POST":
         email = request.POST["email"]
         password = request.POST["password"]
-        user = authenticate(email, password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
-            return redirect("usarios:loginsucess")
-
+            return redirect("usuarios:login_sucess")
+        else:
+            return render(request, 'usuarios/login.html', {
+                "message": "Email ou senha invalidos"
+            })
     return render(request, "usuarios/login.html", {})
 
 
 def login_sucess(request):
-    return render(request,"loginsucess.html")
+    return render(request,"usuarios/loginsucess.html")
 
 def signup(request, *args, **kwargs):
     if request.method == "POST":

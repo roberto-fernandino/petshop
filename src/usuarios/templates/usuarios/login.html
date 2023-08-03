@@ -1,10 +1,15 @@
 {% extends 'usuarios/base.html' %} {%block title%} Login {%endblock%} 
-{% block content %}
-<form action="{% url 'usuarios:login' %}" method="POST">
-    
-    <input type="email" name="email" maxlength="150" required />
+{% block content %} 
+
+<div class="form-container">
+  {% if message %}
+  <div class="error">{{message}}</div>
+  {% endif %}
+  <form action="{% url 'usuarios:login' %}" method="POST" class="form-centered">
+    {% csrf_token %}
     <label for="email">Email</label>
-  
+    <input type="email" name="email" maxlength="150" required />
+    <label for="password">password</label>
     <input
       type="password"
       name="password"
@@ -12,7 +17,7 @@
       minlength="8"
       required
     />
-    <label for="password">password</label>
+    <input type="submit" value="Login">
   </form>
-
+</div>
 {% endblock %}
