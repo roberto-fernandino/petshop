@@ -1,3 +1,4 @@
 src/*/__pycache__/*
 src/usuarios/__pycache__/urls.cpython-311.pyc
 src/usuarios/__pycache__/views.cpython-311.pyc
+.gitignore
