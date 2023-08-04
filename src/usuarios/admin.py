@@ -24,15 +24,28 @@ class AtendimentoAdmin(admin.ModelAdmin):
 # User Custom model
 class UserCrerationForm(forms.ModelForm):
     """Um form para criar novos usuarios."""
-
-    password1 = forms.CharField(label="", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="", widget=forms.PasswordInput)
-    data_nascimento = forms.DateField(label='')
-    cpf = forms.CharField(label="cpf")
+    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={
+        "class": "input-field"
+    })) 
+    username = forms.EmailField(label='', widget=forms.TextInput(attrs={
+        "class": "input-field"
+    })) 
+    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+        "class": "input-field"
+    }))
+    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+        "class": "input-field"
+    }))
+    data_nascimento = forms.DateField(label='', widget=forms.DateInput(attrs={
+        "class": "input-field"
+    }))
+    cpf = forms.CharField(label="", widget=forms.TextInput(attrs={
+        "class": "input-field"
+    }))
 
     class Meta:
         model = Account
-        fields = ["email", "username", "data_nascimento", "cpf",]
+        fields = ["email","password1", "password2","username", "data_nascimento", "cpf",]
 
     def clean_passwords(self):
         """Checa as duas senhas"""

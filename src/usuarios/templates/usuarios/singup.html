@@ -3,14 +3,48 @@
 {% block content %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'usuarios' %}">
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
 <div class="atendimento-container">
   <div class="atendimento-form-container">
     <form action="{% url 'usuarios:signup' %}" method="POST">
       {% csrf_token %}
       <div class="input">
-        {{ form }}
+        {{ form.email }}
+        <label class="input-label" for="email">
+          <span>email</span>
+        </label>
       </div>
+      <div class="input">
+        {{ form.username }}
+        <label class="input-label" for="username">
+          <span>
+            username
+          </span>
+      </label>
+      </div>
+      <div class="input">
+        {{ form.password1 }}
+        <label class="input-label" for="password1"><span>
+          password</span>
+        </label>
+      </div>
+      <div class="input">
+        {{ form.data_nascimento }}
+        <label class="input-label" for="data_nascimento"><span>
+          data nascimento</span>
+        </label>
+      </div>
+      <div class="input">
+        {{ form.password2 }}
+        <label class="input-label" for="password2">
+          <span>password confirmation</span>
+        </label>
+      </div>
+      <div class="input">
+        {{ form.cpf }}
+        <label class="input-label" for="cpf">cpf</label>
+      </div>
+      <input class="SubmitButton" type="submit" value="cadastrar">
     </form>
   </div>
 </div>
