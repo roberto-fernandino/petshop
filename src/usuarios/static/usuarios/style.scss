@@ -158,7 +158,46 @@ body {
         display: grid;
         justify-content: center;
         text-align: center;
-    
+    }
+    .form-centered {
+        .input-field{
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font: inherit;
+            color: #45d045;
+            background-color: transparent;
+            border: 2px solid #d6d6d6; 
+        }
+        .input-label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(10px, 10px);
+            transform-origin: left;
+            transition: transform 0.25s; 
+        }
+        .input-field:focus-visible ~ .input-label, .input-field:valid ~ .input-label {
+            transform: translate(0, -30px) scale(0.8);
+            color: #45d045; 
+        }
+        .input-field:is(:focus-visible, :valid){
+            outline-color: #45d045; 
+        }
+        .SubmitButton {
+            background-color: #45d045;
+            border: none;
+            padding: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: 0.5s; 
+        }
+        .SubmitButton:hover {
+            opacity: 0.6; 
+        }
     }
 }
 
@@ -246,11 +285,11 @@ body {
             .input-field:valid~.input-label {
                 transform: translate(0, -30px) scale(0.8);
                 color: #45d045;
-            }
+        }
 
-            .input-field:is(:focus-visible, :valid) {
-                outline-color: #45d045;
-            }
+        .input-field:is(:focus-visible, :valid) {
+            outline-color: #45d045;
+        }
         }
 
         .SubmitButton {

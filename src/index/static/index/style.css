@@ -156,7 +156,7 @@ body hr {
       cursor: pointer;
       position: relative; }
       .pedosite .author .emailcontainer button i {
-        color: #45d045;
+        color: #fff;
         transition: 0.3s; }
       .pedosite .author .emailcontainer button i:hover {
         color: grey;
@@ -168,7 +168,7 @@ body hr {
     cursor: pointer;
     position: relative; }
     .pedosite div button i {
-      color: #45d045;
+      color: #fff;
       transition: 0.3s; }
     .pedosite div button i:hover {
       color: grey;
