@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from usuarios import models
 from django.contrib.auth.forms import UserCreationForm
-
+from .forms import signup_form, UserCreationForm
 
 # Create your views here.
 def login_view(request, *args, **kwargs):
@@ -31,16 +31,20 @@ def login_sucess(request):
 
 def signup(request, *args, **kwargs):
     if request.method == "POST":
-        pass
-    return render(request, "usuarios/singup.html", {})
+        form = signup_form(request.POST)
+        if form.is_valid():
+            pass
+
+    form = signup_form()
+    context = {
+        "form": form  
+    }
+    return render(request, "usuarios/singup.html", context)
 
 
 def user_view(request):
     return render(request, "usuarios/user.html", {})
 
-
-def signup2(request, *args, **kwargs):
-    return render(request, "usuarios/signup2.html", {})
 
 
 def logout_view(request):

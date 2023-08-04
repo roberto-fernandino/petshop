@@ -5,6 +5,26 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 # Create your models here.
 
 
+# Status atendimentos
+
+STATUS_CHOISES = [
+    ("p", "pendente"),
+    ("r", "respondida"),
+]
+
+
+class Atendimentos(models.Model):
+    nome = models.CharField(max_length=30)
+    email = models.EmailField(max_length=150)
+    assunto = models.CharField(max_length=40, blank=False, null=True)
+    message = models.TextField(null=True, blank=False)
+    status = models.CharField(max_length=1, choices=STATUS_CHOISES, default="p")
+    data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"Nome: {self.nome} -- Assunto: {self.assunto}  -- Status: {self.get_status_display()}"
+
+
 # Overriding Default Account Manager
 
 
@@ -36,7 +56,9 @@ class AccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, data_nascimento, data_criacao, cpf, password):
+    def create_superuser(
+        self, email, username, data_nascimento, data_criacao, cpf, password
+    ):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
@@ -50,26 +72,6 @@ class AccountManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
         return user
-
-
-# Status atendimentos
-
-STATUS_CHOISES = [
-    ("p", "pendente"),
-    ("r", "respondida"),
-]
-
-
-class Atendimentos(models.Model):
-    nome = models.CharField(max_length=30)
-    email = models.EmailField(max_length=150)
-    assunto = models.CharField(max_length=40, blank=False, null=True)
-    message = models.TextField(null=True, blank=False)
-    status = models.CharField(max_length=1, choices=STATUS_CHOISES, default="p")
-    data = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self) -> str:
-        return f"Nome: {self.nome} -- Assunto: {self.assunto}  -- Status: {self.get_status_display()}"
 
 
 #  Overriding Default Base User
@@ -90,7 +92,8 @@ class Account(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    # aqui declaramos as constantes do novo BaseUserManager Model
+    # variavies cosntantes do novo BaseUserManager Model onde voce declara qual sera o username-field e fields
+    # obrigatorios
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "data_nascimento", "cpf"]

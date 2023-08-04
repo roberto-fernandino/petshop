@@ -1,8 +1,21 @@
-{% extends 'usuarios/base.html' %} {% base title %} signup {% endblock %} 
+{% extends 'index/base.html' %} {% block title %} signup {% endblock %} 
 
-{%block content %}
+{% block content %}
+{% load static %}
 
-<form action="{% url 'usuarios:login' %}" method="POST">
+<link rel="stylesheet" href="{% static 'usuarios' %}">
+<div class="atendimento-container">
+  <div class="atendimento-form-container">
+    <form action="{% url 'usuarios:signup' %}" method="POST">
+      {% csrf_token %}
+      <div class="input">
+        {{ form }}
+      </div>
+    </form>
+  </div>
+</div>
+  
+  <!-- 
   <input type="text" name="name" minlength="3" maxlength="25" required />
   <label for="name">Nome</label>
 
@@ -31,7 +44,7 @@
   <input type="date" name="data_nascimento" />
   <label for="date">Data nascimento</label>
 
-  <input type="button" value="enviar" />
+  <input type="button" value="enviar" />-->
 </form>
 
 {% endblock %}

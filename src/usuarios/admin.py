@@ -25,9 +25,9 @@ class AtendimentoAdmin(admin.ModelAdmin):
 class UserCrerationForm(forms.ModelForm):
     """Um form para criar novos usuarios."""
 
-    password1 = forms.CharField(label="senha", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="senha confirmacao", widget=forms.PasswordInput)
-    data_nascimento = forms.DateField(label='Data de nascimento')
+    password1 = forms.CharField(label="", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="", widget=forms.PasswordInput)
+    data_nascimento = forms.DateField(label='')
     cpf = forms.CharField(label="cpf")
 
     class Meta:
