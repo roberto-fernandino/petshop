@@ -1,23 +1,33 @@
-{% extends 'usuarios/base.html' %} {%block title%} Login {%endblock%} 
+{% extends 'index/base.html' %} {%block title%} Login {%endblock%} 
 {% block content %} 
 
-<div class="form-container">
+<div class="atendimento-container">
   {% if message %}
   <div class="alert alert-danger">{{message}}</div>
   {% endif %}
-  <form action="{% url 'usuarios:login' %}" method="POST" class="form-centered">
-    {% csrf_token %}
-    <label for="email">Email</label>
-    <input type="email" name="email" maxlength="150" required />
-    <label for="password">password</label>
-    <input
-      type="password"
-      name="password"
-      maxlength="50"
-      minlength="8"
-      required
-    />
-    <input type="submit" value="Login">
-  </form>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+
+  <div class="atendimento-form-container">
+      <form action="{% url 'usuarios:login' %}" method="POST">
+          {% csrf_token %}
+        <div class="input">
+            <input type="email" name="email" maxlength="150" required class="input-field"/>
+            <label for="email" class="input-label"><span>Email</span></label>
+        </div>
+        <div class="input">
+            <input 
+            type="password"
+            name="password"
+            maxlength="50"
+            minlength="8"
+            required
+            class="input-field"
+            />
+            <label for="password" class="input-label"><span>Password</span></label>
+        </div>
+            <input type="submit" value="Login" class="SubmitButton">
+        </form>
+    </div>
 </div>
 {% endblock %}
