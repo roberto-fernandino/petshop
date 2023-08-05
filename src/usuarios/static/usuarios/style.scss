@@ -220,9 +220,9 @@ body {
 
         .input {
             position: relative;
-            width: 450px;
+            max-width: 400px;
             margin-bottom: 30px;
-
+            
             .input-field {
                 width: 100%;
                 padding: 15px;
@@ -232,7 +232,7 @@ body {
                 color: $primarycolor;
                 background-color: transparent;
                 border: 2px solid #d6d6d6;
-
+                
             }
 
 
@@ -260,12 +260,18 @@ body {
                 transform: translate(0, -30px) scale(0.8);
                 color: #45d045;
             }
-
+            
             .input-field:is(:focus-visible, :valid) {
                 outline-color: #45d045;
             }
         }
-
+        
+        @media (max-width: 412px) {
+            .input{
+                width: 350px;
+            }
+        }
+        
         .SubmitButton {
             background-color: #45d045;
             border: none;
@@ -283,6 +289,7 @@ body {
     }
 
 }
+
 
 /* pe do site */
 

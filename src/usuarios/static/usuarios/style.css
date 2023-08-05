@@ -145,7 +145,7 @@ body hr {
     justify-content: center; }
     .atendimento-container .atendimento-form-container .input {
       position: relative;
-      width: 450px;
+      max-width: 400px;
       margin-bottom: 30px; }
       .atendimento-container .atendimento-form-container .input .input-field {
         width: 100%;
@@ -177,6 +177,9 @@ body hr {
         color: #45d045; }
       .atendimento-container .atendimento-form-container .input .input-field:is(:focus-visible, :valid) {
         outline-color: #45d045; }
+    @media (max-width: 412px) {
+      .atendimento-container .atendimento-form-container .input {
+        width: 200px; } }
     .atendimento-container .atendimento-form-container .SubmitButton {
       background-color: #45d045;
       border: none;
