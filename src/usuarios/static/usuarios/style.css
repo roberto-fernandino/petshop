@@ -145,7 +145,7 @@ body hr {
     justify-content: center; }
     .atendimento-container .atendimento-form-container .input {
       position: relative;
-      max-width: 400px;
+      max-width: 340px;
       margin-bottom: 30px; }
       .atendimento-container .atendimento-form-container .input .input-field {
         width: 100%;
@@ -179,7 +179,7 @@ body hr {
         outline-color: #45d045; }
     @media (max-width: 412px) {
       .atendimento-container .atendimento-form-container .input {
-        width: 200px; } }
+        max-width: 350px; } }
     .atendimento-container .atendimento-form-container .SubmitButton {
       background-color: #45d045;
       border: none;

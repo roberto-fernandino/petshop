@@ -5,7 +5,7 @@ from .models import Produto
 
 
 class ProdutoAdmin(admin.ModelAdmin):
-    list_display = ["nome_produto", "setor", "avaliacao"]
+    list_display = ["nome_produto", "setor"]
     ordering = ["preco"]
     list_filter = ["preco", "setor"]
     search_fields = ["nome_produto"]

@@ -220,7 +220,7 @@ body {
 
         .input {
             position: relative;
-            max-width: 400px;
+            max-width: 340px;
             margin-bottom: 30px;
             
             .input-field {
@@ -268,7 +268,7 @@ body {
         
         @media (max-width: 412px) {
             .input{
-                width: 350px;
+                max-width: 350px;
             }
         }
         
