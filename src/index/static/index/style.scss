@@ -87,6 +87,17 @@ body {
         display: flex;
         padding-top: 60px;
 
+        
+        .ButaoProdutos {
+            text-transform: capitalize;
+            font-size: 15px;
+            font-style: $fontclean;
+            background-color: #45d045;
+            color: #fff;
+            border: none;
+            }
+        
+
         .dropdown-toggle {
             background-color: $primarycolor;
             border: none;
@@ -157,6 +168,9 @@ body {
     a:hover {
         opacity: 0.6;
     }
+@media screen {
+    
+}
 
     .nav-icon {
         color: $secondcolor;
@@ -171,6 +185,7 @@ body {
     }
 
 }
+
 
 /* fim da parte superior */
 
