@@ -211,6 +211,11 @@ body {
         .SubmitButton:hover {
             opacity: 0.6; 
         }
+        p {
+            display: grid;
+            text-align: center;
+            justify-content: center;
+        }
     }
 }
 
@@ -256,6 +261,25 @@ body {
         display: grid;
         margin-top: 75px;
         justify-content: center;
+        form {
+            display: grid;
+            justify-content: center;
+        
+            p {
+                margin-top: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                i {
+                    margin-left: 8px;
+                    color: #45d045;
+                }
+                i:hover {
+                    color: #299829;
+                    transform: translateY(-2px);
+                }
+            }
+        }
 
         .input {
             position: relative;

@@ -185,6 +185,11 @@ body hr {
 .form-container .form-centered .SubmitButton:hover {
   opacity: 0.6;
 }
+.form-container .form-centered p {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
 
 /* form centered fim */
 /* atendimento body style */
@@ -216,6 +221,24 @@ body hr {
   display: grid;
   margin-top: 75px;
   justify-content: center;
+}
+.atendimento-container .atendimento-form-container form {
+  display: grid;
+  justify-content: center;
+}
+.atendimento-container .atendimento-form-container form p {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.atendimento-container .atendimento-form-container form p i {
+  margin-left: 8px;
+  color: #45d045;
+}
+.atendimento-container .atendimento-form-container form p i:hover {
+  color: #299829;
+  transform: translateY(-2px);
 }
 .atendimento-container .atendimento-form-container .input {
   position: relative;

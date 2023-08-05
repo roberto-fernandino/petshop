@@ -157,6 +157,10 @@ body hr {
 .all .title {
   padding: 50px;
 }
+.all .title .slogan {
+  display: grid;
+  justify-content: center;
+}
 .all .title h1 {
   display: flex;
   align-items: center;

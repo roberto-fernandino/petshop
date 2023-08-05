@@ -1,6 +1,7 @@
-{% extends 'index/base.html' %} {% base title %} signup {% endblock %} 
+{% extends 'index/base.html' %} {% block title %} Signup {% endblock %} 
 
-{%block content %}
+{% block content %}
+
 
 <form action="{% url 'usuarios:login' %}" method="POST">
   <input type="text" name="name" minlength="3" maxlength="25" required />
