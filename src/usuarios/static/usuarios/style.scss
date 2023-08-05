@@ -59,11 +59,24 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-
+    
     .dropdown {
         display: flex;
         padding-top: 60px;
-
+        
+        a {
+            color: #45d045;
+            text-transform: capitalize;
+            font-size: 10px;
+            font-style: $fontclean;
+        }
+        
+        .Projectbutton {
+                color: #45d045;
+                text-transform: capitalize;
+                font-size: 10px;
+                font-style: $fontclean;
+            }
         .dropdown-toggle {
             background-color: $primarycolor;
             border: none;
@@ -161,7 +174,51 @@ body {
         display: grid;
         justify-content: center;
         text-align: center;
-    
+    }
+    .form-centered {
+        .input-field{
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font: inherit;
+            color: #45d045;
+            background-color: transparent;
+            border: 2px solid #d6d6d6; 
+        }
+        .input-label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(10px, 10px);
+            transform-origin: left;
+            transition: transform 0.25s; 
+        }
+        .input-field:focus-visible ~ .input-label, .input-field:valid ~ .input-label {
+            transform: translate(0, -30px) scale(0.8);
+            color: #45d045; 
+        }
+        .input-field:is(:focus-visible, :valid){
+            outline-color: #45d045; 
+        }
+        .SubmitButton {
+            background-color: #45d045;
+            border: none;
+            padding: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: 0.5s; 
+        }
+        .SubmitButton:hover {
+            opacity: 0.6; 
+        }
+        p {
+            display: grid;
+            text-align: center;
+            justify-content: center;
+        }
     }
 }
 @media (max-width: 912px){
@@ -217,6 +274,25 @@ body {
         display: grid;
         margin-top: 75px;
         justify-content: center;
+        form {
+            display: grid;
+            justify-content: center;
+        
+            p {
+                margin-top: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                i {
+                    margin-left: 8px;
+                    color: #45d045;
+                }
+                i:hover {
+                    color: #299829;
+                    transform: translateY(-2px);
+                }
+            }
+        }
 
         .input {
             position: relative;
@@ -264,6 +340,7 @@ body {
             .input-field:is(:focus-visible, :valid) {
                 outline-color: #45d045;
             }
+
         }
         
         @media (max-width: 412px) {
