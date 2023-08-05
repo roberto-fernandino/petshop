@@ -1,6 +1,8 @@
 {% extends 'index/base.html' %} {%block title%} Login {%endblock%} 
 {% block content %} 
 
+<link rel="stylesheet" href="usuarios/style.css">
+
 <div class="atendimento-container">
   {% if message %}
   <div class="alert alert-danger">{{message}}</div>
@@ -18,6 +20,7 @@
       required
     />
     <input type="submit" value="Login">
+    
   </form>
 </div>
 {% endblock %}

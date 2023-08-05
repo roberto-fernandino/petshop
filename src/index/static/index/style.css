@@ -150,32 +150,25 @@ body hr {
 
 @media (max-width: 420px) {
   .navnav {
-    margin-top: 30px; } }
-
+    margin-top: 30px;
+  }
+}
 /* fim da parte superior */
 /* about us styling */
 /* slide show */
 .all {
-  margin-top: 100px; }
-  .all .title {
-    padding: 50px; }
-    .all .title .slogan {
-      display: grid;
-      justify-content: center; }
-      .all .title .slogan img {
-        position: relative;
-        max-width: 100%; }
-    .all .title h1 {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-
+  margin-top: 100px;
+}
 .all .title {
   padding: 50px;
 }
 .all .title .slogan {
   display: grid;
   justify-content: center;
+}
+.all .title .slogan img {
+  position: relative;
+  max-width: 100%;
 }
 .all .title h1 {
   display: flex;
@@ -191,55 +184,71 @@ body hr {
   align-items: center;
   justify-content: space-around;
   margin-top: 170px;
-  background-color: #45d045; }
-  .pedosite .author .emailcontainer {
-    color: #45d045;
-    margin: 0;
-    padding: 0;
-    margin-top: 10px; }
-    .pedosite .author .emailcontainer span {
-      font-size: 19px;
-      background-color: transparent;
-      color: black;
-      border: none;
-      border-radius: 4px;
-      padding: 4px 8px; }
-    .pedosite .author .emailcontainer i {
-      color: white; }
-    .pedosite .author .emailcontainer button {
-      background-color: transparent;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      position: relative; }
-      .pedosite .author .emailcontainer button i {
-        color: #45d045;
-        transition: 0.3s; }
-      .pedosite .author .emailcontainer button i:hover {
-        color: grey;
-        transform: translateY(-4px); }
-  .pedosite div button {
-    background-color: transparent;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    position: relative; }
-    .pedosite div button i {
-      color: #45d045;
-      transition: 0.3s; }
-    .pedosite div button i:hover {
-      color: grey;
-      transform: translateY(-4px); }
+  background-color: #45d045;
+}
+.pedosite .author .emailcontainer {
+  color: #45d045;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.pedosite .author .emailcontainer span {
+  font-size: 19px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.pedosite .author .emailcontainer i {
+  color: white;
+}
+.pedosite .author .emailcontainer button {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite .author .emailcontainer button i {
+  color: #45d045;
+  transition: 0.3s;
+}
+.pedosite .author .emailcontainer button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
+.pedosite div button {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite div button i {
+  color: #45d045;
+  transition: 0.3s;
+}
+.pedosite div button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
 
 /* medias for smartphone optimization */
 @media (max-width: 420px) {
   .all {
-    margin-top: 170px; } }
-
+    margin-top: 170px;
+  }
+}
 @media (max-width: 420px) {
   .all {
-    margin-top: 170px; } }
-
+    margin-top: 170px;
+  }
+}
 @media (max-width: 360px) {
   .all {
-    margin-top: 200px; } }
+    margin-top: 200px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
