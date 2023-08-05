@@ -114,6 +114,10 @@ body hr {
   .navnav .nav-icon:hover {
     color: greenyellow; }
 
+@media (max-width: 420px) {
+  .navnav {
+    margin-top: 30px; } }
+
 /* fim da parte superior */
 /* about us styling */
 /* slide show */
@@ -121,6 +125,12 @@ body hr {
   margin-top: 100px; }
   .all .title {
     padding: 50px; }
+    .all .title .slogan {
+      display: grid;
+      justify-content: center; }
+      .all .title .slogan img {
+        position: relative;
+        max-width: 100%; }
     .all .title h1 {
       display: flex;
       align-items: center;
@@ -173,3 +183,16 @@ body hr {
     .pedosite div button i:hover {
       color: grey;
       transform: translateY(-4px); }
+
+/* medias for smartphone optimization */
+@media (max-width: 420px) {
+  .all {
+    margin-top: 170px; } }
+
+@media (max-width: 420px) {
+  .all {
+    margin-top: 170px; } }
+
+@media (max-width: 360px) {
+  .all {
+    margin-top: 200px; } }

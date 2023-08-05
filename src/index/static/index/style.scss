@@ -18,13 +18,16 @@ $fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
         border: 3px solid $primarycolor;
         background-color: transparent;
         border-radius: 40px;
-        h1{
+
+        h1 {
             color: $primarycolor;
         }
-        .paragrafo{
+
+        .paragrafo {
             max-width: 100%;
             text-align: center;
-            p{
+
+            p {
                 font-size: 25px;
             }
         }
@@ -73,6 +76,8 @@ body {
     }
 }
 
+
+
 .navnav {
     background-color: $primarycolor;
     position: fixed;
@@ -82,6 +87,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
 
     .dropdown {
         display: flex;
@@ -171,6 +177,11 @@ body {
     }
 
 }
+@media (max-width: 420px) {
+    .navnav {
+        margin-top: 30px;
+    }
+}
 
 /* fim da parte superior */
 
@@ -185,6 +196,16 @@ body {
 
     .title {
         padding: 50px;
+
+        .slogan {
+            display: grid;
+            justify-content: center;
+
+            img {
+                position: relative;
+                max-width: 100%;
+            }
+        }
 
         h1 {
             display: flex;
@@ -266,5 +287,24 @@ body {
                 transform: translateY(-4px);
             }
         }
+    }
+}
+
+/* medias for smartphone optimization */
+@media (max-width: 420px) {
+    .all {
+        margin-top: 170px;
+    }
+}
+
+@media (max-width: 420px) {
+    .all {
+        margin-top: 170px;
+    }
+}
+
+@media (max-width: 360px) {
+    .all {
+        margin-top: 200px;
     }
 }

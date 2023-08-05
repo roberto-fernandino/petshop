@@ -1,12 +1,14 @@
-{% extends 'usuarios/base.html' %}
+{% extends 'index/base.html' %}
 {% block title %} Ola, {{ request.user.username }} {% endblock %}
 {% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
 <div class="form-container">
     {% if message %}
         <div class="alert alert-success">{{ message }} {{ request.user.username }}</div>
-    {% endif %}
-    <h1>
-        
+        {% endif %}
+    <h1>    
      {{ request.user.username}}
      {{ request.user.email}}
     </h1>

@@ -1,5 +1,8 @@
-{% extends 'usuarios/base.html' %} {% block title%} Atendimento {% endblock %}
+{% extends 'index/base.html' %} {% block title%} Atendimento {% endblock %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+
 <div class="atendimento-container">
   <h1 class="top-title">Atendimento</h1>
   <div class="information-container">
