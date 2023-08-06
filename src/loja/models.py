@@ -8,7 +8,7 @@ class Produto(models.Model):
     setor = models.CharField(max_length=50)
     preco = models.FloatField()
     descricao = models.TextField(null=True, blank=False)
-    imagem = models.ImageField(blank=False, null=True)
+    imagem = models.ImageField(upload_to="products",blank=False, null=True)
 
     def __str__(self):
         return f" {self.nome_produto} | {self.setor} "

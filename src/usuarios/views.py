@@ -38,19 +38,24 @@ def signup(request, *args, **kwargs):
             new_user = authenticate(request, email=email, password=password2)
             if new_user is not None:
                 login(request, new_user)
-    
-    form = signup_form()
+                return redirect('usuarios:signupsucess')
+        else:
+            return render(request, "usuarios/signup.html", {"form": form})
+            
 
+    form = signup_form()
     context = {
-        "form": form  
+        "form": form,  
+        
     }
-    return render(request, "usuarios/singup.html", context)
+    return render(request, "usuarios/signup.html", context)
 
 
 def user_view(request):
     return render(request, "usuarios/user.html", {})
 
-
+def signup_sucess_view(request):
+    return render(request, "usuarios/signupsucess.html", {})
 
 def logout_view(request):
     logout(request)

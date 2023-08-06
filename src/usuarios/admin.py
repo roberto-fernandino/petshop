@@ -21,25 +21,29 @@ class AtendimentoAdmin(admin.ModelAdmin):
     actions = [set_respondidos]
 
 
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 # User Custom model
 class UserCrerationForm(forms.ModelForm):
     """Um form para criar novos usuarios."""
-    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={
+    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={
         "class": "input-field"
     })) 
-    username = forms.EmailField(label='', widget=forms.TextInput(attrs={
+    username = forms.CharField(label='username', widget=forms.TextInput(attrs={
         "class": "input-field"
     })) 
-    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+    password1 = forms.CharField(label="password", widget=forms.PasswordInput(attrs={
         "class": "input-field"
     }))
-    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={
+    password2 = forms.CharField(label="password confirmation", widget=forms.PasswordInput(attrs={
         "class": "input-field"
     }))
-    data_nascimento = forms.DateField(label='', widget=forms.DateInput(attrs={
+    data_nascimento = forms.DateField(label='data nascimento', widget=DateInput(attrs={
         "class": "input-field"
     }))
-    cpf = forms.CharField(label="", widget=forms.TextInput(attrs={
+    cpf = forms.CharField(label="cpf", widget=forms.TextInput(attrs={
         "class": "input-field"
     }))
 
@@ -87,11 +91,11 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCrerationForm
 
-    list_display = ["id","email", "username", "cpf", "is_admin", "data_criacao"]
+    list_display = ["email", "id", "username", "cpf", "is_admin", "data_criacao", "last_login"]
     list_filter = ["is_admin", "data_criacao", "is_staff", "is_superuser"]
     fieldsets = [
         (None, {"fields": ["email", "password"]}),
-        ("Informacao pessoal", {"fields": ["data_nascimento", "cpf",]}),
+        ("Informacao pessoal", {"fields": ["data_nascimento", "cpf", "last_login"]}),
         ("Permissoes", {"fields": ["is_admin", "is_staff", "is_superuser"]}),
     ]
     add_fieldsets = [

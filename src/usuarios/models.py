@@ -81,7 +81,7 @@ class Account(AbstractBaseUser):
         verbose_name="email", max_length=150, unique=True, blank=False
     )
     username = models.CharField(max_length=30, unique=True, blank=False)
-    cpf = models.CharField(max_length=13, unique=True, blank=False, null=True)
+    cpf = models.CharField(max_length=14, unique=True, blank=False, null=True)
     data_nascimento = models.DateField(blank=False, null=True)
     data_criacao = models.DateTimeField(auto_now_add=True, blank=False, null=True)
     # Acount Manager aqui
