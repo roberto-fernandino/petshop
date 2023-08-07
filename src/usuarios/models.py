@@ -106,3 +106,30 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
+
+
+
+class Adress(models.Model):
+    linha1 = models.CharField(default=None, null=True, blank=False, max_length=30,)
+    linha2 = models.CharField(default=None, null=True, blank=False, max_length=30,)
+    cep = models.CharField(default=None, blank=False, max_length=9)
+    bairro = models.CharField(default=None, blank=False, max_length=30,null=True)
+    cidade = models.CharField(default=None, blank=False, max_length=30,null=True)
+    pais = models.CharField(default=None, blank=False, max_length=30,null=True)
+
+class userAdress(models.Model):
+    user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
+    is_default = models.BooleanField(default=False)
+    adress_id = models.ForeignKey(Adress, on_delete=models.CASCADE)
+
+class PaymentType(models.Model):
+    type = models.CharField(max_length=30, default=None, blank=False, null=True)
+
+class UserPaymentMethod(models.Model):
+    user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
+    is_default = models.BooleanField(default=False)
+    paymentype_id = models.ForeignKey(PaymentType, on_delete=models.CASCADE)
+
+
+    
+

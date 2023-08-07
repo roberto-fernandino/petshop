@@ -150,6 +150,6 @@ SESSION_COOKIE_AGE = 1209600  # 2 semanas
 # Define local para armazenamento de medias
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 

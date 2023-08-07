@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
-from usuarios.models import Account, Atendimentos
+from usuarios.models import Account, Atendimentos, Adress, userAdress, UserPaymentMethod, PaymentType
 
 
 # Register your models here.
@@ -117,6 +117,10 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ["email"]
     ordering = ["email"]
     filter_horizontal = []
+
+class AdressAdmin():
+    list_display = []
+
 
 
 admin.site.register(Account, UserAdmin)
