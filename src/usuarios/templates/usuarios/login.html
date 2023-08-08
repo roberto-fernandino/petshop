@@ -1,14 +1,34 @@
-{% extends 'usuarios/base.html' %} {%block title%} Login {%endblock%}
-{% block content %}
-<h1>login aqui</h1>
+{% extends 'index/base.html' %} {%block title%} Login {%endblock%} 
+{% block content %} 
 
+<div class="atendimento-container">
+  {% if message %}
+  <div class="alert alert-danger">{{message}}</div>
+  {% endif %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
 
-<!-- login 
-nome:
-sobrenome:
--- form 2 (outra pagina)
-email:
-senha:
-cpf:
--->
+  <div class="atendimento-form-container">
+      <form action="{% url 'usuarios:login' %}" method="POST">
+          {% csrf_token %}
+        <div class="input">
+            <input type="email" name="email" maxlength="150" required class="input-field"/>
+            <label for="email" class="input-label"><span>Email</span></label>
+        </div>
+        <div class="input">
+            <input 
+            type="password"
+            name="password"
+            maxlength="50"
+            minlength="8"
+            required
+            class="input-field"
+            />
+            <label for="password" class="input-label"><span>Password</span></label>
+        </div>
+            <input type="submit" value="Login" class="SubmitButton">
+            <p>Dont have account?<a href="{% url 'usuarios:signup' %}"><i class="fa-solid fa-user-plus"></i></a></p>
+        </form>
+    </div>
+</div>
 {% endblock %}

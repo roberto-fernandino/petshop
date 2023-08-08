@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #jazzmin plugin
+    "jazzmin",
     # django default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -52,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = "maindjango.urls"
@@ -114,7 +118,6 @@ TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -127,3 +130,39 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# CHANGED DEFAULT USERMODEL TO CUSTOM ONE TO USE EMAIL TO LOGIN WITH USER FUNCTIONS BUILT IN DJANGO
+
+AUTH_USER_MODEL = "usuarios.Account"
+
+
+# DEFINE A AUTENTICACAO DE SESSAO COMO PADRAO
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+
+# DEFINE O ARMAZENAMENTO DE SESSAO COMO PADRAO NO BANCO DE DADOS E TEMPO EM SEGUNDOS PARA TIMEOUT AUTOMATICO
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
+SESSION_COOKIE_AGE = 1209600  # 2 semanas
+
+
+
+# Define local para armazenamento de medias
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Melhor Amigo Admin",
+    "site_header": "Melhor amigo Admin",
+    "site_brand": "Melhor Amigo",
+    "login_logo": "index/logosmall.png",
+    "site_icon": "index/logosmall.png",
+    "welcome_sign": "Bem vindo ao admin de Melhor Amigo!",
+    "copyright": "Melhor Amigo",
+    "changeform_format": "collapsible",
+    
+}

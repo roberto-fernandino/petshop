@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -30,8 +30,8 @@
       crossorigin="anonymous"
     ></script>
     <title>{% block title %} Default title {% endblock %}</title>
-  </head>
-  <body>
+</head>
+<body>
     <header>
       <div class="top-container">
         <div class="top-bar">
@@ -52,8 +52,8 @@
       <nav class="navnav">
         <div>
           <a href="">
-            <img
-              src="{% static 'usuarios/iconeoprincipal.png' %}"
+            <img             
+              src="{% static 'usuarios/logosmall.png' %}"
               alt="iconeoprincipal"
               height="100px"
             />
@@ -61,16 +61,83 @@
         </div>
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Racoes
+            Rações
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cachorro</a></li>
-            <li><a class="dropdown-item" href="#">Felinos</a></li>
-            <li><a class="dropdown-item" href="#">Roedores</a></li>
-            <li><a class="dropdown-item" href="#">Aquaticos</a></li>
-            <li><a class="dropdown-item" href="#">Passaros</a></li>
-
+            <li><a class="dropdown-item" href="">Cães &raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a class="dropdown-item" href="">Ração Seca</a></li>
+                <li><a class="dropdown-item" href="">Ração Úmida</a></li>
+                <li><a class="dropdown-item" href="">Ração Prescrita</a></li>
+                <li><a class="dropdown-item" href="">Ração Natural</a></li>
+            </li>
+              </ul>
+            <li><a class="dropdown-item" href="">Felinos&raquo;</a>
+               <ul class="dropdown-menu dropdown-submenu">
+                <li><a class="dropdown-item" href="">Ração Seca</a></li>
+                <li><a class="dropdown-item" href="">Ração Úmida</a></li>
+                <li><a class="dropdown-item" href="">Ração Prescrita</a></li>
+                <li><a class="dropdown-item" href="">Ração Natural</a></li>
+               </ul>
+            </li>   
+            <li><a class="dropdown-item" href="">Roedores&raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a class="dropdown-item" href="">Ração Super Premium</a></li>
+                <li><a class="dropdown-item" href="">Ração Premium Especial</a></li>
+                <li><a class="dropdown-item" href="">Ração Premium</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="">Aquáticos&raquo;</a>
+              <ul class=" dropdown-menu dropdown-submenu">
+                <li><a class="dropdown-item" href="">Ração Granulada</a></li>
+                <li><a class="dropdown-item" href="">Ração Liofilizada</a></li>
+                <li><a class="dropdown-item" href="">Ração Em comprimidos</a></li>
+              </ul>              
+            </li>
+            <li><a class="dropdown-item" href="">Pássaros&raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a class="dropdown-item" href="">Alpiste</a></li>
+                <li><a class="dropdown-item" href="">Girassol</a></li>
+                <li><a class="dropdown-item" href="">Painço</a></li>
+                <li><a class="dropdown-item" href="">Aveia</a></li>
+                <li><a class="dropdown-item" href="">Linhaça</a></li>
+              </ul>
+            </li>
+              </ul>
           </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tosa</button>
+          <ul class="dropdown-menu">
+            <li><a href="" class="dropdown-item">Cães&raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a href="" class="dropdown-item">Porte Grande</a></li>
+                <li><a href="" class="dropdown-item">Porte Médio</a></li>
+                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Banho</button>
+          <ul class="dropdown-menu">
+            <li><a href="" class="dropdown-item">Cães&raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a href="" class="dropdown-item">Porte Grande</a></li>
+                <li><a href="" class="dropdown-item">Porte Médio</a></li>
+                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+              </ul>
+            </li>
+            <li><a href="" class="dropdown-item">Felinos&raquo;</a>
+              <ul class="dropdown-menu dropdown-submenu">
+                <li><a href="" class="dropdown-item">Porte Médio</a></li>
+                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a href="loja/"><button class="btn btn-primary" style="background-color: #45d045; border: transparent ;">Shop</button></a>
         </div>
         <div class="nav-icons">
           <a href="{% url 'usuarios:login' %}" class="nav-icon">
@@ -83,24 +150,44 @@
       </nav>
       <!-- DROPDOWN HERE! RATO DESGRACADO -->
     </header>
+    <div class="content-container">
+        {% block content %} {% endblock %}
+      <hr/>
+    </div>
+</body>
 
-    {% block content %} {% endblock %}
-    <hr />
-  </body>
 
   <footer class="pedosite">
-    Author: Diego Cheib / Roberto Fernandino <br />
-    &copy; Copyright Reserved <br />
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> diegocheib@gmail.com</span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div>
+      <address>
+        R. Melhores Amigos, 333 - Savassi <br />
+        Belo Horizonte - MG, 3333333-333
+      </address>
+      <p>(31)-999999-9999</p>
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span>meumelhoramigopetshop@melhor.amigo.com.br</span>
+        <button><i class="fa-regular fa-copy"></i></button>
+        <div>
+          <a href="https://www.bcb.gov.br/estabilidadefinanceira/pix" target="_blank" >
+            <img src="{% static 'index/pix.png'%}" alt="Aceitamos pix">
+          </a>
+        </div>
+      </div>
     </div>
-
-    <div class="emailcontainer">
-      <i class="fa-solid fa-envelope"></i>
-      <span> romfernandno@gmail.com </span>
-      <button><i class="fa-regular fa-copy"></i></button>
+    <div class="author">
+      Author: Diego Cheib / Roberto Fernandino <br />
+      &copy; Copyright Reserved <br />
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> diegocheib@gmail.com</span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
+      <div class="emailcontainer">
+        <i class="fa-solid fa-envelope"></i>
+        <span> romfernandno@gmail.com </span>
+        <button><i class="fa-regular fa-copy"></i></button>
+      </div>
     </div>
   </footer>
 </html>

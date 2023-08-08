@@ -7,16 +7,45 @@ $fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     margin: 0;
     padding: 0;
 }
-body{
-    hr{
-    color: $primarycolor;
-    margin-top: 150px;
+
+.all {
+    .display-center {
+        margin-top: 150px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 3px solid $primarycolor;
+        background-color: transparent;
+        border-radius: 40px;
+
+        h1 {
+            color: $primarycolor;
+        }
+
+        .paragrafo {
+            max-width: 100%;
+            text-align: center;
+
+            p {
+                font-size: 25px;
+            }
+        }
+    }
 }
+
+body {
+    hr {
+        color: $primarycolor;
+        margin-top: 150px;
+    }
 }
+
 /* inicio da parte superior */
 .top-container {
     margin: 0 auto;
     padding-bottom: 50px;
+
     .top-bar {
         padding: 20px;
         position: fixed;
@@ -25,6 +54,7 @@ body{
         background-color: rgb(250, 250, 250);
         display: flex;
         justify-content: flex-end;
+
         a {
             transition: 0.3s;
             font-size: 15px;
@@ -46,6 +76,8 @@ body{
     }
 }
 
+
+
 .navnav {
     background-color: $primarycolor;
     position: fixed;
@@ -55,29 +87,72 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    .dropdown{
+
+
+    .dropdown {
         display: flex;
         padding-top: 60px;
-        .dropdown-toggle{
+
+        
+        .ButaoProdutos {
+            text-transform: capitalize;
+            font-size: 15px;
+            font-style: $fontclean;
+            background-color: #45d045;
+            color: #fff;
+            border: none;
+            }
+        
+
+        .dropdown-toggle {
             background-color: $primarycolor;
             border: none;
             transition: 0.5s;
         }
-        .dropdown-toggle:hover{
+
+        .dropdown-toggle:hover {
             opacity: 0.7;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             background-color: $secondcolor;
-            li{
-                a{
+
+            .dropdown-submenu {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: -7px;
+            }
+
+            .dropdown-submenu-left {
+                right: 100%;
+                left: auto;
+            }
+
+            li {
+                a {
                     color: $primarycolor;
                     text-transform: capitalize;
                     font-size: 15px;
                     font-style: $fontclean;
                 }
+
+                button {
+                    color: #45d045;
+                    text-transform: capitalize;
+                    font-size: 15px;
+                    font-style: $fontclean
+                }
+            }
+
+            li:hover {
+                .dropdown-submenu {
+                    display: block;
+                }
             }
         }
     }
+
     a {
         padding: 3;
         margin: 4;
@@ -89,45 +164,71 @@ body{
         letter-spacing: 2px;
         text-decoration: none;
         transition: 0.5s;
+
         h1 {
             padding: 20px;
             font-weight: bold;
         }
     }
 
-        a:hover {
-            opacity: 0.6;
-        }
-        .nav-icon {
-            color: $secondcolor;
-            font-size: 30px;
-            padding-right: 40px;
-            padding-left: 10;
-            transition: 0.3s;
-        }
-
-        .nav-icon:hover {
-            color: greenyellow;
-        }
+    a:hover {
+        opacity: 0.6;
+    }
+@media screen {
     
+}
+
+    .nav-icon {
+        color: $secondcolor;
+        font-size: 30px;
+        padding-right: 40px;
+        padding-left: 10;
+        transition: 0.3s;
+    }
+
+    .nav-icon:hover {
+        color: greenyellow;
+    }
+
+}
+@media (max-width: 420px) {
+    .navnav {
+        margin-top: 30px;
+    }
 }
 
 /* fim da parte superior */
 
 
+/* about us styling */
+
+
+
 /* slide show */
 .all {
     margin-top: 100px;
-    .title{
+
+    .title {
         padding: 50px;
-        h1{
+
+        .slogan {
+            display: grid;
+            justify-content: center;
+
+            img {
+                position: relative;
+                max-width: 100%;
+            }
+        }
+
+        h1 {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
         }
     }
 }
+
 
 
 /* pe do site */
@@ -136,36 +237,89 @@ body{
 .pedosite {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
+    flex-direction: row;
     align-items: center;
-    .emailcontainer{
-        color: $primarycolor;
-        margin-top: 10px;
-        span {
-            font-size: 19px;
-            background-color: $secondcolor;
-            color: black;
-            border: none;
-            border-radius: 4px;
-            padding: 4px 8px;
+    justify-content: space-around;
+    margin-top: 170px;
+    background-color: $primarycolor;
+
+    .author {
+        .emailcontainer {
+            color: $primarycolor;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+
+            span {
+                font-size: 19px;
+                background-color: transparent;
+                color: black;
+                border: none;
+                border-radius: 4px;
+                padding: 4px 8px;
+            }
+
+            i {
+                color: $secondcolor;
+            }
+
+            button {
+                background-color: transparent;
+                font-size: 20px;
+                border: none;
+                cursor: pointer;
+                position: relative;
+
+                i {
+                    color: $primarycolor;
+                    transition: 0.3s;
+                }
+
+                i:hover {
+                    color: grey;
+                    transform: translateY(-4px);
+                }
+            }
+
         }
+    }
+
+    div {
         button {
             background-color: transparent;
             font-size: 20px;
             border: none;
             cursor: pointer;
             position: relative;
-            i
-            {
+
+            i {
                 color: $primarycolor;
                 transition: 0.3s;
             }
+
             i:hover {
                 color: grey;
                 transform: translateY(-4px);
             }
         }
-    
+    }
+}
+
+/* medias for smartphone optimization */
+@media (max-width: 420px) {
+    .all {
+        margin-top: 170px;
+    }
+}
+
+@media (max-width: 420px) {
+    .all {
+        margin-top: 170px;
+    }
+}
+
+@media (max-width: 360px) {
+    .all {
+        margin-top: 200px;
     }
 }

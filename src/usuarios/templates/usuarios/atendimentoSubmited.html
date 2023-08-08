@@ -1,0 +1,27 @@
+{% extends 'index/base.html' %} {% block title %} Atendimento {% endblock %} 
+{% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}" />
+<div class="atendimento-container">
+  <h1 class="top-title">Recebemos sua mensagem!</h1>
+  <div class="atendimento-text-container">
+    <div class="information-container">
+      <div class="text">
+        <h2>
+          Dentro de momentos entraremos em contato via email. Para o agendamento
+          de banho e toza marque um horario ao clicar em sobre Lavagem.
+        </h2>
+        <br />
+        <p>
+          Lembramos que o horario de atendimento esta sujeito a feriados e ao
+          periodo normal de funcionamento da loja. As respostas sao respondidas
+          em ordem de recebimento caso sua mensagem nao seja respondida hoje
+          fique tranquilo, ja iremos te responder. Normalmente respondemos no
+          mesmo dia mas dependendo do horario e demanda atual pode demorar um
+          pouco mais. O petshop Melhor Amigo agradece seu contato, tenha um bom
+          dia!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
