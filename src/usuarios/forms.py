@@ -43,7 +43,7 @@ class AtendimentoForm(forms.ModelForm):
                             "class": "input-field",
     }))
     is_newsletter = forms.BooleanField(
-                            required=True,
+                            required=False,
                             widget=forms.CheckboxInput(attrs={
                                 "class": "check-box"
                             }),
