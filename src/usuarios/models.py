@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 
 
 # Create your models here.
@@ -16,8 +17,10 @@ STATUS_CHOISES = [
 class Atendimentos(models.Model):
     nome = models.CharField(max_length=30)
     email = models.EmailField(max_length=150)
+    phone = models.CharField(max_length=13, default=None, blank=False, null=True)
     assunto = models.CharField(max_length=40, blank=False, null=True)
     message = models.TextField(null=True, blank=False)
+    is_newsletter = models.BooleanField(default=True)
     status = models.CharField(max_length=1, choices=STATUS_CHOISES, default="p")
     data = models.DateTimeField(auto_now_add=True)
 
@@ -75,7 +78,7 @@ class AccountManager(BaseUserManager):
 
 
 #  Overriding Default Base User
-class Account(AbstractBaseUser):
+class Account(AbstractBaseUser, PermissionsMixin):
     # Fields do usuario custom
     email = models.EmailField(
         verbose_name="email", max_length=150, unique=True, blank=False
@@ -91,7 +94,6 @@ class Account(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-
     # variavies cosntantes do novo BaseUserManager Model onde voce declara qual sera o username-field e fields
     # obrigatorios
 
@@ -109,27 +111,5 @@ class Account(AbstractBaseUser):
 
 
 
-class Adress(models.Model):
-    linha1 = models.CharField(default=None, null=True, blank=False, max_length=30,)
-    linha2 = models.CharField(default=None, null=True, blank=False, max_length=30,)
-    cep = models.CharField(default=None, blank=False, max_length=9)
-    bairro = models.CharField(default=None, blank=False, max_length=30,null=True)
-    cidade = models.CharField(default=None, blank=False, max_length=30,null=True)
-    pais = models.CharField(default=None, blank=False, max_length=30,null=True)
 
-class userAdress(models.Model):
-    user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
-    is_default = models.BooleanField(default=False)
-    adress_id = models.ForeignKey(Adress, on_delete=models.CASCADE)
-
-class PaymentType(models.Model):
-    type = models.CharField(max_length=30, default=None, blank=False, null=True)
-
-class UserPaymentMethod(models.Model):
-    user_id = models.ForeignKey(Account, on_delete=models.CASCADE)
-    is_default = models.BooleanField(default=False)
-    paymentype_id = models.ForeignKey(PaymentType, on_delete=models.CASCADE)
-
-
-    
 

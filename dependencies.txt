@@ -15,6 +15,7 @@ cryptography              41.0.3                   pypi_0    pypi
 defusedxml                0.7.1                    pypi_0    pypi
 django                    4.2.3                    pypi_0    pypi
 django-allauth            0.54.0                   pypi_0    pypi
+django-jazzmin            2.6.0                    pypi_0    pypi
 freezegun                 1.2.2                    pypi_0    pypi
 idna                      3.4                      pypi_0    pypi
 ld_impl_linux-64          2.38                 h1181459_1  

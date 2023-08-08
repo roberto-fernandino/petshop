@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #jazzmin plugin
+    "jazzmin",
     # django default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -153,3 +155,14 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 
+JAZZMIN_SETTINGS = {
+    "site_title": "Melhor Amigo Admin",
+    "site_header": "Melhor amigo Admin",
+    "site_brand": "Melhor Amigo",
+    "login_logo": "index/logosmall.png",
+    "site_icon": "index/logosmall.png",
+    "welcome_sign": "Bem vindo ao admin de Melhor Amigo!",
+    "copyright": "Melhor Amigo",
+    "changeform_format": "collapsible",
+    
+}

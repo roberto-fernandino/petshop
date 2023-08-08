@@ -15,51 +15,44 @@
       Aqui no Meu Melhor Amigo presamos nao so pelo seu pet mas pelo
       comprometimento com seus donos!
     </p>
+    {% if form.errors %}
+    <div class="message">
+      <div class="alert alert-danger" style="margin-bottom: 70px;">
+        {{ form.errors }}
+      </div>
+    </div>
+    {% endif %}
   </div>
   <div class="atendimento-form-container">
     <form action="{% url 'usuarios:atendimento'%}" method="post">
       {% csrf_token %}
       <div class="input">
-        <input
-          type="text"
-          name="nome"
-          class="input-field"
-          maxlength="30"
-          minlength="3"
-          required
-        />
+        {{ form.nome }}
         <label class="input-label" for="nome">
           <span>Nome</span>
         </label>
       </div>
       <div class="input">
-        <input
-          type="email"
-          name="email"
-          class="input-field"
-          maxlength="150"
-          required
-        />
+        {{ form.email }}
         <label class="input-label" for="email"><span>Email</span></label>
       </div>
       <div class="input">
-        <input
-          type="text"
-          name="assunto"
-          class="input-field"
-          maxlength="40"
-          required
-        />
+        {{ form.phone }}
+        <label class="input-label" for="tel"><span>Telefone</span></label>
+      </div>
+      <div class="input">
+      {{ form.assunto }}
         <label class="input-label" for="assunto"><span>Assunto</span></label>
       </div>
       <div class="input">
-        <textarea
-          name="mensagem"
-          class="input-field"
-          rows="6"
-          required
-        ></textarea>
+        {{ form.message }}
         <label class="input-label" for="mensagem"><span>Mensagem</span></label>
+      </div>
+      <div class="input">
+        {{ form.is_newsletter }}
+        <span>
+          Deseja receber emails de newsletter?
+        </span>
       </div>
       <button class="SubmitButton" type="submit">Enviar</button>
     </form>

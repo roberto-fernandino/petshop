@@ -9,10 +9,16 @@ $fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     hr {
         color: $primarycolor;
         margin-top: 150px;
     }
+}
+.content-container{
+    flex: 1;
 }
 
 /* inicio da parte superior */
@@ -243,23 +249,22 @@ body {
     justify-items: center;
     justify-content: center;
     align-content: center;
-    margin-top: 190px;
+    margin-top: 130px;
     
     .atendimento-text-container{
         grid-template-rows: auto, auto;
     }
 
     .top-title {
-        display: grid;
         color: $primarycolor;
-        margin-bottom: 40px;
         font-size: 45px;
     }
 
     .information-container {
-        display: grid;
         justify-content: center;
-        margin: 100px;
+        margin: 30px;
+        display: grid;
+        text-align: center;
         h4 {
             font-family: $fontclean;
             font-size: larger;
@@ -271,9 +276,6 @@ body {
     }
 
     .atendimento-form-container {
-        display: grid;
-        margin-top: 75px;
-        justify-content: center;
         form {
             display: grid;
             justify-content: center;
@@ -330,7 +332,25 @@ body {
                     /* Safari */
                 }
             }
+            .check-box input[type="checkbox"] {
+                display: none;
+            }
+            .check-box label:before{
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: grey;
+                border: 2px solid $primarycolor;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            .check-box input[type="checkbox"]:checked + label:before {
+                background-color: $primarycolor;  /* Cor de fundo quando marcado */
+                border: 2px solid $almostwhite;
 
+            }
+            }
             .input-field:focus-visible~.input-label,
             .input-field:valid~.input-label {
                 transform: translate(0, -30px) scale(0.8);
@@ -363,22 +383,19 @@ body {
         .SubmitButton:hover {
             opacity: 0.6;
         }
-    }
-
 }
+
 
 
 /* pe do site */
 
 
 .pedosite {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 170px;
+    display: grid;
+    justify-content: center;
+    
     background-color: $primarycolor;
+
 
     .author {
         .emailcontainer {
@@ -443,4 +460,22 @@ body {
             }
         }
     }
+}
+
+@media (max-width: 540px){
+    .atendimento-container{
+        margin-top: 300px;
+        .atendimento-form-container{
+            margin-top: 10px;
+        }
+        .information-container{
+            margin: 10px;
+        }
+    }
+    .pedosite{
+        margin-top: 0px;
+        div{
+            margin: 7px;
+        }
+   }
 }

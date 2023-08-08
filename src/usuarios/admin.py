@@ -4,8 +4,7 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
-from usuarios.models import Account, Atendimentos, Adress, userAdress, UserPaymentMethod, PaymentType
-
+from usuarios.models import Account, Atendimentos
 
 # Register your models here.
 
@@ -16,9 +15,14 @@ def set_respondidos(modeladmin, request, queryset):
 
 
 class AtendimentoAdmin(admin.ModelAdmin):
-    list_display = ["nome", "assunto", "get_status_display", "data"]
+    list_display = ["nome", "assunto", "status", "data", 'is_newsletter']
     ordering = ["data"]
+    fieldsets = [
+        ("Usuario", {"fields": ["email", "nome", "phone"]}),
+        ("Atendimento", {"fields": ["status", "assunto", "message"]}),
+    ]
     actions = [set_respondidos]
+    list_filter = ['is_newsletter', "data"]
 
 
 
@@ -114,12 +118,9 @@ class UserAdmin(BaseUserAdmin):
             },
         )
     ]
-    search_fields = ["email"]
-    ordering = ["email"]
-    filter_horizontal = []
-
-class AdressAdmin():
-    list_display = []
+    search_fields = ["email", "username"]
+    ordering = ["-last_login"]
+    filter_horizontal = ["user_permissions"]
 
 
 

@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from usuarios import models
 from .admin import UserCrerationForm as signup_form
+from usuarios.forms import AtendimentoForm
+
 
 # Create your views here.
+
 def login_view(request, *args, **kwargs):
     if request.user.is_authenticated:
         return redirect("usuarios:usuario")
@@ -63,19 +66,17 @@ def logout_view(request):
 
 
 def atendimento(request, *args, **kwargs):
-    new_atendimento = models.Atendimentos()
     if request.method == "POST":
-        nome = request.POST["nome"]
-        email = request.POST["email"]
-        assunto = request.POST["assunto"]
-        message = request.POST["mensagem"]
-        new_atendimento.nome = nome
-        new_atendimento.email = email
-        new_atendimento.assunto = assunto
-        new_atendimento.message = message
-        new_atendimento.save()
-        return redirect("usuarios:atendimento-enviado")
-    return render(request, "usuarios/atendimento.html", {})
+        form = AtendimentoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("usuarios:atendimento-enviado")
+        else:
+            return render(request, "usuarios/atendimento.html")
+    
+    form = AtendimentoForm()
+    
+    return render(request, "usuarios/atendimento.html", {"form": form})
 
 
 def atendimentoSubmited(request):
