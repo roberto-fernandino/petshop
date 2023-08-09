@@ -4,7 +4,7 @@
 
 
 To run this aplication follow this step-guide.\
-1- I used conda so install conda in https://docs.conda.io/en/latest/ \
+1- I used conda so install conda in https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html \
 2- Most of the dependecies bellow will come by default when starting a new enviroment\
 3- Make sure you're using python 3.11.4\
 4- Downlad pillow, django, django-allauth and jazzmin.\
