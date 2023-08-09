@@ -227,12 +227,7 @@ body {
         }
     }
 }
-@media (max-width: 912px){
-    .form-container{
-        margin-top: 350px;
-    }
 
-}
 
 /* form centered fim */
 
@@ -363,11 +358,7 @@ body {
 
         }
         
-        @media (max-width: 412px) {
-            .input{
-                max-width: 350px;
-            }
-        }
+       
         
         .SubmitButton {
             background-color: #45d045;
@@ -478,4 +469,16 @@ body {
             margin: 7px;
         }
    }
+}
+@media (max-width: 912px){
+    .form-container{
+        margin-top: 350px;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .input{
+        max-width: 350px;
+    }
 }

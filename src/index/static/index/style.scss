@@ -233,15 +233,12 @@ body {
 
 /* pe do site */
 
-
 .pedosite {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 170px;
+    display: grid;
+    justify-content: center;
+    
     background-color: $primarycolor;
+
 
     .author {
         .emailcontainer {
@@ -266,13 +263,14 @@ body {
             button {
                 background-color: transparent;
                 font-size: 20px;
-                border: none;
+                border-radius: 5px;
                 cursor: pointer;
                 position: relative;
 
                 i {
-                    color: $primarycolor;
-                    transition: 0.3s;
+                    padding: 5px;
+                    color: $secondcolor;
+                    transition: 0.5s;
                 }
 
                 i:hover {
@@ -285,6 +283,8 @@ body {
     }
 
     div {
+        margin: 20px;
+
         button {
             background-color: transparent;
             font-size: 20px;
@@ -321,5 +321,35 @@ body {
 @media (max-width: 360px) {
     .all {
         margin-top: 200px;
+    }
+}
+
+@media (max-width: 540px){
+    .atendimento-container{
+        margin-top: 300px;
+        .atendimento-form-container{
+            margin-top: 10px;
+        }
+        .information-container{
+            margin: 10px;
+        }
+    }
+    .pedosite{
+        margin-top: 0px;
+        div{
+            margin: 7px;
+        }
+   }
+}
+@media (max-width: 912px){
+    .form-container{
+        margin-top: 350px;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .input{
+        max-width: 350px;
     }
 }

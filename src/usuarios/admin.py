@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
 from usuarios.models import Account, Atendimentos
-
+from usuarios.mail import EnviaNewsLetterFromDataBase
 # Register your models here.
 
 
@@ -14,46 +14,64 @@ def set_respondidos(modeladmin, request, queryset):
     queryset.update(status="r")
 
 
+@admin.action(description="Envia newsletter para emails elecionados")
+def envia_newsletter(modeladmin, request, queryset):
+    inquery_users = []
+    for obj in queryset:
+        email = obj.email
+        nome = obj.nome
+        inquery_users.append((email, nome))
+    EnviaNewsLetterFromDataBase(inquery_users)
+
 class AtendimentoAdmin(admin.ModelAdmin):
-    list_display = ["nome", "assunto", "status", "data", 'is_newsletter']
+    list_display = ["nome", "assunto", "status", "data", "is_newsletter"]
     ordering = ["data"]
     fieldsets = [
         ("Usuario", {"fields": ["email", "nome", "phone"]}),
         ("Atendimento", {"fields": ["status", "assunto", "message"]}),
     ]
-    actions = [set_respondidos]
-    list_filter = ['is_newsletter', "data"]
-
+    actions = [set_respondidos, envia_newsletter]
+    list_filter = ["is_newsletter", "data"]
 
 
 class DateInput(forms.DateInput):
-    input_type = 'date'
+    input_type = "date"
+
 
 # User Custom model
 class UserCrerationForm(forms.ModelForm):
     """Um form para criar novos usuarios."""
-    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={
-        "class": "input-field"
-    })) 
-    username = forms.CharField(label='username', widget=forms.TextInput(attrs={
-        "class": "input-field"
-    })) 
-    password1 = forms.CharField(label="password", widget=forms.PasswordInput(attrs={
-        "class": "input-field"
-    }))
-    password2 = forms.CharField(label="password confirmation", widget=forms.PasswordInput(attrs={
-        "class": "input-field"
-    }))
-    data_nascimento = forms.DateField(label='data nascimento', widget=DateInput(attrs={
-        "class": "input-field"
-    }))
-    cpf = forms.CharField(label="cpf", widget=forms.TextInput(attrs={
-        "class": "input-field"
-    }))
+
+    email = forms.EmailField(
+        label="email", widget=forms.EmailInput(attrs={"class": "input-field"})
+    )
+    username = forms.CharField(
+        label="username", widget=forms.TextInput(attrs={"class": "input-field"})
+    )
+    password1 = forms.CharField(
+        label="password", widget=forms.PasswordInput(attrs={"class": "input-field"})
+    )
+    password2 = forms.CharField(
+        label="password confirmation",
+        widget=forms.PasswordInput(attrs={"class": "input-field"}),
+    )
+    data_nascimento = forms.DateField(
+        label="data nascimento", widget=DateInput(attrs={"class": "input-field"})
+    )
+    cpf = forms.CharField(
+        label="cpf", widget=forms.TextInput(attrs={"class": "input-field"})
+    )
 
     class Meta:
         model = Account
-        fields = ["email","password1", "password2","username", "data_nascimento", "cpf",]
+        fields = [
+            "email",
+            "password1",
+            "password2",
+            "username",
+            "data_nascimento",
+            "cpf",
+        ]
 
     def clean_passwords(self):
         """Checa as duas senhas"""
@@ -95,7 +113,15 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCrerationForm
 
-    list_display = ["email", "id", "username", "cpf", "is_admin", "data_criacao", "last_login"]
+    list_display = [
+        "email",
+        "id",
+        "username",
+        "cpf",
+        "is_admin",
+        "data_criacao",
+        "last_login",
+    ]
     list_filter = ["is_admin", "data_criacao", "is_staff", "is_superuser"]
     fieldsets = [
         (None, {"fields": ["email", "password"]}),
@@ -121,7 +147,6 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ["email", "username"]
     ordering = ["-last_login"]
     filter_horizontal = ["user_permissions"]
-
 
 
 admin.site.register(Account, UserAdmin)

@@ -159,6 +159,7 @@ JAZZMIN_SETTINGS = {
     "site_title": "Melhor Amigo Admin",
     "site_header": "Melhor amigo Admin",
     "site_brand": "Melhor Amigo",
+    "site_logo": "index/logosmall.png",
     "login_logo": "index/logosmall.png",
     "site_icon": "index/logosmall.png",
     "welcome_sign": "Bem vindo ao admin de Melhor Amigo!",
