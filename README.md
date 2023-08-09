@@ -16,7 +16,7 @@
 
 
 # Dependencies bellow
-# Name                    Version                   Build  Channel
+ Name                    Version                   Build  Channel
 _libgcc_mutex             0.1                        main  
 _openmp_mutex             5.1                       1_gnu  
 boltons                   23.0.0          py311h06a4308_0  
