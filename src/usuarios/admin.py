@@ -24,11 +24,12 @@ def envia_newsletter(modeladmin, request, queryset):
     EnviaNewsLetterFromDataBase(inquery_users)
 
 class AtendimentoAdmin(admin.ModelAdmin):
-    list_display = ["nome", "assunto", "status", "data", "is_newsletter"]
+    list_display = ["nome", "assunto", "email","status", "data", "is_newsletter"]
     ordering = ["data"]
     fieldsets = [
         ("Usuario", {"fields": ["email", "nome", "phone"]}),
         ("Atendimento", {"fields": ["status", "assunto", "message"]}),
+        ("Email Preferences", {"fields": ['is_newsletter']}),
     ]
     actions = [set_respondidos, envia_newsletter]
     list_filter = ["is_newsletter", "data"]
@@ -61,7 +62,10 @@ class UserCrerationForm(forms.ModelForm):
     cpf = forms.CharField(
         label="cpf", widget=forms.TextInput(attrs={"class": "input-field"})
     )
-
+    is_newsletter = forms.BooleanField(label='is newsletter', required=False, initial=True, widget=forms.CheckboxInput(attrs={
+        "class": 'check-box'})
+    )
+    
     class Meta:
         model = Account
         fields = [
@@ -71,6 +75,7 @@ class UserCrerationForm(forms.ModelForm):
             "username",
             "data_nascimento",
             "cpf",
+            "is_newsletter",
         ]
 
     def clean_passwords(self):
@@ -127,6 +132,7 @@ class UserAdmin(BaseUserAdmin):
         (None, {"fields": ["email", "password"]}),
         ("Informacao pessoal", {"fields": ["data_nascimento", "cpf", "last_login"]}),
         ("Permissoes", {"fields": ["is_admin", "is_staff", "is_superuser"]}),
+        ("Email Preferences", {"fields": ["is_newsletter"]}),
     ]
     add_fieldsets = [
         (

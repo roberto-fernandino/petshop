@@ -90,6 +90,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     cpf = models.CharField(max_length=14, unique=True, blank=False, null=True)
     data_nascimento = models.DateField(blank=False, null=True)
     data_criacao = models.DateTimeField(auto_now_add=True, blank=False, null=True)
+    is_newsletter = models.BooleanField(default=False, null=False, blank=False)
     # Acount Manager aqui
     objects = AccountManager()
 

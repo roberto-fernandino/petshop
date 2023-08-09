@@ -21,9 +21,6 @@ def lojaview(request, *args, **kwargs):
     if preco_max:
         produtos = produtos.filter(preco__lte=float(preco_max))
     
-    
-
-
     return render(request, "loja.html", {"produtos": produtos, "categorias": categorias})
 
 def produtoview(request, *args, **kwargs):
