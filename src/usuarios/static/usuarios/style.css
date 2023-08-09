@@ -122,52 +122,62 @@ body {
   margin-top: 150px;
   display: grid;
   justify-content: center;
-  text-align: center; }
-  .form-container .form-centered {
-    display: grid;
-    justify-content: center;
-    text-align: center; }
-  .form-container .form-centered .input-field {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    font: inherit;
-    color: #45d045;
-    background-color: transparent;
-    border: 2px solid #d6d6d6; }
-  .form-container .form-centered .input-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(10px, 10px);
-    transform-origin: left;
-    transition: transform 0.25s; }
-  .form-container .form-centered .input-field:focus-visible ~ .input-label, .form-container .form-centered .input-field:valid ~ .input-label {
-    transform: translate(0, -30px) scale(0.8);
-    color: #45d045; }
-  .form-container .form-centered .input-field:is(:focus-visible, :valid) {
-    outline-color: #45d045; }
-  .form-container .form-centered .SubmitButton {
-    background-color: #45d045;
-    border: none;
-    padding: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    transition: 0.5s; }
-  .form-container .form-centered .SubmitButton:hover {
-    opacity: 0.6; }
-  .form-container .form-centered p {
-    display: grid;
-    text-align: center;
-    justify-content: center; }
+  text-align: center;
+}
+.form-container .form-centered {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.form-container .form-centered .input-field {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  color: #45d045;
+  background-color: transparent;
+  border: 2px solid #d6d6d6;
+}
+.form-container .form-centered .input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+.form-container .form-centered .input-field:focus-visible ~ .input-label, .form-container .form-centered .input-field:valid ~ .input-label {
+  transform: translate(0, -30px) scale(0.8);
+  color: #45d045;
+}
+.form-container .form-centered .input-field:is(:focus-visible, :valid) {
+  outline-color: #45d045;
+}
+.form-container .form-centered .SubmitButton {
+  background-color: #45d045;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: 0.5s;
+}
+.form-container .form-centered .SubmitButton:hover {
+  opacity: 0.6;
+}
+.form-container .form-centered p {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
 
 @media (max-width: 912px) {
   .form-container {
-    margin-top: 350px; } }
-
+    margin-top: 350px;
+  }
+}
 /* form centered fim */
 /* atendimento body style */
 .atendimento-container {
