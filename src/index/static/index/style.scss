@@ -94,6 +94,7 @@ body {
 
 
 
+
 .navnav {
     background-color: $primarycolor;
     position: fixed;
@@ -103,10 +104,27 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    
+    .hamburguer {
+        display: none;
+        cursor: pointer;
+        .bar {
+            display: block;
+            width: 28px;
+            height: 3px;
+            border-radius: 2px;
+            margin: 5px auto;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+    }
+}
+    .Nav-item {
+        display: none;
+    }
     .dropdown {
         display: flex;
         padding-top: 60px;
-
+        
         
         .ButaoProdutos {
             text-transform: capitalize;
@@ -115,34 +133,34 @@ body {
             background-color: #45d045;
             color: #fff;
             border: none;
-            }
+        }
         
-
+        
         .dropdown-toggle {
             background-color: $primarycolor;
             border: none;
             transition: 0.5s;
         }
-
+        
         .dropdown-toggle:hover {
             opacity: 0.7;
         }
-
+        
         .dropdown-menu {
             background-color: $secondcolor;
-
+            
             .dropdown-submenu {
                 display: none;
                 position: absolute;
                 left: 100%;
                 top: -7px;
             }
-
+            
             .dropdown-submenu-left {
                 right: 100%;
                 left: auto;
             }
-
+            
             li {
                 a {
                     color: $primarycolor;
@@ -150,7 +168,7 @@ body {
                     font-size: 15px;
                     font-style: $fontclean;
                 }
-
+                
                 button {
                     color: #45d045;
                     text-transform: capitalize;
@@ -158,7 +176,7 @@ body {
                     font-style: $fontclean
                 }
             }
-
+            
             li:hover {
                 .dropdown-submenu {
                     display: block;
@@ -178,13 +196,13 @@ body {
         letter-spacing: 2px;
         text-decoration: none;
         transition: 0.5s;
-
+        
         h1 {
             padding: 20px;
             font-weight: bold;
         }
     }
-
+    
     a:hover {
         opacity: 0.6;
     }
@@ -195,9 +213,15 @@ body {
         padding-left: 10;
         transition: 0.3s;
     }
-
+    
     .nav-icon:hover {
         color: greenyellow;
+    }
+    
+}
+@media (max-width: 420px) {
+    .navnav {
+        margin-top: 30px;
     }
 }
 /* fim da parte superior */
@@ -213,17 +237,17 @@ body {
 
     .title {
         padding: 50px;
-
+        
         .slogan {
             display: grid;
             justify-content: center;
-
+            
             img {
                 position: relative;
                 max-width: 100%;
             }
         }
-
+        
         h1 {
             display: flex;
             align-items: center;
@@ -343,3 +367,71 @@ body {
     }
 
 }
+@media (max-width:768px) {
+    .navnav{
+        .hamburguer{
+            background-color: $primarycolor;
+            border: none;
+            display: block;
+            margin-right: 15px;
+        }
+        .hamburguer.active{
+            .bar:nth-child(2){
+                opacity: 0;
+            }
+            .bar:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+            }
+            .bar:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+        
+        .nav-menu{
+            position: fixed;
+            left: -100%;
+            top: 30px;
+            gap: 0;
+            border-radius: 0 0 20px 20px;
+            background-color: $primarycolor;
+            text-align: center;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .nav-menu.active{
+            margin-top: 15vh;
+            height: 30vh;
+            left: 0;
+            position: fixed;
+            top: 30px;
+            gap: 0;
+            border-radius: 0 0 20px 20px;
+            background-color: $primarycolor;
+            text-align: center;
+            flex-direction: column;
+            width: 100%;
+            transition: 0.3s;
+            .Nav-item{
+                margin: 16px 0;
+                display: block;
+            }
+        }
+
+        .dropdown {
+            left: -100%;
+        }   
+        .nav-icons{
+            display: none
+        }
+    }
+}
+@media (max-height: 740px) {
+    .navnav{
+        .nav-menu.active{
+            margin-top: 30vh;
+    
+        }
+
+    }
+}
+
