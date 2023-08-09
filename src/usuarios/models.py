@@ -29,7 +29,10 @@ class Atendimentos(models.Model):
 
 
 # Overriding Default Account Manager
-
+class EmailErrorsLog(models.Model):
+    email = models.EmailField(max_length=150)
+    log = models.CharField(max_length=255, blank=False, null=True, default='None')
+    error_date = models.DateTimeField(auto_now_add=True)
 
 class AccountManager(BaseUserManager):
     def create_user(

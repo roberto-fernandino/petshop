@@ -56,4 +56,18 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
             except Exception as e:
                 print(f"erro: {e}")
 
-
+def EnviaSigunupEmail(email, username) -> str:
+    with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
+        server.starttls()
+        server.login(api_key, api_secret_key)
+        message = EmailMessage()
+        message["Subject"] = f"Bem vindo ao Melhor Amigo Petshop {username}"
+        message["From"] = email_sender
+        message['To'] = email
+        with open('/home/roberto/projects/petshop/src/usuarios/emailstemplate/SIGNUPPETSHOP.html', 'r') as htmlmodel:
+            html = htmlmodel.read()
+        message.add_alternative(html, subtype="html")
+        try:
+            server.send_message(message)
+        except Exception as e:
+            return f"EMAIL ERROR LOG : {e}"

@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from loja.models import Produto
 
 # Create your views here.
 def lojaview(request, *args, **kwargs):
-    return render(request, "loja.html", {})
+    produtos = Produto.objects.all()
+    return render(request, "loja.html", {"produtos": produtos})
 
 def produtoview(request, *args, **kwargs):
     return render(request, 'produto.html', {})

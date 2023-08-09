@@ -2,42 +2,40 @@
   margin: 0;
   padding: 0; }
 
-.all .display-center {
-  margin-top: 200px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 3px solid #45d045;
-  background-color: transparent;
-  border-radius: 40px;
-}
-.all .display-center h1 {
-  color: #45d045;
-}
-.all .display-center .paragrafo {
-  max-width: 100%;
-  text-align: justify;
-  display: inline-block;
-}
-.all .display-center .paragrafo p {
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  padding: 5px;
-  text-indent: 30px;
-  margin-left: 15px;
-  margin-right: 20px;
-  margin-bottom: 0px;
-  color: rgb(0, 0, 0);
-}
-.all .display-center .paragrafo img {
-  float: left;
-  margin-top: 0px;
-  margin-left: px;
-  margin-right: 15px;
-  box-shadow: 1px 2px 3px rgb(5, 100, 31);
-}
+a {
+  color: white;
+  text-decoration: none; }
+
+.all {
+  margin-top: 150px; }
+  .all .display-center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent; }
+    .all .display-center h1 {
+      color: #45d045; }
+    .all .display-center .paragrafo {
+      max-width: 100%;
+      text-align: justify;
+      display: inline-block; }
+      .all .display-center .paragrafo p {
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        padding: 5px;
+        text-indent: 30px;
+        margin-left: 15px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+        color: black; }
+      .all .display-center .paragrafo img {
+        float: left;
+        margin-top: 0px;
+        margin-left: px;
+        margin-right: 15px;
+        box-shadow: 1px 2px 3px #05641f; }
 
 body hr {
   color: #45d045;
@@ -141,16 +139,11 @@ body hr {
   .navnav .nav-icon:hover {
     color: greenyellow; }
 
-@media (max-width: 420px) {
-  .navnav {
-    margin-top: 30px;
-  }
-}
 /* fim da parte superior */
 /* about us styling */
 /* slide show */
 .all {
-  margin-top: 100px; }
+  margin-top: 150px; }
   .all .title {
     padding: 50px; }
     .all .title .slogan {
@@ -214,17 +207,20 @@ body hr {
 /* medias for smartphone optimization */
 @media (max-width: 420px) {
   .all {
-    margin-top: 170px;
-  }
-}
-@media (max-width: 420px) {
+    margin-top: 300px; }
+  .navnav {
+    margin-top: 30px; }
+  .input {
+    max-width: 350px; }
+  .pedosite {
+    display: grid;
+    justify-content: center;
+    background-color: #45d045;
+    width: 105vw; } }
+
+@media (max-width: 390px) {
   .all {
-    margin-top: 170px;
-  }
-}
-@media (max-width: 360px) {
-  .all {
-    margin-top: 200px; } }
+    margin-top: 300px; } }
 
 @media (max-width: 540px) {
   .atendimento-container {
@@ -241,7 +237,3 @@ body hr {
 @media (max-width: 912px) {
   .form-container {
     margin-top: 350px; } }
-
-@media (max-width: 412px) {
-  .input {
-    max-width: 350px; } }

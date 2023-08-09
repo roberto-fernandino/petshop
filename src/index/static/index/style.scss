@@ -7,18 +7,19 @@ $fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     margin: 0;
     padding: 0;
 }
+a {
+    color: $secondcolor;
+    text-decoration: none;
+}
 
 .all {
+    margin-top: 150px;
     .display-center {
-        margin-top: 200px;
         display: grid;
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 3px solid $primarycolor;
         background-color: transparent;
-        border-radius: 40px;
-
         h1 {
             color: $primarycolor;
         }
@@ -102,8 +103,6 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-
-
     .dropdown {
         display: flex;
         padding-top: 60px;
@@ -189,10 +188,6 @@ body {
     a:hover {
         opacity: 0.6;
     }
-@media screen {
-    
-}
-
     .nav-icon {
         color: $secondcolor;
         font-size: 30px;
@@ -204,14 +199,7 @@ body {
     .nav-icon:hover {
         color: greenyellow;
     }
-
 }
-@media (max-width: 420px) {
-    .navnav {
-        margin-top: 30px;
-    }
-}
-
 /* fim da parte superior */
 
 
@@ -221,7 +209,7 @@ body {
 
 /* slide show */
 .all {
-    margin-top: 100px;
+    margin-top: 150px;
 
     .title {
         padding: 50px;
@@ -251,17 +239,13 @@ body {
 .pedosite {
     display: grid;
     justify-content: center;
-    
     background-color: $primarycolor;
-
-
     .author {
         .emailcontainer {
             color: $primarycolor;
             margin: 0;
             padding: 0;
             margin-top: 10px;
-
             span {
                 font-size: 19px;
                 background-color: transparent;
@@ -270,48 +254,39 @@ body {
                 border-radius: 4px;
                 padding: 4px 8px;
             }
-
             i {
                 color: $secondcolor;
             }
-
             button {
                 background-color: transparent;
                 font-size: 20px;
                 border-radius: 5px;
                 cursor: pointer;
                 position: relative;
-
                 i {
                     padding: 5px;
                     color: $secondcolor;
                     transition: 0.5s;
                 }
-
                 i:hover {
                     color: grey;
                     transform: translateY(-4px);
                 }
             }
-
         }
     }
-
     div {
         margin: 20px;
-
         button {
             background-color: transparent;
             font-size: 20px;
             border: none;
             cursor: pointer;
             position: relative;
-
             i {
                 color: $primarycolor;
                 transition: 0.3s;
             }
-
             i:hover {
                 color: grey;
                 transform: translateY(-4px);
@@ -323,22 +298,28 @@ body {
 /* medias for smartphone optimization */
 @media (max-width: 420px) {
     .all {
-        margin-top: 170px;
+        margin-top: 300px;
+    }
+    .navnav {
+        margin-top: 30px;
+    }
+    .input{
+        max-width: 350px;
+    }
+    .pedosite{
+        display: grid;
+        justify-content: center;
+        background-color: #45d045;
+        width: 105vw;
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 390px) {
     .all {
-        margin-top: 170px;
+        margin-top: 300px;
+
     }
 }
-
-@media (max-width: 360px) {
-    .all {
-        margin-top: 200px;
-    }
-}
-
 @media (max-width: 540px){
     .atendimento-container{
         margin-top: 300px;
@@ -361,10 +342,4 @@ body {
         margin-top: 350px;
     }
 
-}
-
-@media (max-width: 412px) {
-    .input{
-        max-width: 350px;
-    }
 }

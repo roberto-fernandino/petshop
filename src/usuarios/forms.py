@@ -40,6 +40,7 @@ class AtendimentoForm(forms.ModelForm):
     message = forms.CharField(widget=forms.Textarea(attrs={
                             "name": "mensagem",
                             "rows": 6,
+                            "cols": 30,
                             "class": "input-field",
     }))
     is_newsletter = forms.BooleanField(

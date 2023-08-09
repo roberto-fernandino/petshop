@@ -5,13 +5,47 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  width: 100vw; }
   body hr {
     color: #45d045;
     margin-top: 150px; }
 
 .content-container {
   flex: 1; }
+
+/* text display */
+.all .display-center {
+  margin-top: 200px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid #45d045;
+  background-color: transparent;
+  border-radius: 40px; }
+  .all .display-center h1 {
+    color: #45d045; }
+  .all .display-center .paragrafo {
+    max-width: 100%;
+    text-align: justify;
+    display: inline-block; }
+    .all .display-center .paragrafo p {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      padding: 5px;
+      text-indent: 30px;
+      margin-left: 15px;
+      margin-right: 20px;
+      margin-bottom: 0px;
+      color: black; }
+    .all .display-center .paragrafo img {
+      float: left;
+      margin-top: 0px;
+      margin-left: px;
+      margin-right: 15px;
+      box-shadow: 1px 2px 3px #05641f; }
 
 /* inicio da parte superior */
 .top-container {
@@ -122,62 +156,48 @@ body {
   margin-top: 150px;
   display: grid;
   justify-content: center;
-  text-align: center;
-}
-.form-container .form-centered {
-  display: grid;
-  justify-content: center;
-  text-align: center;
-}
-.form-container .form-centered .input-field {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 4px;
-  font: inherit;
-  color: #45d045;
-  background-color: transparent;
-  border: 2px solid #d6d6d6;
-}
-.form-container .form-centered .input-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(10px, 10px);
-  transform-origin: left;
-  transition: transform 0.25s;
-}
-.form-container .form-centered .input-field:focus-visible ~ .input-label, .form-container .form-centered .input-field:valid ~ .input-label {
-  transform: translate(0, -30px) scale(0.8);
-  color: #45d045;
-}
-.form-container .form-centered .input-field:is(:focus-visible, :valid) {
-  outline-color: #45d045;
-}
-.form-container .form-centered .SubmitButton {
-  background-color: #45d045;
-  border: none;
-  padding: 10px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-  transition: 0.5s;
-}
-.form-container .form-centered .SubmitButton:hover {
-  opacity: 0.6;
-}
-.form-container .form-centered p {
-  display: grid;
-  text-align: center;
-  justify-content: center;
-}
+  text-align: center; }
+  .form-container .form-centered {
+    display: grid;
+    justify-content: center;
+    text-align: center; }
+  .form-container .form-centered .input-field {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    color: #45d045;
+    background-color: transparent;
+    border: 2px solid #d6d6d6; }
+  .form-container .form-centered .input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transform-origin: left;
+    transition: transform 0.25s; }
+  .form-container .form-centered .input-field:focus-visible ~ .input-label, .form-container .form-centered .input-field:valid ~ .input-label {
+    transform: translate(0, -30px) scale(0.8);
+    color: #45d045; }
+  .form-container .form-centered .input-field:is(:focus-visible, :valid) {
+    outline-color: #45d045; }
+  .form-container .form-centered .SubmitButton {
+    background-color: #45d045;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.5s; }
+  .form-container .form-centered .SubmitButton:hover {
+    opacity: 0.6; }
+  .form-container .form-centered p {
+    display: grid;
+    text-align: center;
+    justify-content: center; }
 
-@media (max-width: 912px) {
-  .form-container {
-    margin-top: 350px;
-  }
-}
 /* form centered fim */
 /* atendimento body style */
 .atendimento-container {
@@ -201,83 +221,83 @@ body {
       font-size: larger; }
     .atendimento-container .information-container p {
       font-size: medium; }
-  .atendimento-container .atendimento-form-container form {
-    display: grid;
-    justify-content: center; }
-    .atendimento-container .atendimento-form-container form p {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center; }
-      .atendimento-container .atendimento-form-container form p i {
-        margin-left: 8px;
+  .atendimento-container .atendimento-form-container {
+    max-width: 100%; }
+    .atendimento-container .atendimento-form-container form {
+      display: grid;
+      justify-content: center;
+      margin-top: 80px; }
+      .atendimento-container .atendimento-form-container form p {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; }
+        .atendimento-container .atendimento-form-container form p i {
+          margin-left: 8px;
+          color: #45d045; }
+        .atendimento-container .atendimento-form-container form p i:hover {
+          color: #299829;
+          transform: translateY(-2px); }
+      .atendimento-container .atendimento-form-container form .input {
+        position: relative;
+        width: 300px;
+        margin-bottom: 30px; }
+        .atendimento-container .atendimento-form-container form .input .input-field {
+          width: 300px;
+          padding: 15px;
+          border: none;
+          border-radius: 4px;
+          font: inherit;
+          color: #45d045;
+          background-color: transparent;
+          border: 2px solid #d6d6d6; }
+        .atendimento-container .atendimento-form-container form .input .input-label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(10px, 10px);
+          transform-origin: left;
+          transition: transform 0.25s; }
+          .atendimento-container .atendimento-form-container form .input .input-label span {
+            user-select: none;
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer */
+            -webkit-user-select: none;
+            /* Safari */ }
+        .atendimento-container .atendimento-form-container form .input .check-box input[type="checkbox"] {
+          display: none; }
+        .atendimento-container .atendimento-form-container form .input .check-box label:before {
+          content: "";
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: grey;
+          border: 2px solid #45d045;
+          border-radius: 3px;
+          cursor: pointer; }
+        .atendimento-container .atendimento-form-container form .input .check-box input[type="checkbox"]:checked + label:before {
+          background-color: #45d045;
+          /* Cor de fundo quando marcado */
+          border: 2px solid #fafafa; }
+      .atendimento-container .atendimento-form-container form .input-field:focus-visible ~ .input-label,
+      .atendimento-container .atendimento-form-container form .input-field:valid ~ .input-label {
+        transform: translate(0, -30px) scale(0.8);
         color: #45d045; }
-      .atendimento-container .atendimento-form-container form p i:hover {
-        color: #299829;
-        transform: translateY(-2px); }
-  .atendimento-container .atendimento-form-container .input {
-    position: relative;
-    max-width: 340px;
-    margin-bottom: 30px; }
-    .atendimento-container .atendimento-form-container .input .input-field {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 4px;
-      font: inherit;
-      color: #45d045;
-      background-color: transparent;
-      border: 2px solid #d6d6d6; }
-    .atendimento-container .atendimento-form-container .input .input-label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(10px, 10px);
-      transform-origin: left;
-      transition: transform 0.25s; }
-      .atendimento-container .atendimento-form-container .input .input-label span {
-        user-select: none;
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* Internet Explorer */
-        -webkit-user-select: none;
-        /* Safari */ }
-    .atendimento-container .atendimento-form-container .input .check-box input[type="checkbox"] {
-      display: none; }
-    .atendimento-container .atendimento-form-container .input .check-box label:before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: grey;
-      border: 2px solid #45d045;
-      border-radius: 3px;
-      cursor: pointer; }
-    .atendimento-container .atendimento-form-container .input .check-box input[type="checkbox"]:checked + label:before {
+      .atendimento-container .atendimento-form-container form .input-field:is(:focus-visible, :valid) {
+        outline-color: #45d045; }
+    .atendimento-container .atendimento-form-container .SubmitButton {
       background-color: #45d045;
-      /* Cor de fundo quando marcado */
-      border: 2px solid #fafafa; }
-  .atendimento-container .atendimento-form-container .input-field:focus-visible ~ .input-label,
-  .atendimento-container .atendimento-form-container .input-field:valid ~ .input-label {
-    transform: translate(0, -30px) scale(0.8);
-    color: #45d045; }
-  .atendimento-container .atendimento-form-container .input-field:is(:focus-visible, :valid) {
-    outline-color: #45d045; }
-  @media (max-width: 412px) {
-    .atendimento-container .input {
-      max-width: 350px; } }
-  .atendimento-container .SubmitButton {
-    background-color: #45d045;
-    border: none;
-    padding: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    transition: 0.5s; }
-  .atendimento-container .SubmitButton:hover {
-    opacity: 0.6; }
+      border: none;
+      padding: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      transition: 0.5s; }
+    .atendimento-container .atendimento-form-container .SubmitButton:hover {
+      opacity: 0.6; }
 
 /* pe do site */
 .pedosite {
@@ -335,5 +355,24 @@ body {
       margin: 10px; }
   .pedosite {
     margin-top: 0px; }
+    .pedosite div adrres {
+      padding-left: 5px; }
     .pedosite div {
-      margin: 7px; } }
+      margin: 3px; } }
+
+@media (max-width: 912px) {
+  .form-container {
+    max-width: 100%;
+    margin-top: 350px; } }
+
+@media (max-width: 412px) {
+  .input {
+    max-width: 350px; }
+  .all {
+    margin-top: 330px; } }
+
+@media (max-width: 400px) {
+  .input {
+    max-width: 100%; }
+    .input .input-field {
+      max-width: 100%; } }

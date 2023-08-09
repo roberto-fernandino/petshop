@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from usuarios import models
 from .admin import UserCrerationForm as signup_form
 from usuarios.forms import AtendimentoForm
-
+from usuarios.mail import EnviaSigunupEmail
 
 # Create your views here.
 
@@ -38,9 +38,15 @@ def signup(request, *args, **kwargs):
             form.save()
             email = form.cleaned_data['email']
             password2 = form.cleaned_data['password2']
+            username = form.cleaned_data['username']
             new_user = authenticate(request, email=email, password=password2)
             if new_user is not None:
                 login(request, new_user)
+                log = EnviaSigunupEmail(email=email, username=username)
+                new_log = models.EmailErrorsLog()
+                new_log.log = log
+                new_log.email = email
+                new_log.save()
                 return redirect('usuarios:signupsucess')
         else:
             return render(request, "usuarios/signup.html", {"form": form})
