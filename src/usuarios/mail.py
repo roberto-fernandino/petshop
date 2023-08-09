@@ -57,4 +57,3 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
                 print(f"erro: {e}")
 
 
-EnviarNewsletter()
