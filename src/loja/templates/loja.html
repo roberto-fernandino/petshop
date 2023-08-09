@@ -22,6 +22,20 @@
 {% load static %} 
 <link rel="stylesheet" href="{% static 'loja/style.css' %}" />
 <div class="container">
+  <form  method="get" action="{% url 'loja:loja'%}">
+    <label for="categoria">Categoria:</label>
+    <select name="categoria" id="categoria">
+      <option value="">Todas</option>
+      {% for categoria in categorias %}
+      <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+      {% endfor %}
+    </select>
+    <label for="preco">Preco Maximo:</label>
+    <input type="number" name="preco_max" step="0.1">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome">
+    <button type="submit">Filtrar</button>
+  </form>
   <h2>Produtos</h2>
   <div class="row">
   {% for produto in produtos %}
