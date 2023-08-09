@@ -3,22 +3,18 @@
 
 
 
-
-
-
-
-To run this aplication
-1- I used conda so install conda in https://docs.conda.io/en/latest/
-2- Most of the dependecies bellow will come by default when starting a new enviroment
-3- Make sure you're using python 3.11.4
-4- Downlad pillow, django, django-allauth and jazzmin.
-5- Make sure to activate the env before executing any command
-6- go to your ./manage.py directorie
-6- Run "python manage.py createsuperuser" to Create your superuser to acces admin panel
-7- Run "python manage.py makemigrations"
-8- Run "python manage.py migrate"
-9- Run your server with "python manage.py "
-10- The app now is running in a local server on your computer you can copy the default local ipv4 to see it in your browser "https://127.0.0.1:8000" 
+To run this aplication follow this step-guide.\
+1- I used conda so install conda in https://docs.conda.io/en/latest/ \
+2- Most of the dependecies bellow will come by default when starting a new enviroment\
+3- Make sure you're using python 3.11.4\
+4- Downlad pillow, django, django-allauth and jazzmin.\
+5- Make sure to activate the env before executing any command\
+6- go to your ./manage.py directorie\
+6- Run "python manage.py createsuperuser" to Create your superuser to acces admin panel\
+7- Run "python manage.py makemigrations"\
+8- Run "python manage.py migrate"\
+9- Run your server with "python manage.py "\
+10- The app now is running in a local server on your computer you can copy the default local ipv4 to see it in your browser "https://127.0.0.1:8000" \
 
 
 # Dependencies bellow aug/09/2023
