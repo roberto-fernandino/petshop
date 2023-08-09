@@ -50,12 +50,13 @@
         </div>
       </div>
       <nav class="navnav">
+
         <div>
           <a href="">
             <img             
-              src="{% static 'usuarios/logosmall.png' %}"
-              alt="iconeoprincipal"
-              height="100px"
+            src="{% static 'usuarios/logosmall.png' %}"
+            alt="iconeoprincipal"
+            height="100px"
             />
           </a>
         </div>
@@ -70,15 +71,15 @@
                 <li><a class="dropdown-item" href="">Ração Úmida</a></li>
                 <li><a class="dropdown-item" href="">Ração Prescrita</a></li>
                 <li><a class="dropdown-item" href="">Ração Natural</a></li>
-            </li>
-              </ul>
+              </li>
+            </ul>
             <li><a class="dropdown-item" href="">Felinos&raquo;</a>
-               <ul class="dropdown-menu dropdown-submenu">
+              <ul class="dropdown-menu dropdown-submenu">
                 <li><a class="dropdown-item" href="">Ração Seca</a></li>
                 <li><a class="dropdown-item" href="">Ração Úmida</a></li>
                 <li><a class="dropdown-item" href="">Ração Prescrita</a></li>
                 <li><a class="dropdown-item" href="">Ração Natural</a></li>
-               </ul>
+              </ul>
             </li>   
             <li><a class="dropdown-item" href="">Roedores&raquo;</a>
               <ul class="dropdown-menu dropdown-submenu">
@@ -103,59 +104,75 @@
                 <li><a class="dropdown-item" href="">Linhaça</a></li>
               </ul>
             </li>
-              </ul>
           </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tosa</button>
-          <ul class="dropdown-menu">
-            <li><a href="" class="dropdown-item">Cães&raquo;</a>
-              <ul class="dropdown-menu dropdown-submenu">
-                <li><a href="" class="dropdown-item">Porte Grande</a></li>
-                <li><a href="" class="dropdown-item">Porte Médio</a></li>
-                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Banho</button>
-          <ul class="dropdown-menu">
-            <li><a href="" class="dropdown-item">Cães&raquo;</a>
-              <ul class="dropdown-menu dropdown-submenu">
-                <li><a href="" class="dropdown-item">Porte Grande</a></li>
-                <li><a href="" class="dropdown-item">Porte Médio</a></li>
-                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
-              </ul>
-            </li>
-            <li><a href="" class="dropdown-item">Felinos&raquo;</a>
-              <ul class="dropdown-menu dropdown-submenu">
-                <li><a href="" class="dropdown-item">Porte Médio</a></li>
-                <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a href="{% url 'loja:produto' %}"><button class="btn btn-primary dropdown-toggle">Produtos</button></a>
-        </div>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tosa</button>
+        <ul class="dropdown-menu">
+          <li><a href="" class="dropdown-item">Cães&raquo;</a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li><a href="" class="dropdown-item">Porte Grande</a></li>
+              <li><a href="" class="dropdown-item">Porte Médio</a></li>
+              <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Banho</button>
+        <ul class="dropdown-menu">
+          <li><a href="" class="dropdown-item">Cães&raquo;</a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li><a href="" class="dropdown-item">Porte Grande</a></li>
+              <li><a href="" class="dropdown-item">Porte Médio</a></li>
+              <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+            </ul>
+          </li>
+          <li><a href="" class="dropdown-item">Felinos&raquo;</a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li><a href="" class="dropdown-item">Porte Médio</a></li>
+              <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="{% url 'loja:produto' %}"><button class="btn btn-primary dropdown-toggle">Produtos</button></a>
+      </div>
+
+      <ul class="nav-menu"> 
+        <li class="Nav-item"><a href="{% url 'loja:produto' %}">Shop</a></li>
+        <li class="Nav-item"><a href="{% url 'usuarios:login' %}" >
+          <i class="fa-regular fa-user"></i></a></li>
+        <li class="Nav-item"><a href="{% url 'loja:carrinho' %}">
+          <i class="fa-solid fa-bag-shopping"></i></a></li>
+      </ul>
+        
         <div class="nav-icons">
           <a href="{% url 'usuarios:login' %}" class="nav-icon">
             <i class="fa-regular fa-user"></i
-          ></a>
-          <a href="{% url 'loja:carrinho' %}" class="nav-icon">
-            <i class="fa-solid fa-bag-shopping"></i
-          ></a>
-        </div>
-      </nav>
-      <!-- DROPDOWN HERE! RATO DESGRACADO -->
-    </header>
-
-    {% block content %} {% endblock %}
+              ></a>
+              <a href="{% url 'loja:carrinho' %}" class="nav-icon">
+                <i class="fa-solid fa-bag-shopping"></i
+                  ></a>
+                </div>
+                
+                
+                  <button class="hamburguer">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </button>              
+              </nav>
+            </header>
+            
+            <script src="{% static 'index/script.js'  %}"></script>
+            {% block content %} {% endblock %}
     <hr />
   </body>
 
-
+  
   <footer class="pedosite">
     <div>
       <address>
