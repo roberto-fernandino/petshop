@@ -339,27 +339,44 @@ body {
 @media (max-width: 420px) {
     .all {
         margin-top: 170px;
+        .dropdown{
+            display: none;
+        }
     }
 }
 
 @media (max-width: 420px) {
     .all {
         margin-top: 170px;
+        .nav-menu.active{
+            height: 5vh;
+        }
+        .dropdown{
+            display: none;
+        }
     }
 }
 
 @media (max-width: 360px) {
     .all {
         margin-top: 200px;
+        .dropdown{
+            display: none;
+        }
     }
 }
 @media (max-width:768px) {
     .navnav{
+        display: inline-flex;
+        .dropdown{
+            display: none;
+        }
         .hamburguer{
             background-color: $primarycolor;
             border: none;
             display: block;
             margin-right: 15px;
+            margin-left: 30px;
         }
         .hamburguer.active{
             .bar:nth-child(2){
@@ -413,10 +430,40 @@ body {
 }
 @media (max-height: 740px) {
     .navnav{
+        .dropdown{
+            display: none;
+        }
         .nav-menu.active{
             margin-top: 30vh;
-    
         }
 
+    }
+}
+@media (max-width: 412px) {
+    .navnav {
+        .hamburguer{
+            margin-right: 30px;
+        }
+        .nav-menu.active{
+            margin-top: 28vh;
+
+        }
+    }
+}
+/* Samsumg S20 */
+@media (max-width: 414px) {
+    .navnav {
+        .nav-menu.active{
+            margin-top: 29vh;
+
+        }
+    }
+}
+/* Ipad M */
+@media (max-height: 915px) and (max-width: 412px ){
+    .navnav{
+        .nav-menu.active{
+            margin-top: 28vh;
+        }
     }
 }
