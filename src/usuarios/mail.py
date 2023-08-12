@@ -9,6 +9,11 @@ email_sender = "melhoramigonaoresponda@gmail.com"
 
 
 def EnviarNewsletter() -> None:
+    '''Acha emails validos com is_newsletter em todo o banco de dados e envia o newsletter selecionado em ->
+    with open(
+    "diretorio do template",
+    "r"
+    ) as htmlmodel: '''
     emails = SearchNewsletterEmail()
 
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
@@ -35,6 +40,7 @@ def EnviarNewsletter() -> None:
 
 
 def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
+    '''Envia emails de newsletter para emails selecionados no admin panel'''
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
         server.starttls()
         server.login(api_key, api_secret_key)
@@ -57,6 +63,7 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
                 print(f"erro: {e}")
 
 def EnviaSigunupEmail(email, username) -> str:
+    '''Envia emails para usuarios novos cadastrados'''
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
         server.starttls()
         server.login(api_key, api_secret_key)

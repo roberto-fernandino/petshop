@@ -4,10 +4,10 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
-from usuarios.models import Account, Atendimentos
+from usuarios.models import Account, Atendimentos, UserCart, UserCartItems
 from usuarios.mail import EnviaNewsLetterFromDataBase
-# Register your models here.
 
+# Register your models here.
 
 @admin.action(description="Marcar atendimento(s) como respondido")
 def set_respondidos(modeladmin, request, queryset):
@@ -155,6 +155,26 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ["user_permissions"]
 
 
+
+
+class UserCartAdmin(admin.ModelAdmin):
+    list_display = ['user', 'total_price']
+    readonly_fields = ['total_price']
+
+    def total_price(self, obj):
+        preco = obj.calculate_total_price() / 100        
+        return f'R${preco}'
+    total_price.short_description = 'Preco Total'
+
+class UserCartItemsAdmin(admin.ModelAdmin):
+    list_display = ['cart_id','produto', 'quantidade']
+
+admin.site.register(UserCartItems, UserCartItemsAdmin)
+admin.site.register(UserCart, UserCartAdmin)
 admin.site.register(Account, UserAdmin)
 admin.site.register(Atendimentos, AtendimentoAdmin)
 admin.site.unregister(Group)
+
+
+
+

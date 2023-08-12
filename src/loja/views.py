@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from loja.models import Produto, Category
+import stripe
+from maindjango.settings import STRIPE_PUBLIC_KEY
+from loja.funcs import SearchProductsToPaymentGateway
+
+
+#stripe api key
+stripe.api_key = STRIPE_PUBLIC_KEY
+
 
 # Create your views here.
 def lojaview(request, *args, **kwargs):
@@ -28,3 +36,20 @@ def produtoview(request, *args, **kwargs):
 
 def carrinhoview(request, *args, **kwargs):
     return render(request, 'carrinho.html', {})
+
+
+
+def create_checkout_session():
+    def post(self, *args, **kwargs):
+        stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            sucess_url='',
+            line_items=[
+                {
+                    'price_data':{
+                        'currency': 'brl',
+    
+                    }
+                }
+            ],
+        )

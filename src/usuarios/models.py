@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
-
+from loja.models import Produto
 
 # Create your models here.
 
@@ -31,8 +31,9 @@ class Atendimentos(models.Model):
 # Overriding Default Account Manager
 class EmailErrorsLog(models.Model):
     email = models.EmailField(max_length=150)
-    log = models.CharField(max_length=255, blank=False, null=True, default='None')
+    log = models.CharField(max_length=255, blank=False, null=True, default="None")
     error_date = models.DateTimeField(auto_now_add=True)
+
 
 class AccountManager(BaseUserManager):
     def create_user(
@@ -114,6 +115,31 @@ class Account(AbstractBaseUser, PermissionsMixin):
         return True
 
 
+class UserCart(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.user.email}"
+
+    class Meta:
+        verbose_name_plural = "Carrinho Usuario"
+
+    def calculate_total_price(self):
+        total = 0
+        for item in self.items.all():
+            total += item.produto.preco * item.quantidade
+        return total
 
 
 
+class UserCartItems(models.Model):
+    cart_id = models.ForeignKey(
+        UserCart, 
+        on_delete=models.CASCADE, 
+        related_name="items")
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    quantidade = models.IntegerField(default=1)
+
+
+    class Meta:
+        verbose_name_plural = 'Items Carrinho'

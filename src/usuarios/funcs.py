@@ -13,8 +13,7 @@ def SearchNewsletterEmail() -> list:
     emails_validos += cursor.fetchall()
     emails_validos = set(emails_validos)
     emails_validos = list(emails_validos)
-    print(emails_validos)
+    cursor.close()
+    conn.close()
     return emails_validos
    
-
-SearchNewsletterEmail()
