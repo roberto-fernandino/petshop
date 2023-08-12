@@ -7,7 +7,7 @@ To run this aplication follow this step-guide.\
 1- I used conda so install conda in https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html \
 2- Most of the dependecies bellow will come by default when starting a new enviroment\
 3- Make sure you're using python 3.11.4\
-4- Downlad pillow 10.0.0, django 4.2.3, django-allauth 0.54.0 and jazzmin 2.6.0.\
+4- Downlad pillow 10.0.0, django 4.2.3, django-allauth 0.54.0, jazzmin 2.6.0., stripe 5.5.0. \
 5- Make sure to activate the env before executing any command\
 6- go to your ./manage.py directorie\
 6- Run "python manage.py createsuperuser" to Create your superuser to acces admin panel\
