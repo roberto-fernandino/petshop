@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
-
+from loja.models import Produto
 
 # Create your models here.
 
@@ -29,6 +29,10 @@ class Atendimentos(models.Model):
 
 
 # Overriding Default Account Manager
+class EmailErrorsLog(models.Model):
+    email = models.EmailField(max_length=150)
+    log = models.CharField(max_length=255, blank=False, null=True, default="None")
+    error_date = models.DateTimeField(auto_now_add=True)
 
 
 class AccountManager(BaseUserManager):
@@ -87,6 +91,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     cpf = models.CharField(max_length=14, unique=True, blank=False, null=True)
     data_nascimento = models.DateField(blank=False, null=True)
     data_criacao = models.DateTimeField(auto_now_add=True, blank=False, null=True)
+    is_newsletter = models.BooleanField(default=False, null=False, blank=False)
     # Acount Manager aqui
     objects = AccountManager()
 
@@ -108,8 +113,38 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+    
+    def esconde_cpf(self):
+        return "*" * 7 +  self.cpf[-5:-2] + '-' + self.cpf[-2] + self.cpf[-1]
 
 
+class UserCart(models.Model):
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.user.email}"
+
+    class Meta:
+        verbose_name_plural = "Carrinho Usuario"
+
+    def calculate_total_price(self) -> float:
+        total = 0
+        for item in self.items.all():
+            total += item.produto.preco * item.quantidade
+        return total
+
+    def calculate_total_price_real(self) -> float:
+        total = (int(self.calculate_total_price()) / 100 )
+        return total   
+
+class UserCartItems(models.Model):
+    cart = models.ForeignKey(
+        UserCart, 
+        on_delete=models.CASCADE, 
+        related_name="items")
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    quantidade = models.IntegerField(default=1)
 
 
-
+    class Meta:
+        verbose_name_plural = 'Items Carrinho'

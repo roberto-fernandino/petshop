@@ -5,7 +5,8 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  width: 100vw; }
   body hr {
     color: #45d045;
     margin-top: 150px; }
@@ -16,28 +17,60 @@ body {
 /* inicio da parte superior */
 .top-container {
   margin: 0 auto;
-  padding-bottom: 50px; }
-  .top-container .top-bar {
-    padding: 20px;
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    background-color: #fafafa;
-    display: flex;
-    justify-content: flex-end; }
-    .top-container .top-bar a {
-      transition: 0.3s;
-      font-size: 15px;
-      color: grey;
-      text-decoration: none; }
-      .top-container .top-bar a i {
-        padding-left: 20px;
-        color: #45d045;
-        font-size: 20px;
-        padding-right: 20px; }
-    .top-container .top-bar a:hover {
-      color: #45d045;
-      transform: translateY(-4px); }
+  padding-bottom: 50px;
+}
+.top-container .top-bar {
+  padding: 20px;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  justify-content: flex-end;
+}
+.top-container .top-bar a {
+  transition: 0.3s;
+  font-size: 15px;
+  color: grey;
+  text-decoration: none;
+}
+.top-container .top-bar a i {
+  padding-left: 20px;
+  color: #45d045;
+  font-size: 20px;
+  padding-right: 20px;
+}
+.top-container .top-bar a:hover {
+  color: #45d045;
+  transform: translateY(-4px);
+}
+  padding-bottom: 50px;
+}
+.top-container .top-bar {
+  padding: 20px;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  justify-content: flex-end;
+}
+.top-container .top-bar a {
+  transition: 0.3s;
+  font-size: 15px;
+  color: grey;
+  text-decoration: none;
+}
+.top-container .top-bar a i {
+  padding-left: 20px;
+  color: #45d045;
+  font-size: 20px;
+  padding-right: 20px;
+}
+.top-container .top-bar a:hover {
+  color: #45d045;
+  transform: translateY(-4px);
+}
 
 .navnav {
   background-color: #45d045;
@@ -164,11 +197,20 @@ body {
     text-align: center;
     justify-content: center; }
 
-@media (max-width: 912px) {
-  .form-container {
-    margin-top: 350px; } }
-
 /* form centered fim */
+/* user-cart inicio */
+.cart-container {
+  margin-top: 25vh; }
+  .cart-container .cart-user-container {
+    display: grid;
+    justify-content: center; }
+    .cart-container .cart-user-container h1 {
+      padding-bottom: 2vh; }
+    .cart-container .cart-user-container .items {
+      display: grid;
+      justify-content: space-evenly; }
+
+/* user-cart fim */
 /* atendimento body style */
 .atendimento-container {
   display: grid;
@@ -191,139 +233,203 @@ body {
       font-size: larger; }
     .atendimento-container .information-container p {
       font-size: medium; }
-  .atendimento-container .atendimento-form-container form {
-    display: grid;
-    justify-content: center; }
-    .atendimento-container .atendimento-form-container form p {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center; }
-      .atendimento-container .atendimento-form-container form p i {
-        margin-left: 8px;
+  .atendimento-container .atendimento-form-container {
+    max-width: 100%; }
+    .atendimento-container .atendimento-form-container form {
+      display: grid;
+      justify-content: center;
+      margin-top: 80px; }
+      .atendimento-container .atendimento-form-container form p {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; }
+        .atendimento-container .atendimento-form-container form p i {
+          margin-left: 8px;
+          color: #45d045; }
+        .atendimento-container .atendimento-form-container form p i:hover {
+          color: #299829;
+          transform: translateY(-2px); }
+      .atendimento-container .atendimento-form-container form .input {
+        position: relative;
+        width: 300px;
+        margin-bottom: 30px; }
+        .atendimento-container .atendimento-form-container form .input .input-field {
+          width: 300px;
+          padding: 15px;
+          border: none;
+          border-radius: 4px;
+          font: inherit;
+          color: #45d045;
+          background-color: transparent;
+          border: 2px solid #d6d6d6; }
+        .atendimento-container .atendimento-form-container form .input .input-label {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(10px, 10px);
+          transform-origin: left;
+          transition: transform 0.25s; }
+          .atendimento-container .atendimento-form-container form .input .input-label span {
+            user-select: none;
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer */
+            -webkit-user-select: none;
+            /* Safari */ }
+        .atendimento-container .atendimento-form-container form .input .check-box input[type="checkbox"] {
+          display: none; }
+        .atendimento-container .atendimento-form-container form .input .check-box label:before {
+          content: "";
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: grey;
+          border: 2px solid #45d045;
+          border-radius: 3px;
+          cursor: pointer; }
+        .atendimento-container .atendimento-form-container form .input .check-box input[type="checkbox"]:checked + label:before {
+          background-color: #45d045;
+          /* Cor de fundo quando marcado */
+          border: 2px solid #fafafa; }
+      .atendimento-container .atendimento-form-container form .input-field:focus-visible ~ .input-label,
+      .atendimento-container .atendimento-form-container form .input-field:valid ~ .input-label {
+        transform: translate(0, -30px) scale(0.8);
         color: #45d045; }
-      .atendimento-container .atendimento-form-container form p i:hover {
-        color: #299829;
-        transform: translateY(-2px); }
-  .atendimento-container .atendimento-form-container .input {
-    position: relative;
-    max-width: 340px;
-    margin-bottom: 30px; }
-    .atendimento-container .atendimento-form-container .input .input-field {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 4px;
-      font: inherit;
-      color: #45d045;
-      background-color: transparent;
-      border: 2px solid #d6d6d6; }
-    .atendimento-container .atendimento-form-container .input .input-label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(10px, 10px);
-      transform-origin: left;
-      transition: transform 0.25s; }
-      .atendimento-container .atendimento-form-container .input .input-label span {
-        user-select: none;
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* Internet Explorer */
-        -webkit-user-select: none;
-        /* Safari */ }
-    .atendimento-container .atendimento-form-container .input .check-box input[type="checkbox"] {
-      display: none; }
-    .atendimento-container .atendimento-form-container .input .check-box label:before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: grey;
-      border: 2px solid #45d045;
-      border-radius: 3px;
-      cursor: pointer; }
-    .atendimento-container .atendimento-form-container .input .check-box input[type="checkbox"]:checked + label:before {
+      .atendimento-container .atendimento-form-container form .input-field:is(:focus-visible, :valid) {
+        outline-color: #45d045; }
+    .atendimento-container .atendimento-form-container .SubmitButton {
       background-color: #45d045;
-      /* Cor de fundo quando marcado */
-      border: 2px solid #fafafa; }
-  .atendimento-container .atendimento-form-container .input-field:focus-visible ~ .input-label,
-  .atendimento-container .atendimento-form-container .input-field:valid ~ .input-label {
-    transform: translate(0, -30px) scale(0.8);
-    color: #45d045; }
-  .atendimento-container .atendimento-form-container .input-field:is(:focus-visible, :valid) {
-    outline-color: #45d045; }
-  @media (max-width: 412px) {
-    .atendimento-container .input {
-      max-width: 350px; } }
-  .atendimento-container .SubmitButton {
-    background-color: #45d045;
-    border: none;
-    padding: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    transition: 0.5s; }
-  .atendimento-container .SubmitButton:hover {
-    opacity: 0.6; }
+      border: none;
+      padding: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      transition: 0.5s; }
+    .atendimento-container .atendimento-form-container .SubmitButton:hover {
+      opacity: 0.6; }
 
 /* pe do site */
 .pedosite {
-  display: grid;
-  justify-content: center;
-  background-color: #45d045; }
-  .pedosite .author .emailcontainer {
-    color: #45d045;
-    margin: 0;
-    padding: 0;
-    margin-top: 10px; }
-    .pedosite .author .emailcontainer span {
-      font-size: 19px;
-      background-color: transparent;
-      color: black;
-      border: none;
-      border-radius: 4px;
-      padding: 4px 8px; }
-    .pedosite .author .emailcontainer i {
-      color: white; }
-    .pedosite .author .emailcontainer button {
-      background-color: transparent;
-      font-size: 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      position: relative; }
-      .pedosite .author .emailcontainer button i {
-        padding: 5px;
-        color: white;
-        transition: 0.5s; }
-      .pedosite .author .emailcontainer button i:hover {
-        color: grey;
-        transform: translateY(-4px); }
-  .pedosite div {
-    margin: 20px; }
-    .pedosite div button {
-      background-color: transparent;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      position: relative; }
-      .pedosite div button i {
-        color: #45d045;
-        transition: 0.3s; }
-      .pedosite div button i:hover {
-        color: grey;
-        transform: translateY(-4px); }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 170px;
+  background-color: #45d045;
+}
+.pedosite .author .emailcontainer {
+  color: #45d045;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.pedosite .author .emailcontainer span {
+  font-size: 19px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.pedosite .author .emailcontainer i {
+  color: white;
+}
+.pedosite .author .emailcontainer button {
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite .author .emailcontainer button i {
+  padding: 5px;
+  color: white;
+  transition: 0.5s;
+}
+.pedosite .author .emailcontainer button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
+.pedosite div {
+  margin: 20px;
+}
+.pedosite div button {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite div button i {
+  color: #45d045;
+  transition: 0.3s;
+}
+.pedosite div button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
 
-@media (max-width: 540px) {
-  .atendimento-container {
-    margin-top: 300px; }
-    .atendimento-container .atendimento-form-container {
-      margin-top: 10px; }
-    .atendimento-container .information-container {
-      margin: 10px; }
-  .pedosite {
-    margin-top: 0px; }
-    .pedosite div {
-      margin: 7px; } }
+/*# sourceMappingURL=style.css.map */
+  background-color: #45d045;
+}
+.pedosite .author .emailcontainer {
+  color: #45d045;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.pedosite .author .emailcontainer span {
+  font-size: 19px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.pedosite .author .emailcontainer i {
+  color: white;
+}
+.pedosite .author .emailcontainer button {
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite .author .emailcontainer button i {
+  padding: 5px;
+  color: white;
+  transition: 0.5s;
+}
+.pedosite .author .emailcontainer button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
+.pedosite div {
+  margin: 20px;
+}
+.pedosite div button {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.pedosite div button i {
+  color: #45d045;
+  transition: 0.3s;
+}
+.pedosite div button i:hover {
+  color: grey;
+  transform: translateY(-4px);
+}
+
+@media (max-width: 400px) {
+  .input {
+    max-width: 100%; }
+    .input .input-field {
+      max-width: 100%; } }

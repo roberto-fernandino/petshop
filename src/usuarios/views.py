@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login, logout
 from usuarios import models
 from .admin import UserCrerationForm as signup_form
 from usuarios.forms import AtendimentoForm
-
-
+from usuarios.mail import EnviaSigunupEmail
+from django.contrib.auth.decorators import login_required
+from usuarios.models import UserCart, UserCartItems
 # Create your views here.
 
 def login_view(request, *args, **kwargs):
@@ -25,7 +26,7 @@ def login_view(request, *args, **kwargs):
             )
     return render(request, "usuarios/login.html", {})
 
-
+@login_required
 def login_sucess(request):
     if request.user.is_authenticated:
         return render(request, "usuarios/loginsucess.html")
@@ -38,9 +39,15 @@ def signup(request, *args, **kwargs):
             form.save()
             email = form.cleaned_data['email']
             password2 = form.cleaned_data['password2']
+            username = form.cleaned_data['username']
             new_user = authenticate(request, email=email, password=password2)
             if new_user is not None:
                 login(request, new_user)
+                log = EnviaSigunupEmail(email=email, username=username)
+                new_log = models.EmailErrorsLog()
+                new_log.log = log
+                new_log.email = email
+                new_log.save()
                 return redirect('usuarios:signupsucess')
         else:
             return render(request, "usuarios/signup.html", {"form": form})
@@ -53,7 +60,7 @@ def signup(request, *args, **kwargs):
     }
     return render(request, "usuarios/signup.html", context)
 
-
+@login_required
 def user_view(request):
     return render(request, "usuarios/user.html", {})
 
@@ -81,3 +88,19 @@ def atendimento(request, *args, **kwargs):
 
 def atendimentoSubmited(request):
     return render(request, "usuarios/atendimentoSubmited.html", {})
+
+def user_adress(request):
+    return render(request, "usuarios/useradress.html")
+
+def cart_view(request):
+    try:
+        cart = UserCart.objects.get(user=request.user)
+        cart_items = UserCartItems.objects.filter(cart=cart)
+        items = cart_items.all()
+        context = {'items': items, 'cart': cart}
+    except UserCart.DoesNotExist:
+        items = []
+
+    return render(request, 'usuarios/cart.html', context)
+
+    

@@ -7,7 +7,11 @@
   {% endif %}
   {% load static %}
   <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
-
+  <h1 class="top-title">Login</h1>
+  <div class="information-container">
+    <h4>Para logar entre com email <br> </h4>
+    <p>Caso nao tenha uma conta crie clicando abaixo</p>
+  </div>  
   <div class="atendimento-form-container">
       <form action="{% url 'usuarios:login' %}" method="POST">
           {% csrf_token %}

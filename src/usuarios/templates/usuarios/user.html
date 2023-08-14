@@ -1,5 +1,5 @@
 {% extends 'index/base.html' %}
-{% block title %} Ola, {{ request.user.username }} {% endblock %}
+{% block title %} Melhor Amigo {{ request.user.username }}  {% endblock %}
 {% block content %} 
 {% load static %}
 
@@ -10,7 +10,7 @@
         {% endif %}
     <h1>
     Ola, {{ request.user.username}}: {{ request.user.email}}. <br>
-    CPF: {{ request.user.cpf}}
+    CPF: {{ request.user.esconde_cpf}}
     </h1>
     <div>
         <a class="btn btn-danger" href="{% url 'usuarios:logout' %}">Logout</a>

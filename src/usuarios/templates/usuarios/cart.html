@@ -1,0 +1,54 @@
+{% extends 'index/base.html' %}
+{% block title %} Carrinho {% endblock %}
+{% block content %}
+
+{% load static %}
+{% load my_filters %}
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+
+<div class="cart-container">
+    <div class="cart-user-container">
+        <h1>Carrinho de {{ request.user }}</h1>
+        {% if items %}
+        <div class="items">
+                {% for item in items %}
+                    {% if item.quantidade > 0 %}
+                    <h1>{{ item.quantidade }}x {{ item.produto.nome }} R${{ item.produto.preco_em_real }} 
+                        <form  method="post" action="{% url 'loja:remove-cart' item.produto.id %}">
+                            {% csrf_token %}
+                            <select name="quantidade">
+                                {% for qtd in item.quantidade|times %}
+                                <option value="{{ qtd }}">{{ qtd }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-danger">Remover</button>
+                        </form>
+                    </h1>
+                    {% endif %}
+                    {% endfor %}
+                    {% if cart.calculate_total_price_real == 0 %}
+                    <div class="items">
+                        <h1>Nenhum item no carrinho</h1>
+                    </div>
+                    {% endif %}            
+                <h2> Preco total: R${{ cart.calculate_total_price_real }}</h2>
+            </div>
+        {% else %}
+        <div class="items">
+            <h1>Nenhum item no carrinho</h1>
+        </div>
+        {% endif %}
+        {% if cart.calculate_total_price_real != 0 %}
+            <a href="">
+                <button class="btn btn-info">Checkout</button>
+            </a>
+        {% else %}
+        <a href="{% url 'loja:loja' %}">
+        <button class="btn btn-success"> Shop
+        </button>
+        </a> 
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -159,6 +159,7 @@ JAZZMIN_SETTINGS = {
     "site_title": "Melhor Amigo Admin",
     "site_header": "Melhor amigo Admin",
     "site_brand": "Melhor Amigo",
+    "site_logo": "index/logosmall.png",
     "login_logo": "index/logosmall.png",
     "site_icon": "index/logosmall.png",
     "welcome_sign": "Bem vindo ao admin de Melhor Amigo!",
@@ -166,3 +167,7 @@ JAZZMIN_SETTINGS = {
     "changeform_format": "collapsible",
     
 }
+
+
+STRIPE_PUBLIC_KEY = 'pk_live_51Ne1TyCZo2XjuPFOjFI9ckKAASxHNUm4Za7GLrgRclBSKss5zRANQ8DXGmBSsHqtU05u0ZSD0NAfQHL61SnR2lII00Mtguv6ky'
+STRIPE_SECRET_KEY = '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'
