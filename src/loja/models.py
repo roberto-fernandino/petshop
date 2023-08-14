@@ -28,6 +28,9 @@ class Produto(models.Model):
     img = models.ImageField(upload_to=product_image_path)
     estoque = models.IntegerField(default=0, null=False, blank=False)
 
+    def preco_em_real(self):
+        return f"{(self.preco) / 100 }"
+
     def __str__(self) -> str:
         return f"{self.nome}| Cat:{self.category} | R${(self.preco)/100}"
 

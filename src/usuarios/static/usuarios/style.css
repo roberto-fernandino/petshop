@@ -166,6 +166,19 @@ body {
     justify-content: center; }
 
 /* form centered fim */
+/* user-cart inicio */
+.cart-container {
+  margin-top: 25vh; }
+  .cart-container .cart-user-container {
+    display: grid;
+    justify-content: center; }
+    .cart-container .cart-user-container h1 {
+      padding-bottom: 2vh; }
+    .cart-container .cart-user-container .items {
+      display: grid;
+      justify-content: space-evenly; }
+
+/* user-cart fim */
 /* atendimento body style */
 .atendimento-container {
   display: grid;

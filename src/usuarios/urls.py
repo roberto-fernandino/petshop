@@ -14,4 +14,5 @@ urlpatterns = [
     path('signup/sucess', signup_sucess_view, name='signupsucess'),
     path('atendimento', atendimento, name='atendimento'),
     path('atendimento/enviado', atendimentoSubmited, name='atendimento-enviado'),
+    path('cart', cart_view, name='carrinho'),
 ]

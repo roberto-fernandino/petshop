@@ -20,6 +20,7 @@
 ></script>
 <hr />
 {% load static %} 
+{% load my_filters %}
 <link rel="stylesheet" href="{% static 'loja/style.css' %}" />
 <div class="container">
   <form  method="get" action="{% url 'loja:loja'%}">
@@ -49,8 +50,19 @@
         <div class="card-body">
           <h5 class="card-title">{{ produto.nome }}</h5>
           <p class="card-text">{{ produto.descricao }}</p>
-          <p class="card-price">R$ {{ produto.preco }}</p>
-          <a href=""><p><i class="fa-solid fa-cart-shopping"></i></p></a>
+          <p class="card-price">R$ {{ produto.preco_em_real }}</p>
+          <form method="post" action="{% url 'loja:add-cart' produto.id %}">
+            {% csrf_token %}
+              <select name="quantidade" >
+                {% for qtd in produto.estoque|times %}
+                <option value="{{ qtd }}">{{ qtd }}</option>
+                {% endfor %}
+                {% if produto.estoque == 0 %}
+                <option value="0">Sem estoque</option>
+                {% endif %}
+              </select>
+            <button type="submit"> <i class="fa-solid fa-cart-shopping"></i></button>
+          </form>
         </div>
       </div>
     </div>

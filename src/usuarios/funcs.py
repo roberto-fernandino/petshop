@@ -1,5 +1,4 @@
 import sqlite3
-
 conn = sqlite3.connect("/home/roberto/projects/petshop/src/db.sqlite3")
 cursor = conn.cursor()
 
@@ -17,3 +16,9 @@ def SearchNewsletterEmail() -> list:
     conn.close()
     return emails_validos
    
+
+
+def DisplayUserCart(UserEmail):
+    '''Define carinhos para cada usuario no frontend'''
+    conn.execute(f'SELECT produto_id FROM usuarios_usercartitems WHERE user')
+    user_cart_items = cursor.fetchall()

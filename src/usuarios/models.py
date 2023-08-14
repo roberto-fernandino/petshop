@@ -124,16 +124,18 @@ class UserCart(models.Model):
     class Meta:
         verbose_name_plural = "Carrinho Usuario"
 
-    def calculate_total_price(self):
+    def calculate_total_price(self) -> float:
         total = 0
         for item in self.items.all():
             total += item.produto.preco * item.quantidade
         return total
 
-
+    def calculate_total_price_real(self) -> float:
+        total = (int(self.calculate_total_price()) / 100 )
+        return total   
 
 class UserCartItems(models.Model):
-    cart_id = models.ForeignKey(
+    cart = models.ForeignKey(
         UserCart, 
         on_delete=models.CASCADE, 
         related_name="items")

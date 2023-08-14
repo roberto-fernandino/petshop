@@ -167,7 +167,7 @@ class UserCartAdmin(admin.ModelAdmin):
     total_price.short_description = 'Preco Total'
 
 class UserCartItemsAdmin(admin.ModelAdmin):
-    list_display = ['cart_id','produto', 'quantidade']
+    list_display = ['cart','produto', 'quantidade']
 
 admin.site.register(UserCartItems, UserCartItemsAdmin)
 admin.site.register(UserCart, UserCartAdmin)

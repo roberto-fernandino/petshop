@@ -232,7 +232,26 @@ body {
 
 
 
+/* user-cart inicio */
 
+
+.cart-container{
+    margin-top: 25vh;
+    .cart-user-container{
+        display: grid;
+        justify-content: center;
+        h1{
+            padding-bottom: 2vh
+        }
+        .items{
+            display: grid;
+            justify-content: space-evenly;        
+        }
+    }
+}
+
+
+/* user-cart fim */
 
 
 
