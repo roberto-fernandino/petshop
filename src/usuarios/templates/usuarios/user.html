@@ -1,0 +1,21 @@
+{% extends 'index/base.html' %}
+{% block title %} Melhor Amigo {{ request.user.username }}  {% endblock %}
+{% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<div class="form-container">
+    {% if message %}
+        <div class="alert alert-success">{{ message }} {{ request.user.username }}</div>
+        {% endif %}
+    <h1>
+    Ola, {{ request.user.username}}: {{ request.user.email}}. <br>
+    CPF: {{ request.user.esconde_cpf}}
+    </h1>
+    <div>
+        <a class="btn btn-danger" href="{% url 'usuarios:logout' %}">Logout</a>
+    </div>
+</div>
+
+
+{% endblock %} 

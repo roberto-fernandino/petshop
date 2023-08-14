@@ -1,0 +1,510 @@
+$primarycolor: #45d045;
+$secondcolor: white;
+$almostwhite: rgb(250, 250, 250);
+$fontclean: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    hr {
+        color: $primarycolor;
+        margin-top: 150px;
+    }
+}
+.content-container{
+    flex: 1;
+}
+
+
+/* inicio da parte superior */
+.top-container {
+    margin: 0 auto;
+    padding-bottom: 50px;
+    .top-bar {
+        padding: 20px;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        background-color: rgb(250, 250, 250);
+        display: flex;
+        justify-content: flex-end;
+        a {
+            transition: 0.3s;
+            font-size: 15px;
+            color: grey;
+            text-decoration: none;
+
+            i {
+                padding-left: 20px;
+                color: $primarycolor;
+                font-size: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        a:hover {
+            color: $primarycolor;
+            transform: translateY(-4px);
+        }
+    }
+}
+
+.navnav {
+    background-color: $primarycolor;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    .dropdown {
+        display: flex;
+        padding-top: 60px;
+        
+        a {
+            color: $primarycolor;
+            text-transform: capitalize;
+            font-size: 10px;
+            font-style: $fontclean;
+        }
+        
+        .Projectbutton {
+                color: $primarycolor;
+                text-transform: capitalize;
+                font-size: 10px;
+                font-style: $fontclean;
+            }
+        .dropdown-toggle {
+            background-color: $primarycolor;
+            border: none;
+            transition: 0.5s;
+        }
+
+        .dropdown-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .dropdown-menu {
+            background-color: $secondcolor;
+
+            li {
+                position: relative;
+                a {
+                    color: $primarycolor;
+                    text-transform: capitalize;
+                    font-size: 15px;
+                    font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+                }
+                button{
+                    color: $primarycolor;
+                    text-transform: capitalize;
+                    font-size: 15px;
+                    font-style:$fontclean;
+                }
+            }
+            .dropdown-submenu{
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: -7px;
+            }
+            .dropdown-submenu-left{
+                right: 100%;
+                left: auto;
+            }
+            > li:hover {
+                .dropdown-submenu{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    a {
+        padding: 3;
+        margin: 4;
+        font-size: 35px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: none;
+        transition: 0.5s;
+
+        h1 {
+            padding: 20px;
+            font-weight: bold;
+        }
+    }
+
+    a:hover {
+        opacity: 0.6;
+    }
+
+    .nav-icon {
+        color: $secondcolor;
+        font-size: 30px;
+        padding-right: 40px;
+        padding-left: 10;
+        transition: 0.3s;
+    }
+
+    .nav-icon:hover {
+        color: greenyellow;
+    }
+
+}
+
+
+/* fim da parte superior */
+
+
+
+/* form centered inicio */
+.form-container{
+    margin-top: 150px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    .form-centered{
+        display: grid;
+        justify-content: center;
+        text-align: center;
+    }
+    .form-centered {
+        .input-field{
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font: inherit;
+            color: $primarycolor;
+            background-color: transparent;
+            border: 2px solid #d6d6d6; 
+        }
+        .input-label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(10px, 10px);
+            transform-origin: left;
+            transition: transform 0.25s; 
+        }
+        .input-field:focus-visible ~ .input-label, .input-field:valid ~ .input-label {
+            transform: translate(0, -30px) scale(0.8);
+            color: $primarycolor; 
+        }
+        .input-field:is(:focus-visible, :valid){
+            outline-color: $primarycolor; 
+        }
+        .SubmitButton {
+            background-color: $primarycolor;
+            border: none;
+            padding: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: 0.5s; 
+        }
+        .SubmitButton:hover {
+            opacity: 0.6; 
+        }
+        p {
+            display: grid;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+/* form centered fim */
+
+
+
+/* user-cart inicio */
+
+
+.cart-container{
+    margin-top: 25vh;
+    .cart-user-container{
+        display: grid;
+        justify-content: center;
+        h1{
+            padding-bottom: 2vh
+        }
+        .items{
+            display: grid;
+            justify-content: space-evenly;        
+        }
+    }
+}
+
+
+/* user-cart fim */
+
+
+
+
+/* atendimento body style */
+.atendimento-container {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 130px;
+    
+    .atendimento-text-container{
+        grid-template-rows: auto, auto;
+    }
+
+    .top-title {
+        color: $primarycolor;
+        font-size: 45px;
+    }
+
+    .information-container {
+        justify-content: center;
+        margin: 30px;
+        display: grid;
+        text-align: center;
+        h4 {
+            font-family: $fontclean;
+            font-size: larger;
+        }
+
+        p {
+            font-size: medium;
+        }
+    }
+
+    .atendimento-form-container {
+        max-width: 100%;
+        form {
+            display: grid;
+            justify-content: center;
+            margin-top: 80px;
+            p {
+                margin-top: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                i {
+                    margin-left: 8px;
+                    color: $primarycolor;
+                }
+                i:hover {
+                    color: #299829;
+                    transform: translateY(-2px);
+                }
+            }
+            .input {
+                position: relative;
+                width: 300px;
+                margin-bottom: 30px;
+                
+                .input-field {
+                    width: 300px;
+                    padding: 15px;
+                    border: none;
+                    border-radius: 4px;
+                    font: inherit;
+                    color: $primarycolor;
+                    background-color: transparent;
+                    border: 2px solid #d6d6d6;
+                    
+                }    
+                .input-label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(10px, 10px);
+                    transform-origin: left;
+                    transition: transform 0.25s;
+    
+                    span {
+                        user-select: none;
+                        -moz-user-select: none;
+                        /* Firefox */
+                        -ms-user-select: none;
+                        /* Internet Explorer */
+                        -webkit-user-select: none;
+                        /* Safari */
+                    }
+                }
+                .check-box input[type="checkbox"] {
+                    display: none;
+                }
+                .check-box label:before{
+                    content: "";
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: grey;
+                    border: 2px solid $primarycolor;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+                .check-box input[type="checkbox"]:checked + label:before {
+                    background-color: $primarycolor;  /* Cor de fundo quando marcado */
+                    border: 2px solid $almostwhite;
+    
+                }
+                }
+                .input-field:focus-visible~.input-label,
+                .input-field:valid~.input-label {
+                    transform: translate(0, -30px) scale(0.8);
+                    color: $primarycolor;
+                }
+                .input-field:is(:focus-visible, :valid) {
+                    outline-color: $primarycolor;
+                }
+            }          
+            .SubmitButton {
+                background-color: $primarycolor;
+                border: none;
+                padding: 10px;
+                text-decoration: none;
+                cursor: pointer;
+                border-radius: 5px;
+                width: 100%;
+                transition: 0.5s;
+            }
+            .SubmitButton:hover {
+                opacity: 0.6;
+            }
+        }
+
+        
+}
+
+
+/* pe do site */
+
+
+.pedosite {
+    display: grid;
+    justify-content: center;
+    
+    background-color: $primarycolor;
+
+
+    .author {
+        .emailcontainer {
+            color: $primarycolor;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+
+            span {
+                font-size: 19px;
+                background-color: transparent;
+                color: black;
+                border: none;
+                border-radius: 4px;
+                padding: 4px 8px;
+            }
+
+            i {
+                color: $secondcolor;
+            }
+
+            button {
+                background-color: transparent;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                position: relative;
+
+                i {
+                    padding: 5px;
+                    color: $secondcolor;
+                    transition: 0.5s;
+                }
+
+                i:hover {
+                    color: grey;
+                    transform: translateY(-4px);
+                }
+            }
+
+        }
+    }
+
+    div {
+        margin: 20px;
+
+        button {
+            background-color: transparent;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+
+            i {
+                color: $primarycolor;
+                transition: 0.3s;
+            }
+
+            i:hover {
+                color: grey;
+                transform: translateY(-4px);
+            }
+        }
+    }
+}
+
+@media (max-width: 540px){
+    .atendimento-container{
+        margin-top: 300px;
+        .atendimento-form-container{
+            margin-top: 10px;
+        }
+        .information-container{
+            margin: 10px;
+        }
+    }
+    .pedosite{
+        margin-top: 0px;
+        div{
+            adrres{
+                padding-left: 5px;
+            }
+        }
+        div{
+            margin: 3px;
+        }
+   }
+}
+@media (max-width: 912px){
+    .form-container{
+        max-width: 100%;
+        margin-top: 350px;
+    }
+
+}
+@media (max-width: 412px) {
+    .input{
+        max-width: 350px;
+    }
+    
+    
+}
+@media (max-width: 400px) {
+    .input{
+        max-width: 100%;
+        .input-field{
+            max-width: 100%;
+        }
+    }
+}

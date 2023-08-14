@@ -1,0 +1,73 @@
+{% extends 'index/base.html' %} {% block title %} Shoping {% endblock %} 
+{% block content %}
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+  crossorigin="anonymous"
+></script>
+<hr />
+{% load static %} 
+{% load my_filters %}
+<link rel="stylesheet" href="{% static 'loja/style.css' %}" />
+<div class="container">
+  <form  method="get" action="{% url 'loja:loja'%}" class="shopform">
+    <label for="categoria">Categoria:</label>
+    <select name="categoria" class="categoria">
+      <option value="">Todas</option>
+      {% for categoria in categorias %}
+      <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+      {% endfor %}
+    </select>
+    <label for="preco">Preco Maximo:</label>
+    <input type="number" name="preco_max" step="0.1" class="input">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" class="input">
+    <button type="submit" class="filterbutton">Filtrar</button>
+  </form>
+  <h2>Produtos</h2>
+  <div class="row">
+  {% for produto in produtos %}
+    <div class="col-md-3">
+      <div class="card">
+        <img
+          src="{{ produto.img.url }}"
+          alt="{{ produto.nome }}"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ produto.nome }}</h5>
+          <p class="card-text">{{ produto.descricao }}</p>
+          <p class="card-price">R$ {{ produto.preco_em_real }}</p>
+          <form method="post" action="{% url 'loja:add-cart' produto.id %}">
+            {% csrf_token %}
+              <select name="quantidade" >
+                {% for qtd in produto.estoque|times %}
+                <option value="{{ qtd }}">{{ qtd }}</option>
+                {% endfor %}
+                {% if produto.estoque == 0 %}
+                <option value="0">Sem estoque</option>
+                {% endif %}
+              </select>
+            <button type="submit"> <i class="fa-solid fa-cart-shopping"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

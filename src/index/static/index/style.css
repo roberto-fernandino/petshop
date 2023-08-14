@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+.all {
+  margin-top: 150px; }
+  .all .display-center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent; }
+    .all .display-center h1 {
+      color: #45d045; }
+    .all .display-center .paragrafo {
+      max-width: 100%;
+      text-align: justify;
+      display: inline-block; }
+      .all .display-center .paragrafo p {
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        padding: 5px;
+        text-indent: 30px;
+        margin-left: 15px;
+        margin-right: 20px;
+        margin-bottom: 0px;
+        color: black; }
+      .all .display-center .paragrafo img {
+        float: left;
+        margin-top: 0px;
+        margin-left: px;
+        margin-right: 15px;
+        box-shadow: 1px 2px 3px #05641f; }
+
+body hr {
+  color: #45d045;
+  margin-top: 150px; }
+
+/* inicio da parte superior */
+.top-container {
+  margin: 0 auto;
+  padding-bottom: 50px; }
+  .top-container .top-bar {
+    padding: 20px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: flex-end; }
+    .top-container .top-bar a {
+      transition: 0.3s;
+      font-size: 15px;
+      color: grey;
+      text-decoration: none; }
+      .top-container .top-bar a i {
+        padding-left: 20px;
+        color: #45d045;
+        font-size: 20px;
+        padding-right: 20px; }
+    .top-container .top-bar a:hover {
+      color: #45d045;
+      transform: translateY(-4px); }
+
+.navnav {
+  background-color: #45d045;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; }
+  .navnav .hamburguer {
+    display: none;
+    cursor: pointer; }
+    .navnav .hamburguer .bar {
+      display: block;
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      margin: 5px auto;
+      background-color: #fff;
+      transition: all 0.3s ease-in-out; }
+  .navnav .Nav-item {
+    display: none; }
+  .navnav .dropdown {
+    display: flex;
+    padding-top: 60px; }
+    .navnav .dropdown .ButaoProdutos {
+      text-transform: capitalize;
+      font-size: 15px;
+      font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #45d045;
+      color: #fff;
+      border: none; }
+    .navnav .dropdown .dropdown-toggle {
+      background-color: #45d045;
+      border: none;
+      transition: 0.5s; }
+    .navnav .dropdown .dropdown-toggle:hover {
+      opacity: 0.7; }
+    .navnav .dropdown .dropdown-menu {
+      background-color: white; }
+      .navnav .dropdown .dropdown-menu .dropdown-submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -7px; }
+      .navnav .dropdown .dropdown-menu .dropdown-submenu-left {
+        right: 100%;
+        left: auto; }
+      .navnav .dropdown .dropdown-menu li a {
+        color: #45d045;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
+      .navnav .dropdown .dropdown-menu li button {
+        color: #45d045;
+        text-transform: capitalize;
+        font-size: 15px;
+        font-style: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
+      .navnav .dropdown .dropdown-menu li:hover .dropdown-submenu {
+        display: block; }
+  .navnav a {
+    padding: 3;
+    margin: 4;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.5s; }
+    .navnav a h1 {
+      padding: 20px;
+      font-weight: bold; }
+  .navnav a:hover {
+    opacity: 0.6; }
+  .navnav .nav-icon {
+    color: white;
+    font-size: 30px;
+    padding-right: 40px;
+    padding-left: 10;
+    transition: 0.3s; }
+  .navnav .nav-icon:hover {
+    color: greenyellow; }
+
+@media (max-width: 420px) {
+  .navnav {
+    margin-top: 30px; } }
+
+/* fim da parte superior */
+/* about us styling */
+/* slide show */
+.all {
+  margin-top: 150px; }
+  .all .title {
+    padding: 50px; }
+    .all .title .slogan {
+      display: grid;
+      justify-content: center; }
+      .all .title .slogan img {
+        position: relative;
+        max-width: 100%; }
+    .all .title h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+
+/* pe do site */
+.pedosite {
+  display: grid;
+  justify-content: center;
+  background-color: #45d045; }
+  .pedosite .author .emailcontainer {
+    color: #45d045;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px; }
+    .pedosite .author .emailcontainer span {
+      font-size: 19px;
+      background-color: transparent;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px; }
+    .pedosite .author .emailcontainer i {
+      color: white; }
+    .pedosite .author .emailcontainer button {
+      background-color: transparent;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative; }
+      .pedosite .author .emailcontainer button i {
+        padding: 5px;
+        color: white;
+        transition: 0.5s; }
+      .pedosite .author .emailcontainer button i:hover {
+        color: grey;
+        transform: translateY(-4px); }
+  .pedosite div {
+    margin: 20px; }
+    .pedosite div button {
+      background-color: transparent;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      position: relative; }
+      .pedosite div button i {
+        color: #45d045;
+        transition: 0.3s; }
+      .pedosite div button i:hover {
+        color: grey;
+        transform: translateY(-4px); }
+
+/* medias for smartphone optimization */
+@media (max-width: 768px) {
+  .navnav {
+    display: inline-flex;
+  }
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .hamburguer {
+    background-color: #45d045;
+    border: none;
+    display: block;
+    margin-right: 15px;
+    margin-left: 30px;
+  }
+  .navnav .hamburguer.active .bar:nth-child(2) {
+    opacity: 0; }
+  .navnav .hamburguer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); }
+  .navnav .hamburguer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); }
+  .navnav .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 30px;
+    gap: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: #45d045;
+    text-align: center;
+    width: 100%;
+    transition: 0.3s; }
+  .navnav .nav-menu.active {
+    margin-top: 15vh;
+    height: 30vh;
+    left: 0;
+    position: fixed;
+    top: 30px;
+    gap: 0;
+    border-radius: 0 0 20px 20px;
+    background-color: #45d045;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    transition: 0.3s; }
+    .navnav .nav-menu.active .Nav-item {
+      margin: 16px 0;
+      display: block; }
+  .navnav .dropdown {
+    left: -100%; }
+  .navnav .nav-icons {
+    display: none;
+  }
+}
+/* Samsumg Galaxy S8+ */
+@media (height: 740px) and (width: 360px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 19.9vh;
+  }
+}
+/* Samsumg Galaxy S20 Ultra */
+@media (height: 915px) and (width: 412px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 15.9vh;
+  }
+}
+/* Pixel 5 */
+@media (width: 393px) and (height: 851px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 17.4vh;
+  }
+}
+/* Iphone 12 Pro */
+@media (width: 390px) and (height: 844px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 17.7vh;
+  }
+}
+/* Iphone XR */
+@media (width: 414px) and (height: 896px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 16.6vh;
+  }
+}
+/* Iphone X */
+@media (width: 375px) and (height: 812px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 18vh;
+  }
+}
+/* Iphone SE */
+@media (width: 375px) and (height: 667px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 22.3vh;
+  }
+}
+/* Ipad Mini */
+@media (width: 768px) and (height: 1024px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 11.2vh;
+  }
+}
+/* Surface Duo */
+@media (width: 540px) and (height: 720px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 16.2vh;
+  }
+}
+/* Galaxy Fold */
+@media (width: 280px) and (height: 653px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 22.2vh;
+  }
+}
+/* Samsumg galaxy A51/A71 */
+@media (width: 412px) and (height: 914px) {
+  .navnav .dropdown {
+    display: none;
+  }
+  .navnav .nav-menu.active {
+    margin-top: 16.2vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

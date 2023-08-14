@@ -1,0 +1,16 @@
+
+
+
+{% extends 'index/base.html' %}
+
+{% block title %} Bem vindo de volta!{% endblock %}
+{% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<div class="form-container">
+    <div class="alert alert-success">Seja bem vindo ao Melhor Amigo petshop, sua conta foi criada com sucesso {{ request.user.username }}!</div>
+</div>
+    
+
+{% endblock %} 

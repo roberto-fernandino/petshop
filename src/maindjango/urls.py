@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('home/', include("index.urls"), name="homepage"),
-    path('usuarios/', include("usuarios.urls"), name="usuarios"),
-    path('galeria/', include("galeria.urls"), name='galeria'),
-    path('loja/', include("loja.urls"), name='loja'),
-    path('admin/', admin.site.urls),
-]
+    path("", include("index.urls")),
+    path("usuarios/", include("usuarios.urls")),
+    path("loja/", include("loja.urls")),
+    path("admin/", admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # snippet
+
+#The above snippet tells Django where to find user-uploaded images when the project is still in the development stage.
