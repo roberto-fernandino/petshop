@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("/home/roberto/projects/petshop/src/db.sqlite3")
+conn = sqlite3.connect("D:\\Users\\Diego Cheib\\Desktop\\portifolio\\projeto website petshop\\petshop\\src\\db.sqlite3")
 cursor = conn.cursor()
 
 

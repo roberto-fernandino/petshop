@@ -185,7 +185,24 @@ body {
         }
     }
 }
-
+.container{
+    .shopform{
+        color: $primarycolor;
+        .categoria {
+        border-color: $primarycolor;
+    }
+        .input {
+            border-radius: 6px;
+            border: 1px solid $primarycolor;
+            }
+            .filterbutton {
+                margin-left: 15px;
+                border: 1px solid $primarycolor ;
+                background-color: $primarycolor;
+                color: #fff
+            }    
+    }
+}
 
 @media (max-width: 550px){
     .navnav{
