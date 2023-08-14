@@ -1,6 +1,11 @@
+from pathlib import Path
 from usuarios.funcs import SearchNewsletterEmail
 import smtplib
 from email.message import EmailMessage
+
+
+#declara BASE_DIR
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # informacoes do smtp, apikeys
 api_key = "93756b68ede318c14f2b66e96dae6d15"
@@ -27,7 +32,7 @@ def EnviarNewsletter() -> None:
             message["From"] = "melhoramigonaoresponda@gmail.com"
             message["To"] = email
             with open(
-                "/home/roberto/projects/petshop/src/usuarios/emailstemplate/newsletter1.html",
+                BASE_DIR / 'usuarios/emailstemplate/newsletter1.html',
                 "r",
             ) as htmlmodel:
                 html = htmlmodel.read()
@@ -52,7 +57,7 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
             message["From"] = "melhoramigonaoresponda@gmail.com"
             message["To"] = email
             with open(
-                "/home/roberto/projects/petshop/src/usuarios/emailstemplate/newsletter1.html",
+                BASE_DIR / "usuarios/emailstemplate/newsletter1.html",
                 "r",
             ) as htmlmodel:
                 html = htmlmodel.read()
@@ -71,10 +76,15 @@ def EnviaSigunupEmail(email, username) -> str:
         message["Subject"] = f"Bem vindo ao Melhor Amigo Petshop {username}"
         message["From"] = email_sender
         message['To'] = email
-        with open('/home/roberto/projects/petshop/src/usuarios/emailstemplate/SIGNUPPETSHOP.html', 'r') as htmlmodel:
+        with open( BASE_DIR / 'usuarios/emailstemplate/SIGNUPPETSHOP.html', 'r') as htmlmodel:
             html = htmlmodel.read()
         message.add_alternative(html, subtype="html")
         try:
             server.send_message(message)
         except Exception as e:
             return f"EMAIL ERROR LOG : {e}"
+        
+
+
+
+

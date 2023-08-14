@@ -1,5 +1,11 @@
 import sqlite3
-conn = sqlite3.connect("D:\\Users\\Diego Cheib\\Desktop\\portifolio\\projeto website petshop\\petshop\\src\\db.sqlite3")
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+conn = sqlite3.connect(BASE_DIR / "db.sqlite3")
 cursor = conn.cursor()
 
 
