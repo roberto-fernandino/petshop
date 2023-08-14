@@ -40,6 +40,7 @@
   <h2>Produtos</h2>
   <div class="row">
   {% for produto in produtos %}
+  {% if produto %}
     <div class="col-md-3">
       <div class="card">
         <img
@@ -53,7 +54,7 @@
           <p class="card-price">R$ {{ produto.preco_em_real }}</p>
           <form method="post" action="{% url 'loja:add-cart' produto.id %}">
             {% csrf_token %}
-              <select name="quantidade" >
+              <select name="quantidade" class="quantidade">
                 {% for qtd in produto.estoque|times %}
                 <option value="{{ qtd }}">{{ qtd }}</option>
                 {% endfor %}
@@ -61,12 +62,17 @@
                 <option value="0">Sem estoque</option>
                 {% endif %}
               </select>
-            <button type="submit"> <i class="fa-solid fa-cart-shopping"></i></button>
+            <button type="submit" class="add-to-cart"> <i class="fa-solid fa-cart-shopping"></i></button>
           </form>
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% else %}
+    <div>
+      <h1>nenhum Produto encontrado</h1>
+    </div>
+  {% endif %}
+  {% endfor %}
   </div>
 </div>
 
