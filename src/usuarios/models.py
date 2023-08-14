@@ -113,6 +113,9 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
+    
+    def esconde_cpf(self):
+        return "*" * 7 +  self.cpf[-5:-2] + '-' + self.cpf[-2] + self.cpf[-1]
 
 
 class UserCart(models.Model):
