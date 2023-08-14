@@ -23,19 +23,19 @@
 {% load my_filters %}
 <link rel="stylesheet" href="{% static 'loja/style.css' %}" />
 <div class="container">
-  <form  method="get" action="{% url 'loja:loja'%}">
+  <form  method="get" action="{% url 'loja:loja'%}" class="shopform">
     <label for="categoria">Categoria:</label>
-    <select name="categoria" id="categoria">
+    <select name="categoria" class="categoria">
       <option value="">Todas</option>
       {% for categoria in categorias %}
       <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
       {% endfor %}
     </select>
     <label for="preco">Preco Maximo:</label>
-    <input type="number" name="preco_max" step="0.1">
+    <input type="number" name="preco_max" step="0.1" class="input">
     <label for="nome">Nome:</label>
-    <input type="text" name="nome">
-    <button type="submit">Filtrar</button>
+    <input type="text" name="nome" class="input">
+    <button type="submit" class="filterbutton">Filtrar</button>
   </form>
   <h2>Produtos</h2>
   <div class="row">
