@@ -2,6 +2,7 @@ import stripe
 from django.db import models
 from loja.funcs import product_image_path
 from maindjango.settings import STRIPE_PUBLIC_KEY
+from django.apps import apps
 import sqlite3
 
 stripe.api_key = STRIPE_PUBLIC_KEY
@@ -35,3 +36,35 @@ class Produto(models.Model):
         return f"{self.nome}| Cat:{self.category} | R${(self.preco)/100}"
 
 
+class porte(models.Model):
+    porte = models.CharField(default=None, blank=False, null=True, max_length=30)
+
+    def __str__(self) -> str:
+        return f"{self.porte}"
+
+
+class TosaType(models.Model):
+    name = models.CharField(default=None, blank=False, null=False, max_length=30)
+    preco = models.FloatField()
+    porte = models.ForeignKey(porte, on_delete=models.DO_NOTHING, null=True)
+
+    def __str__(self) -> str:
+        return f"{self.name} {self.porte} R${self.preco}"
+
+class BanhoType(models.Model):
+    name = models.CharField(default=None, blank=False, null=False, max_length=30)
+    preco = models.FloatField()
+    porte = models.ForeignKey(porte, on_delete=models.DO_NOTHING, null=True)
+
+    def __str__(self) -> str:
+        return f"{self.name} {self.porte} R${self.preco}"
+
+class Banho(models.Model):
+    user = models.ForeignKey("usuarios.Account", on_delete=models.CASCADE, blank=False, null=True, related_name="banho")
+class Tosa(models.Model):
+    user = models.ForeignKey(
+        "usuarios.Account", on_delete=models.CASCADE, blank=False, null=True, related_name='tosa'
+    )
+    pet = models.CharField(default=None, max_length=30, blank=False, null=True)
+    type = models.ForeignKey(TosaType, on_delete=models.CASCADE)
+    data = models.DateTimeField(unique=True)
