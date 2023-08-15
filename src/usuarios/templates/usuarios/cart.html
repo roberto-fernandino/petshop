@@ -21,7 +21,11 @@
                                 <option value="{{ qtd }}">{{ qtd }}</option>
                                 {% endfor %}
                             </select>
-                            <button type="submit" class="btn btn-danger">Remover</button>
+                            <button type="submit" class="btn btn-warning">Remover</button>
+                        </form>
+                        <form method="post" action="{% url 'loja:remove-all-cart' item.produto.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Remover tudo</button>
                         </form>
                     </h1>
                     {% endif %}

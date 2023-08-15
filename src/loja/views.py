@@ -44,7 +44,6 @@ def lojaview(request, *args, **kwargs):
     )
 
 
-
 @login_required
 def add_cart(request, produto_id):
     produto = Produto.objects.get(pk=produto_id)
@@ -79,6 +78,15 @@ def remove_cart(request, produto_id):
 
 
 @login_required
+def remove_all_cart(request, produto_id):
+    produto = Produto.objects.get(pk=produto_id)
+    cart = UserCart.objects.get(user=request.user)
+    cart_items = UserCartItems.objects.get(cart=cart, produto=produto)
+    cart_items.delete()
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
+
+
+@login_required
 def create_checkout_session():
     def post(self, *args, **kwargs):
         stripe.checkout.Session.create(
@@ -103,7 +111,9 @@ def tosa(request):
         tosa_form = TosaForm(request.POST)
         tosa_id = request.POST.get("tosa-type")
         tosa_instance = TosaType.objects.get(pk=tosa_id)
-        banho_form = BanhoForm(request.POST) if request.POST.get('banho') == 'on' else None
+        banho_form = (
+            BanhoForm(request.POST) if request.POST.get("banho") == "on" else None
+        )
 
         if tosa_form.is_valid():
             tosa = tosa_form.save(commit=False)
@@ -148,20 +158,20 @@ def banho(request):
     usuario = request.user
     if request.method == "POST":
         banho_form = BanhoForm(request.POST)
-        tosa_form = TosaForm(request.POST) if request.POST.get('tosa') == 'on' else None
-        banho_id = request.POST.get('banho-type')
+        tosa_form = TosaForm(request.POST) if request.POST.get("tosa") == "on" else None
+        banho_id = request.POST.get("banho-type")
         banho_instance = BanhoType(pk=banho_id)
 
         if banho_form.is_valid():
             banho = banho_form.save(commit=False)
-            nome_pet = banho_form.cleaned_data['pet']
-            data = banho_form.cleaned_data['data']
+            nome_pet = banho_form.cleaned_data["pet"]
+            data = banho_form.cleaned_data["data"]
             banho.user = usuario
             banho.type = banho_instance
             banho.save()
 
             if tosa_form and tosa_form.is_valid():
-                tosa_id = request.POST.get('tosa-type')
+                tosa_id = request.POST.get("tosa-type")
                 tosa_instance = TosaType.objects.get(pk=tosa_id)
                 tosa = tosa_form.save(commit=False)
                 tosa.pet = nome_pet
@@ -170,16 +180,17 @@ def banho(request):
                 tosa.data = data
                 tosa.save()
 
-            return redirect('loja:banho_marcado')
+            return redirect("loja:banho_marcado")
 
     banho_form = BanhoForm()
-    
+
     context = {
         "categorias": categorias,
-        'form': banho_form,
+        "form": banho_form,
         "categorias_tosa": categorias_tosa,
-        }
+    }
     return render(request, "loja/banho.html", context)
+
 
 @login_required
 def banho_marcado(request):

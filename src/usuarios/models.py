@@ -144,7 +144,9 @@ class UserCartItems(models.Model):
         related_name="items")
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.IntegerField(default=1)
-
+    
+    def total_price_items(self) -> float:
+        return self.produto.preco * self.quantidade 
 
     class Meta:
         verbose_name_plural = 'Items Carrinho'

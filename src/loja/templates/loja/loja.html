@@ -36,7 +36,7 @@
           <p class="card-price">R$ {{ produto.preco_em_real }}</p>
           <form method="post" action="{% url 'loja:add-cart' produto.id %}">
             {% csrf_token %}
-              <select name="quantidade" class="quantidade">
+            <select name="quantidade" class="quantidade">
                 {% for qtd in produto.estoque|times %}
                 <option value="{{ qtd }}">{{ qtd }}</option>
                 {% endfor %}

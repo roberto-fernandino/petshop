@@ -161,7 +161,8 @@ body {
           padding: 15px;
           border: none;
           outline: none;
-          transition: 0.5s; }
+          transition: 0.5s;
+          background-color: gainsboro; }
         .atendimento-container .atendimento-form-container form .input .select-input:focus {
           outline: none;
           border: 2px solid aqua; }

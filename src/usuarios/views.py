@@ -4,9 +4,10 @@ from usuarios import models
 from .admin import UserCrerationForm as signup_form
 from usuarios.forms import AtendimentoForm
 from usuarios.mail import EnviaSigunupEmail
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from usuarios.models import UserCart, UserCartItems
-from loja.models import Tosa, Banho
+from loja.models import Tosa, Banho, Produto
 # Create your views here.
 
 def login_view(request, *args, **kwargs):
@@ -52,8 +53,6 @@ def signup(request, *args, **kwargs):
                 return redirect('usuarios:signupsucess')
         else:
             return render(request, "usuarios/signup.html", {"form": form})
-            
-
     form = signup_form()
     context = {
         "form": form,  
