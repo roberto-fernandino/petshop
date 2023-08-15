@@ -1,53 +1,52 @@
-# packages in environment at /home/roberto/miniconda3/envs/petshop:
 #
-# Name                    Version                   
-_libgcc_mutex             0.1\                         
-_openmp_mutex             5.1 \                        
-asgiref                   3.7.2\                    
-bzip2                     1.0.8 \                
-ca-certificates           2023.05.30\
-certifi                   2023.7.22\
-cffi                      1.15.1\
-charset-normalizer        3.2.0\
-click                     8.1.6\
-crontab                   1.0.1 \
-cryptography              41.0.3\
-defusedxml                0.7.1 \
-django                    4.2.3 \
-django-allauth            0.54.0\
-django-jazzmin            2.6.0 \
-freezegun                 1.2.2 \
-idna                      3.4   \ 
-ld_impl_linux-64          2.38  \
-libffi                    3.4.4 \
-libgcc-ng                 11.2.0\
-libgomp                   11.2.0 \
-libstdcxx-ng              11.2.0 \
-libuuid                   1.41.5 \
-ncurses                   6.4    \
-oauthlib                  3.2.2  \ 
-openssl                   3.0.9  \
-pillow                    10.0.0 \ 
-pip                       23.2.1 \
-pycparser                 2.21   \     
-pyjwt                     2.8.0  \      
-python                    3.11.4 \ 
-python-dateutil           2.8.2  \    
-python3-openid            3.2.0  \   
-readline                  8.2    \
-redis                     4.6.0  \  
-requests                  2.31.0 \ 
-requests-oauthlib         1.3.1  \
-rq                        1.15.1 \
-rq-scheduler              0.13.1 \
-setuptools                68.0.0 \
-six                       1.16.0 \
-sqlite                    3.41.2  \   
-sqlparse                  0.4.4   \    
-stripe                    5.5.0   \   
-tk                        8.6.12  \  
-tzdata                    2023c   \
-urllib3                   2.0.4   \ 
-wheel                     0.38.4  \
-xz                        5.4.2   \    
-zlib                      1.2.13  \   
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                        main  
+_openmp_mutex             5.1                       1_gnu  
+asgiref                   3.7.2                    pypi_0    pypi
+bzip2                     1.0.8                h7b6447c_0  
+ca-certificates           2023.05.30           h06a4308_0  
+certifi                   2023.7.22                pypi_0    pypi
+cffi                      1.15.1                   pypi_0    pypi
+charset-normalizer        3.2.0                    pypi_0    pypi
+click                     8.1.6                    pypi_0    pypi
+crontab                   1.0.1                    pypi_0    pypi
+cryptography              41.0.3                   pypi_0    pypi
+defusedxml                0.7.1                    pypi_0    pypi
+django                    4.2.3                    pypi_0    pypi
+django-allauth            0.54.0                   pypi_0    pypi
+django-jazzmin            2.6.0                    pypi_0    pypi
+freezegun                 1.2.2                    pypi_0    pypi
+idna                      3.4                      pypi_0    pypi
+ld_impl_linux-64          2.38                 h1181459_1  
+libffi                    3.4.4                h6a678d5_0  
+libgcc-ng                 11.2.0               h1234567_1  
+libgomp                   11.2.0               h1234567_1  
+libstdcxx-ng              11.2.0               h1234567_1  
+libuuid                   1.41.5               h5eee18b_0  
+ncurses                   6.4                  h6a678d5_0  
+oauthlib                  3.2.2                    pypi_0    pypi
+openssl                   3.0.9                h7f8727e_0  
+pillow                    10.0.0                   pypi_0    pypi
+pip                       23.2.1          py311h06a4308_0  
+pycparser                 2.21                     pypi_0    pypi
+pyjwt                     2.8.0                    pypi_0    pypi
+python                    3.11.4               h955ad1f_0  
+python-dateutil           2.8.2                    pypi_0    pypi
+python3-openid            3.2.0                    pypi_0    pypi
+readline                  8.2                  h5eee18b_0  
+redis                     4.6.0                    pypi_0    pypi
+requests                  2.31.0                   pypi_0    pypi
+requests-oauthlib         1.3.1                    pypi_0    pypi
+rq                        1.15.1                   pypi_0    pypi
+rq-scheduler              0.13.1                   pypi_0    pypi
+setuptools                68.0.0          py311h06a4308_0  
+six                       1.16.0                   pypi_0    pypi
+sqlite                    3.41.2               h5eee18b_0  
+sqlparse                  0.4.4                    pypi_0    pypi
+stripe                    5.5.0                    pypi_0    pypi
+tk                        8.6.12               h1ccaba5_0  
+tzdata                    2023c                h04d1e81_0  
+urllib3                   2.0.4                    pypi_0    pypi
+wheel                     0.38.4          py311h06a4308_0  
+xz                        5.4.2                h5eee18b_0  
+zlib                      1.2.13               h5eee18b_0  
