@@ -66,7 +66,7 @@ def remove_cart(request, produto_id):
     produto = Produto.objects.get(pk=produto_id)
     cart, _ = UserCart.objects.get_or_create(user=request.user)
     cart_items = UserCartItems.objects.get(cart=cart, produto=produto)
-    quantidade = int(request.POST.get("quantidade"))
+    quantidade = int(request.POST.get("quantidade", 1))
     if quantidade == cart_items.quantidade:
         cart_items.delete()
     else:

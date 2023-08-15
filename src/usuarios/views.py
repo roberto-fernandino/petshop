@@ -109,5 +109,3 @@ def cart_view(request):
         items = []
 
     return render(request, 'usuarios/cart.html', context)
-
-    

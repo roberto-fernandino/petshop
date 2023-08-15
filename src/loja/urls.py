@@ -16,4 +16,5 @@ urlpatterns = [
     path('tosa/marcada', views.tosa_marcada, name='tosa_marcada'),
     path('banho', views.banho, name='banho'),
     path('banho/marcado', views.banho_marcado, name='banho_marcado'),
+    path('remove-all-cart/<int:produto_id>', views.remove_all_cart, name='remove-all-cart'),
 ]

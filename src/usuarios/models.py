@@ -135,7 +135,7 @@ class UserCart(models.Model):
 
     def calculate_total_price_real(self) -> float:
         total = (int(self.calculate_total_price()) / 100 )
-        return total   
+        return total
 
 class UserCartItems(models.Model):
     cart = models.ForeignKey(
@@ -144,9 +144,9 @@ class UserCartItems(models.Model):
         related_name="items")
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.IntegerField(default=1)
-    
+
     def total_price_items(self) -> float:
-        return self.produto.preco * self.quantidade 
+        return self.produto.preco * self.quantidade / 100
 
     class Meta:
         verbose_name_plural = 'Items Carrinho'
