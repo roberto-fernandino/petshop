@@ -174,7 +174,3 @@ admin.site.register(UserCart, UserCartAdmin)
 admin.site.register(Account, UserAdmin)
 admin.site.register(Atendimentos, AtendimentoAdmin)
 admin.site.unregister(Group)
-
-
-
-
