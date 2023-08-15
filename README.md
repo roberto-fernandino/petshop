@@ -10,7 +10,7 @@ To run this aplication follow this step-guide.\
 4- Downlad pillow 10.0.0, django 4.2.3, django-allauth 0.54.0, jazzmin 2.6.0., stripe 5.5.0. \
 5- Make sure to activate the env before executing any command\
 6- go to your ./manage.py directorie\
-6- Run "python manage.py createsuperuser" to Create your superuser to acces admin panel\
+6- go to src/usuarios/conta_email.txt and use the account there to access "https://127.0.0.1:8000/admin"\
 7- Run "python manage.py makemigrations"\
 8- Run "python manage.py migrate"\
 9- Run your server with "python manage.py "\
