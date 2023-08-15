@@ -36,14 +36,16 @@
           <p class="card-price">R$ {{ produto.preco_em_real }}</p>
           <form method="post" action="{% url 'loja:add-cart' produto.id %}">
             {% csrf_token %}
+            {% if produto.estoque != 0 %}
             <select name="quantidade" class="quantidade">
                 {% for qtd in produto.estoque|times %}
                 <option value="{{ qtd }}">{{ qtd }}</option>
                 {% endfor %}
-                {% if produto.estoque == 0 %}
                 <option value="0">Sem estoque</option>
-                {% endif %}
               </select>
+            {% else %}
+            <p> Sem estoque </p>
+            {% endif %}
             <button type="submit" class="add-to-cart"> <i class="fa-solid fa-cart-shopping"></i></button>
           </form>
         </div>
