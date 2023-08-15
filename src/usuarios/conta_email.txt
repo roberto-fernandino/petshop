@@ -1,3 +1,9 @@
 
+
+LOGUE NO PAINEL DE ADMIN COM ESSA container
+
+# http://127.0.0.1:8000/admin/
+
+
 melhoramigonaoresponda@gmail.com
 melhoramigonaoresponda1234
