@@ -67,7 +67,7 @@ def remove_cart(request, produto_id):
     produto = Produto.objects.get(pk=produto_id)
     cart, _ = UserCart.objects.get_or_create(user=request.user)
     cart_items = UserCartItems.objects.get(cart=cart, produto=produto)
-    quantidade = int(request.POST.get("quantidade"))
+    quantidade = int(request.POST.get("quantidade", 1))
     if quantidade == cart_items.quantidade:
         cart_items.delete()
     else:
@@ -184,3 +184,11 @@ def banho(request):
 @login_required
 def banho_marcado(request):
     return render(request, "loja/banhomarcado.html")
+
+@login_required
+def remove_all_cart(request, produto_id):
+    produto = Produto.objects.get(pk=produto_id)
+    cart = UserCart.objects.get(user=request.user)
+    cart_items = UserCartItems.objects.get(cart=cart, produto=produto)
+    cart_items.delete()
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
