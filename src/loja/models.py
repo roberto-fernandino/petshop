@@ -18,7 +18,7 @@ class Category(models.Model):
         return f"{self.nome}"
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Categorias Produtos"
 
 
 class Produto(models.Model):
@@ -50,6 +50,9 @@ class TosaType(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} {self.porte} R${self.preco}"
+    class Meta:
+        verbose_name_plural = 'Categorias Tosa'
+
 
 class BanhoType(models.Model):
     name = models.CharField(default=None, blank=False, null=False, max_length=30)
@@ -58,13 +61,33 @@ class BanhoType(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} {self.porte} R${self.preco}"
+    
+    class Meta:
+        verbose_name_plural = 'Categorias Banho'
+
 
 class Banho(models.Model):
-    user = models.ForeignKey("usuarios.Account", on_delete=models.CASCADE, blank=False, null=True, related_name="banho")
+    user = models.ForeignKey(
+        "usuarios.Account",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=True,
+        related_name="banho",
+    )
+    marcado = models.DateTimeField(auto_now_add=True)
+    pet = models.CharField(max_length=30, default=None, blank=False, null=True)
+    type = models.ForeignKey(BanhoType, on_delete=models.CASCADE)
+    data = models.DateTimeField(unique=True)
+
 class Tosa(models.Model):
     user = models.ForeignKey(
-        "usuarios.Account", on_delete=models.CASCADE, blank=False, null=True, related_name='tosa'
+        "usuarios.Account",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=True,
+        related_name="tosa",
     )
+    marcado = models.DateTimeField(auto_now_add=True)
     pet = models.CharField(default=None, max_length=30, blank=False, null=True)
     type = models.ForeignKey(TosaType, on_delete=models.CASCADE)
     data = models.DateTimeField(unique=True)

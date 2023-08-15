@@ -6,7 +6,7 @@ from usuarios.forms import AtendimentoForm
 from usuarios.mail import EnviaSigunupEmail
 from django.contrib.auth.decorators import login_required
 from usuarios.models import UserCart, UserCartItems
-from loja.models import Tosa
+from loja.models import Tosa, Banho
 # Create your views here.
 
 def login_view(request, *args, **kwargs):
@@ -64,8 +64,10 @@ def signup(request, *args, **kwargs):
 @login_required
 def user_view(request):
     tosa_marcada = Tosa.objects.filter(user=request.user)
+    banho_marcado = Banho.objects.filter(user=request.user)
     context = {
-        'tosas': tosa_marcada
+        'tosas': tosa_marcada,
+        'banhos': banho_marcado
     }
     return render(request, "usuarios/user.html", context)
 
@@ -97,6 +99,7 @@ def atendimentoSubmited(request):
 def user_adress(request):
     return render(request, "usuarios/useradress.html")
 
+@login_required
 def cart_view(request):
     try:
         cart = UserCart.objects.get(user=request.user)

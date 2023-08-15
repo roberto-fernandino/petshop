@@ -88,16 +88,22 @@
               {% if tosas %}
                 {% for tosa in tosas %}
                 <p>
-                  Data: {{ tosa.data }} - Tipo: {{ tosa.type}} Pet: {{ tosa.pet }}
+                  Tosa Data: {{ tosa.data }} - Para: {{ tosa.pet }} {{ tosa.type }} 
                 </p> <br>
 
                 {% endfor %}
               {% else %}
-              <p>
-                Nenhuma tosa marcada!
-              </p>
+                <p>Nenhuma Tosa marcada</p>
             {% endif %}
-
+            {% if banhos %}
+              {% for banho in banhos %}
+                <p>
+                  Banho Data: {{ banho.data }} - Para {{ banho.pet }} {{ banho.type }} 
+                </p>
+              {% endfor %}
+            {% else %}
+              <p> Nenhum Banho marcado </p>
+            {% endif %}
           </div>
         </div>
       </div>

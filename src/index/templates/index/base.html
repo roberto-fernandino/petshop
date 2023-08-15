@@ -125,17 +125,17 @@
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Banho</button>
         <ul class="dropdown-menu">
-          <li><a href="" class="dropdown-item">Cães&raquo;</a>
+          <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Cães&raquo;</a>
             <ul class="dropdown-menu dropdown-submenu">
-              <li><a href="" class="dropdown-item">Porte Grande</a></li>
-              <li><a href="" class="dropdown-item">Porte Médio</a></li>
-              <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+              <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Porte Grande</a></li>
+              <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Porte Médio</a></li>
+              <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Porte Pequeno</a></li>
             </ul>
           </li>
-          <li><a href="" class="dropdown-item">Felinos&raquo;</a>
+          <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Felinos&raquo;</a>
             <ul class="dropdown-menu dropdown-submenu">
-              <li><a href="" class="dropdown-item">Porte Médio</a></li
-              <li><a href="" class="dropdown-item">Porte Pequeno</a></li>
+              <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Porte Médio</a></li
+              <li><a href="{% url 'loja:banho' %}" class="dropdown-item">Porte Pequeno</a></li>
             </ul>
           </li>
         </ul>
@@ -145,7 +145,7 @@
       </div>
 
       <ul class="nav-menu"> 
-        <li class="Nav-item"><a href="{% url 'loja:produto' %}">Shop</a></li>
+        <li class="Nav-item"><a href="{% url 'loja:loja' %}">Shop</a></li>
         <li class="Nav-item"><a href="{% url 'usuarios:login' %}" >
           <i class="fa-regular fa-user"></i></a></li>
         <li class="Nav-item"><a href="{% url 'usuarios:carrinho' %}"> 
