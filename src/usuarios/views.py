@@ -101,11 +101,12 @@ def user_adress(request):
 @login_required
 def cart_view(request):
     try:
-        cart = UserCart.objects.get(user=request.user)
+        cart, created = UserCart.objects.get_or_create(user=request.user)
         cart_items = UserCartItems.objects.filter(cart=cart)
         items = cart_items.all()
         context = {'items': items, 'cart': cart}
     except UserCart.DoesNotExist:
         items = []
+        context = {'items': items, 'cart': cart}
 
     return render(request, 'usuarios/cart.html', context)

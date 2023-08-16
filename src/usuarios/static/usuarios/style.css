@@ -317,6 +317,7 @@ aside button {
   border: none;
   outline: none;
   transition: 0.5s;
+  background-color: gainsboro;
 }
 .atendimento-container .atendimento-form-container form .input .select-input:focus {
   outline: none;
@@ -399,6 +400,369 @@ aside button {
   .input .input-field {
     max-width: 100%;
   }
+}
+/* Samsumg Galaxy S8+ */
+@media (height: 740px) and (width: 360px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 360px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 360px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 10px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 361px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Samsumg Galaxy S20 Ultra */
+@media (height: 915px) and (width: 412px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 412px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 412px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 10px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 412px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Pixel 5 */
+@media (width: 393px) and (height: 851px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 393px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 393px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 10px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 393px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Iphone 12 Pro */
+@media (width: 390px) and (height: 844px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 390px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 390px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 10px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 390px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Iphone XR */
+@media (width: 414px) and (height: 896px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 414px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 414px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 414px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Iphone X */
+@media (width: 375px) and (height: 812px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 375px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 375px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 375px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Iphone SE */
+@media (width: 375px) and (height: 667px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 375px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 375px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 375px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Ipad Mini */
+@media (width: 768px) and (height: 1024px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 768px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 768px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 768px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Surface Duo */
+@media (width: 540px) and (height: 720px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 540px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 540px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 540px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 10px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Galaxy Fold */
+@media (width: 280px) and (height: 653px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 280px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 280px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+    max-width: 361px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 361px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 10px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* Samsumg galaxy A51/A71 */
+@media (width: 412px) and (height: 914px) {
+  .cart-container .cart-user-container {
+    padding: 0;
+    max-width: 412px;
+  }
+  .cart-container .cart-user-container .items {
+    display: grid;
+    margin-left: 0;
+    max-width: 412px;
+  }
+  .cart-container .cart-user-container .items aside {
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .cart-container .cart-user-container .items aside .box {
+    max-width: 412px;
+  }
+  .qntd {
+    height: 15px;
+  }
+}
+table .product .imgcel {
+  display: none;
+}
+table .product .imgcel .info .nomeproduto {
+  font-size: 5px;
+}
+table thead tr th {
+  font-size: 10px;
+  margin-left: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -27,6 +27,7 @@
           });
       });
   </script>
+
 <div class="cart-container">
     <div class="cart-user-container">
         <h1 class="username">Carrinho de {{ request.user }}</h1>
@@ -48,14 +49,13 @@
                                 <tr>
                                     <td>
                                         <div class="product">
-                                            <img src="{{ item.produto.img.url }}" alt="{{ item.produto.nome }}">
+                                            <img src="{{ item.produto.img.url }}" alt="{{ item.produto.nome }}" class="imgcel">
                                             <div class="info">
                                                 <div class="nomeproduto">{{ item.produto.nome }}</div>
                                                 <div class="categoria">{{ item.produto.category }}</div>
                                             </div>
                                         </div>
                                     </td>
-                        </h1>
                         <td>R${{ item.produto.preco_em_real }} </td>
                         <td>
                             <div class="qntd">
