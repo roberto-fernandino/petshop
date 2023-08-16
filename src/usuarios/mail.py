@@ -1,10 +1,11 @@
 from pathlib import Path
-from usuarios.funcs import SearchNewsletterEmail
+
+# from usuarios.funcs import SearchNewsletterEmail
 import smtplib
 from email.message import EmailMessage
+import os
 
-
-#declara BASE_DIR
+# declara BASE_DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # informacoes do smtp, apikeys
@@ -14,11 +15,11 @@ email_sender = "melhoramigonaoresponda@gmail.com"
 
 
 def EnviarNewsletter() -> None:
-    '''Acha emails validos com is_newsletter em todo o banco de dados e envia o newsletter selecionado em ->
+    """Acha emails validos com is_newsletter em todo o banco de dados e envia o newsletter selecionado em ->
     with open(
     "diretorio do template",
     "r"
-    ) as htmlmodel: '''
+    ) as htmlmodel:"""
     emails = SearchNewsletterEmail()
 
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
@@ -32,7 +33,7 @@ def EnviarNewsletter() -> None:
             message["From"] = "melhoramigonaoresponda@gmail.com"
             message["To"] = email
             with open(
-                BASE_DIR / 'usuarios/emailstemplate/newsletter1.html',
+                BASE_DIR / "usuarios/emailstemplate/newsletter1.html",
                 "r",
             ) as htmlmodel:
                 html = htmlmodel.read()
@@ -45,7 +46,7 @@ def EnviarNewsletter() -> None:
 
 
 def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
-    '''Envia emails de newsletter para emails selecionados no admin panel'''
+    """Envia emails de newsletter para emails selecionados no admin panel"""
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
         server.starttls()
         server.login(api_key, api_secret_key)
@@ -56,6 +57,7 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
             message["Subject"] = "Promocao imperdivel Melhor Amigo"
             message["From"] = "melhoramigonaoresponda@gmail.com"
             message["To"] = email
+
             with open(
                 BASE_DIR / "usuarios/emailstemplate/newsletter1.html",
                 "r",
@@ -67,24 +69,26 @@ def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:
             except Exception as e:
                 print(f"erro: {e}")
 
+
 def EnviaSigunupEmail(email, username) -> str:
-    '''Envia emails para usuarios novos cadastrados'''
+    """Envia emails para usuarios novos cadastrados"""
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
         server.starttls()
         server.login(api_key, api_secret_key)
         message = EmailMessage()
         message["Subject"] = f"Bem vindo ao Melhor Amigo Petshop {username}"
         message["From"] = email_sender
-        message['To'] = email
-        with open( BASE_DIR / 'usuarios/emailstemplate/SIGNUPPETSHOP.html', 'r') as htmlmodel:
+        message["To"] = email
+        with open(
+            BASE_DIR / "usuarios/emailstemplate/SIGNUPPETSHOP.html", "r"
+        ) as htmlmodel:
             html = htmlmodel.read()
         message.add_alternative(html, subtype="html")
         try:
             server.send_message(message)
         except Exception as e:
             return f"EMAIL ERROR LOG : {e}"
-        
 
 
-
-
+def procura_email_template() -> str:
+    emails = os.listdir(f"{BASE_DIR}/usuarios/emailstemplate")
