@@ -1,3 +1,11 @@
 
+
+LOGUE NO PAINEL DE ADMIN COM ESSA CONTA
+
+# http://127.0.0.1:8000/admin/
+
+
 melhoramigonaoresponda@gmail.com
+
+senha:
 melhoramigonaoresponda1234

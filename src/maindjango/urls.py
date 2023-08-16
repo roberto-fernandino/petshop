@@ -25,6 +25,7 @@ urlpatterns = [
     path("usuarios/", include("usuarios.urls")),
     path("loja/", include("loja.urls")),
     path("admin/", admin.site.urls),
+    #path('dashboard', include("dashboard.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # snippet
 
 #The above snippet tells Django where to find user-uploaded images when the project is still in the development stage.

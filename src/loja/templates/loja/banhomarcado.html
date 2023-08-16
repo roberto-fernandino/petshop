@@ -1,0 +1,18 @@
+{% extends 'index/base.html' %}
+
+{% block title %} Bem vindo de volta!{% endblock %}
+{% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<div class="form-container">
+    <div class="alert alert-success">{{ request.user.username }} seu Banho foi marcado com sucesso! 
+        <a href="{% url 'usuarios:usuario' %}">
+            clique aqui
+        </a> 
+        para conferir
+    </div>
+</div>
+    
+
+{% endblock %} 
