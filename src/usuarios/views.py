@@ -4,8 +4,10 @@ from usuarios import models
 from .admin import UserCrerationForm as signup_form
 from usuarios.forms import AtendimentoForm
 from usuarios.mail import EnviaSigunupEmail
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from usuarios.models import UserCart, UserCartItems
+from loja.models import Tosa, Banho, Produto
 # Create your views here.
 
 def login_view(request, *args, **kwargs):
@@ -51,8 +53,6 @@ def signup(request, *args, **kwargs):
                 return redirect('usuarios:signupsucess')
         else:
             return render(request, "usuarios/signup.html", {"form": form})
-            
-
     form = signup_form()
     context = {
         "form": form,  
@@ -62,7 +62,13 @@ def signup(request, *args, **kwargs):
 
 @login_required
 def user_view(request):
-    return render(request, "usuarios/user.html", {})
+    tosa_marcada = Tosa.objects.filter(user=request.user)
+    banho_marcado = Banho.objects.filter(user=request.user)
+    context = {
+        'tosas': tosa_marcada,
+        'banhos': banho_marcado
+    }
+    return render(request, "usuarios/user.html", context)
 
 def signup_sucess_view(request):
     return render(request, "usuarios/signupsucess.html", {})
@@ -92,15 +98,15 @@ def atendimentoSubmited(request):
 def user_adress(request):
     return render(request, "usuarios/useradress.html")
 
+@login_required
 def cart_view(request):
     try:
-        cart = UserCart.objects.get(user=request.user)
+        cart, created = UserCart.objects.get_or_create(user=request.user)
         cart_items = UserCartItems.objects.filter(cart=cart)
         items = cart_items.all()
         context = {'items': items, 'cart': cart}
     except UserCart.DoesNotExist:
         items = []
+        context = {'items': items, 'cart': cart}
 
     return render(request, 'usuarios/cart.html', context)
-
-    

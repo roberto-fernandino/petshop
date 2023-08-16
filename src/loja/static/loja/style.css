@@ -144,28 +144,87 @@ body hr {
 
 /* fim da parte superior */
 /*Inicio body*/
-.content-container .container .row .col-md-3 .product-top .overlay {
+/* inicio loja produtos */
+.container .row .col-md-3 .card .card-body {
+  background-color: rgb(250, 250, 250);
+}
+.container .row .col-md-3 .card .card-body .card-title {
+  color: rgb(69, 208, 69);
+}
+.container .row .col-md-3 .card .card-body form {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.container .row .col-md-3 .card .card-body form .quantidade {
+  background-color: rgb(250, 250, 250);
+  color: rgb(69, 208, 69);
+  border-radius: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: 1px solid rgb(69, 208, 69);
+}
+.container .row .col-md-3 .card .card-body form .add-to-cart {
+  border: none;
+  background-color: transparent;
+  color: rgb(69, 208, 69);
+  transition: 0.5s;
+}
+.container .row .col-md-3 .card .card-body form .add-to-cart:hover {
+  transform: translateY(-4px);
+  color: aqua;
+  font-size: 20px;
+}
+.container .row .col-md-3 .card .card-body .card-price {
+  color: rgb(69, 208, 69);
+  font-size: 20px;
 }
 
+/* fim loja produtos */
+/* inicio filter bar */
 .container .shopform {
   color: rgb(69, 208, 69);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 .container .shopform .categoria {
   border-color: rgb(69, 208, 69);
+  background-color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(69, 208, 69);
+  transition: 0.5s;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.container .shopform .categoria:focus {
+  border: aqua 1px solid;
+  outline: none;
+  background-color: white;
 }
 .container .shopform .input {
   border-radius: 6px;
   border: 1px solid rgb(69, 208, 69);
+  color: rgb(69, 208, 69);
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: 0.5s;
+}
+.container .shopform .input:focus {
+  outline: none;
+  border: 1px solid aqua;
+  color: rgb(69, 208, 69);
 }
 .container .shopform .filterbutton {
   margin-left: 15px;
   border: 1px solid rgb(69, 208, 69);
   background-color: rgb(69, 208, 69);
+  border-radius: 5px;
   color: #fff;
 }
 
+/* fim filter bar */
 @media (max-width: 550px) {
   .navnav {
     margin-top: 30px;

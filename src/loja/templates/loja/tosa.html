@@ -1,0 +1,74 @@
+{% extends 'index/base.html'%}
+{% block title %} Tosa {% endblock %}
+{% block content %}
+{% load static %}
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const banhoCheckbox = document.querySelector('.banho-checkbox');
+        const banhoOptions = document.getElementById('banho-options');
+        
+        banhoCheckbox.addEventListener('change', (event) => {
+            if (event.target.checked){
+                banhoOptions.style.display = 'block';
+            }
+            else {
+                banhoOptions.style.display = 'none';
+            }
+        });
+
+    });
+</script>
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<div class="atendimento-container">
+    <h1 class="top-title">Tosa</h1>
+    <div class="information-container">
+        <h4>Marque a tosa do seu pet aqui</h4>
+    </div>
+    {% if form.errors %}
+    <div class="message">
+        <div class="alert alert-danger" style="margin-bottom: 70px;">
+        {{ form.errors  }}
+        </div>
+    </div>
+    {% endif %}
+    <div class="atendimento-form-container">
+        <form action="{% url 'loja:tosa' %}" method='post'>
+        {% csrf_token %}
+        <div class="input">
+            <label for="tosa-type">Tosa</label><br>
+            <select name="tosa-type" class="select-input"> 
+                {% for categoria in categorias %}
+                <option value="{{ categoria.id }}">{{categoria}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input">
+            {{ form.pet }}
+            <label  class="input-label" for="pet"><span>Nome Pet</span></label>
+        </div>
+        <div class="input">
+            <label for="data"><span>Marque um Horario</span></label>
+            {{ form.data }}
+        </div>
+        <div class="input">
+            <label for="banho">Deseja marcar um banho para seu pet de uma vez?</label> <br>
+            <input type="checkbox" id="banho" name="banho" class="banho-checkbox">
+        </div>
+        <div id="banho-options" style="display: none;">
+            <div class="input">
+                <label for="banho-type">Banho</label> <br>
+                <select name="banho-type" class="select-input">
+                    {% for categoria in categorias_banho %}
+                    <option value="{{ categoria.id }}">{{ categoria }}</option>
+                    {% endfor %}
+                </select>            
+            </div>
+        </div>
+        <button type="submit" class="SubmitButton">Marcar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+

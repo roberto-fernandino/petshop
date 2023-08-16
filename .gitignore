@@ -4,4 +4,4 @@ src/usuarios/__pycache__/views.cpython-311.pyc
 src/loja/__pycache__/models.cpython-311.pyc
 src/maindjango/__pycache__/settings.cpython-311.pyc
 src/usuarios/__pycache__/admin.cpython-311.pyc
-
+.vscode

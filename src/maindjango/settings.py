@@ -154,7 +154,7 @@ SESSION_COOKIE_AGE = 1209600  # 2 semanas
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-
+#admin panel plugin settings
 JAZZMIN_SETTINGS = {
     "site_title": "Melhor Amigo Admin",
     "site_header": "Melhor amigo Admin",
@@ -168,6 +168,10 @@ JAZZMIN_SETTINGS = {
     
 }
 
-
+#STRIPE API KEYS
 STRIPE_PUBLIC_KEY = 'pk_live_51Ne1TyCZo2XjuPFOjFI9ckKAASxHNUm4Za7GLrgRclBSKss5zRANQ8DXGmBSsHqtU05u0ZSD0NAfQHL61SnR2lII00Mtguv6ky'
 STRIPE_SECRET_KEY = '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'
+
+
+
+LOGIN_URL = '/usuarios/login'

@@ -1,0 +1,74 @@
+{% extends 'index/base.html' %}
+{% block title %} Banho {% endblock %}
+{% block content %}
+{% load static %}
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const tosaCheckBox = document.querySelector('.tosa-checkbox');
+        const tosaOptions = document.getElementById('tosa-options');
+
+        tosaCheckBox.addEventListener('change', (event) => {
+            if (event.target.checked){
+                tosaOptions.style.display = 'block';
+            }
+            else {
+                tosaOptions.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<div class="atendimento-container">
+    <h1 class="top-title">Banho</h1>
+    <div class="information-container">
+        <h4>Marque o cuidadoso Banho do seu pet aqui</h4>
+    </div>
+    {% if form.errors %}
+        <div class="message">
+            <div class="alert alert-danger" style="margin-bottom: 70px;">
+                {{ form.errors }}</div>
+        </div>
+    {% endif %}
+    <div class="atendimento-form-container">
+        <form action="{% url 'loja:banho' %}" method="post">
+            {% csrf_token %}
+            <div class="input">
+                <label for="banho-type">Banho:</label> <br>
+                <select name="banho-type" class="select-input">
+                    {% for categoria in categorias %}
+                    <option value="{{categoria.id}}">{{categoria}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input">
+                {{ form.pet }}
+                <label class="input-label" for="pet" ><span>Nome Pet</span></label>
+            </div>
+            <div class="input">
+                <label for="data"><span>Data e Horario</span></label>
+                {{ form.data }}
+            </div>
+            <div class="input">
+                <label for="tosa">Deseja marcar uma tosa para seu pet de uma vez?</label> <br>
+                <input type="checkbox" id="tosa" name="tosa" class="tosa-checkbox">
+            </div>
+            <div id="tosa-options" style="display: none;">
+                <div class="input">
+                    <label for="tosa-type">Tosa</label>
+                    <select name="tosa-type" class="select-input">
+                        {% for categoria in categorias_tosa %}
+                        <option value="{{categoria.id}}">{{categoria}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="SubmitButton">Marcar</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

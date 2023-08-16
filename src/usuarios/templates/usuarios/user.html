@@ -1,21 +1,117 @@
 {% extends 'index/base.html' %}
-{% block title %} Melhor Amigo {{ request.user.username }}  {% endblock %}
-{% block content %} 
-{% load static %}
+{% block title %} Melhor Amigo {{ request.user.username }} {% endblock %} 
+{% block content %} {% load static %}
 
-<link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+<link rel="stylesheet" href="{% static 'usuarios/style.css' %}" />
+<style>
+  h1 {
+    margin-top: 10px;
+    margin-bottom: 5vh;
+  }
+  .accordion {
+    margin-top: 20px;
+    margin-bottom: 15vh;
+  }
+  a{
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .fa-lock{
+    color: greenyellow;
+    font-size: 20px;
+    margin-left: 9px;
+    transition: 0.5s;
+  }
+</style>
 <div class="form-container">
-    {% if message %}
-        <div class="alert alert-success">{{ message }} {{ request.user.username }}</div>
-        {% endif %}
-    <h1>
-    Ola, {{ request.user.username}}: {{ request.user.email}}. <br>
-    CPF: {{ request.user.esconde_cpf}}
-    </h1>
-    <div>
-        <a class="btn btn-danger" href="{% url 'usuarios:logout' %}">Logout</a>
+  {% if message %}
+  <div class="alert alert-success">
+    {{ message }} {{ request.user.username }}
+  </div>
+  {% endif %}
+  <h1>Ola, {{ request.user.username }}!</h1>
+  <div class="content">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <h4>
+                Dados Pessoais
+            </h4>
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p>
+            Nome: <strong>{{ request.user.username }}</strong> <br />
+            Email: <strong>{{ request.user.email }}</strong> <br />
+            Cpf: <strong>{{ request.user.esconde_cpf}}</strong> <br />
+            Data Nasimento: <strong>{{ request.user.data_nascimento }}</strong> <br />
+            {% if request.user.is_admin == True %}
+            <span>Admin Panel<a href="http://127.0.0.1:8000/admin/"><i class="fa-solid fa-lock"></i></a></span> <br />
+            {% endif %}
+            Conosco Desde: <strong> {{ request.user.data_criacao }} </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+           <h4>Tosa e Banho</h4>
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+              {% if tosas %}
+                {% for tosa in tosas %}
+                <p>
+                  <strong>TOSA</strong> Data: {{ tosa.data }} - Para: {{ tosa.pet }} - R${{ tosa.type.preco }} 
+                </p> <br>
+
+                {% endfor %}
+              {% else %}
+                <p>Nenhuma Tosa marcada</p>
+            {% endif %}
+            {% if banhos %}
+              {% for banho in banhos %}
+                <p>
+                  <strong>BANHO</strong> Data: {{ banho.data }} - Para: {{ banho.pet }} - R${{ banho.type.preco }} 
+                </p>
+              {% endfor %}
+            {% else %}
+              <p> Nenhum Banho marcado </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
+    <div>
+      <a class="btn btn-danger" href="{% url 'usuarios:logout' %}">Logout</a>
+    </div>
+  </div>
 </div>
 
-
-{% endblock %} 
+{% endblock %}
