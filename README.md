@@ -86,3 +86,19 @@ This application allows for 100% automated addition of products through the admi
 Adding and modifying categories is a straightforward process in the admin panel. The interface is self-explanatory, allowing you to create, edit, or delete categories as needed. All category-related actions can be performed directly from the admin panel, providing a user-friendly experience.
 
 
+## Email Functionalities
+
+One of the core features of our system is the seamless handling of emails, ensuring a smooth and efficient communication channel with users.
+
+### Sending Emails via Admin Panel
+
+The admin panel provides a user-friendly interface for sending emails. Whether it’s a notification, an update, or a promotional message, sending emails has never been easier. Simply navigate to the designated email section in the admin panel, compose your message, select the recipients, and hit send. It’s as easy as that!
+
+### Automatic Email on Registration
+
+We understand the importance of immediate communication, especially when welcoming new users to our platform. That’s why an email is automatically sent to the user’s account upon registration. This email includes essential details such as account verification, welcome information, and guides to get started. It ensures that users feel connected and informed right from their first interaction with our system.
+
+### Future Support for HTML Email Templates
+
+Looking ahead, we are excited to announce that future updates will include support for HTML email templates. This feature will allow administrators to choose from a variety of pre-designed templates or create custom designs using HTML.
+
