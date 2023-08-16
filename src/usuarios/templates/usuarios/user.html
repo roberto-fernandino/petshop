@@ -76,7 +76,7 @@
             aria-expanded="false"
             aria-controls="collapseTwo"
           >
-           <h4>Tosa|Banho</h4>
+           <h4>Tosa e Banho</h4>
           </button>
         </h2>
         <div
@@ -88,7 +88,7 @@
               {% if tosas %}
                 {% for tosa in tosas %}
                 <p>
-                  Tosa Data: {{ tosa.data }} - Para: {{ tosa.pet }} {{ tosa.type }} 
+                  <strong>TOSA</strong> Data: {{ tosa.data }} - Para: {{ tosa.pet }} - R${{ tosa.type.preco }} 
                 </p> <br>
 
                 {% endfor %}
@@ -98,7 +98,7 @@
             {% if banhos %}
               {% for banho in banhos %}
                 <p>
-                  Banho Data: {{ banho.data }} - Para {{ banho.pet }} {{ banho.type }} 
+                  <strong>BANHO</strong> Data: {{ banho.data }} - Para: {{ banho.pet }} - R${{ banho.type.preco }} 
                 </p>
               {% endfor %}
             {% else %}
