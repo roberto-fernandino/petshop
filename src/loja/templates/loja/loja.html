@@ -41,7 +41,6 @@
                 {% for qtd in produto.estoque|times %}
                 <option value="{{ qtd }}">{{ qtd }}</option>
                 {% endfor %}
-                <option value="0">Sem estoque</option>
               </select>
             {% else %}
             <p> Sem estoque </p>

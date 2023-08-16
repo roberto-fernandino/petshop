@@ -57,7 +57,7 @@
         <div id="banho-options" style="display: none;">
             <div class="input">
                 <label for="banho-type">Banho</label> <br>
-                <select name="banho-type" >
+                <select name="banho-type" class="select-input">
                     {% for categoria in categorias_banho %}
                     <option value="{{ categoria.id }}">{{ categoria }}</option>
                     {% endfor %}

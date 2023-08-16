@@ -73,3 +73,13 @@ Feel free to contribute to this project by submitting issues, pull requests, or 
 
 This project is licensed under the MIT License.
 
+
+## Managing Products and Categories
+
+### Automated Product Addition
+
+This application allows for 100% automated addition of products through the admin panel. However, it's essential to note that product images must adhere to standardized sizes to maintain consistency across the application. Please ensure that all product images follow the required dimensions before uploading them.
+
+### Managing Categories
+
+Adding and modifying categories is a straightforward process in the admin panel. The interface is self-explanatory, allowing you to create, edit, or delete categories as needed. All category-related actions can be performed directly from the admin panel, providing a user-friendly experience.
