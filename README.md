@@ -39,7 +39,7 @@ Apply the necessary database migrations:
 
 Go to your src directory
 
-#### Step 4,2:
+#### Step 4.2:
 
 Run
 ```bash
