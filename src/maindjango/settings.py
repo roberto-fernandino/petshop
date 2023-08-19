@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #jazzmin plugin
+    # jazzmin plugin
     "jazzmin",
     # django default
     "django.contrib.admin",
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "index",
     "usuarios",
     "loja",
+    "dashboard",
 ]
 
 MIDDLEWARE = [
@@ -119,7 +120,6 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -148,13 +148,12 @@ SESSION_ENGINE = "django.contrib.sessions.backends.db"
 SESSION_COOKIE_AGE = 1209600  # 2 semanas
 
 
-
 # Define local para armazenamento de medias
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-#admin panel plugin settings
+# admin panel plugin settings
 JAZZMIN_SETTINGS = {
     "site_title": "Melhor Amigo Admin",
     "site_header": "Melhor amigo Admin",
@@ -165,13 +164,11 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bem vindo ao admin de Melhor Amigo!",
     "copyright": "Melhor Amigo",
     "changeform_format": "collapsible",
-    
 }
 
-#STRIPE API KEYS
-STRIPE_PUBLIC_KEY = 'pk_live_51Ne1TyCZo2XjuPFOjFI9ckKAASxHNUm4Za7GLrgRclBSKss5zRANQ8DXGmBSsHqtU05u0ZSD0NAfQHL61SnR2lII00Mtguv6ky'
-STRIPE_SECRET_KEY = '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'
+# STRIPE API KEYS
+STRIPE_PUBLIC_KEY = "pk_live_51Ne1TyCZo2XjuPFOjFI9ckKAASxHNUm4Za7GLrgRclBSKss5zRANQ8DXGmBSsHqtU05u0ZSD0NAfQHL61SnR2lII00Mtguv6ky"
+STRIPE_SECRET_KEY = "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"
 
 
-
-LOGIN_URL = '/usuarios/login'
+LOGIN_URL = "/usuarios/login"

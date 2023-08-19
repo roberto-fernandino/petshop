@@ -45,6 +45,14 @@
               <a href="{% url 'usuarios:atendimento'%}">
                 atendimento <i class="fa-solid fa-envelope"></i>
               </a>
+              {% if request.user.is_admin == True %}
+              <a href="{% url 'dashboard:dashboard' %}">
+                dashb.   <i class="fa-solid fa-chart-line"></i>
+              </a>
+              <a href="http://127.0.0.1:8000/admin/">
+                admin <i class="fa-solid fa-lock"></i>
+              </a>
+              {% endif %}
             </div>
           </div>
           <nav class="navnav">
@@ -111,9 +119,9 @@
               <a href="{% url 'usuarios:carrinho' %}" class="nav-icon">
                 <i class="fa-solid fa-bag-shopping"></i
                   ></a>
-                </div>
-              </nav>
-            </header>
+        </div>
+      </nav>
+    </header>
             
             <script src="{% static 'index/script.js'  %}"></script>
             {% block content %} {% endblock %}

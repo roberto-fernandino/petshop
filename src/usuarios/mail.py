@@ -32,6 +32,8 @@ def EnviarNewsletter() -> None:
     with smtplib.SMTP("in-v3.mailjet.com", 587) as server:
         server.starttls()
         server.login(api_key, api_secret_key)
+        selector = Selector()
+        template = selector.start_tk()
         for usuario in emails:
             email = usuario[0]
             nome = usuario[1]
@@ -40,7 +42,7 @@ def EnviarNewsletter() -> None:
             message["From"] = "melhoramigonaoresponda@gmail.com"
             message["To"] = email
             with open(
-                BASE_DIR / "usuarios/emailstemplate/newsletter1.html",
+                BASE_DIR / f"usuarios/emailstemplate/{template}",
                 "r",
             ) as htmlmodel:
                 html = htmlmodel.read()
@@ -90,37 +92,6 @@ class Selector:
         self.root.mainloop()
         return self.template_selecionado.get()
 
-
-"""def on_enviar_click(self):
-    template = template_selecionado.get()
-    root.destroy()
-    template_selecionado.set(template)
-
-
-def start_tk():
-    global template_selecionado, root
-
-    root = tk.Tk()
-    root.geometry("300x300")
-    root.resizable(False, False)
-    root.title("Selecione template")
-    template_selecionado = tk.StringVar()
-
-    combobox = ttk.Combobox(
-        root, bootstyle="dark", state="readonly", textvariable=template_selecionado
-    )
-
-    templates_arquivo = procura_email_template()
-    combobox["values"] = templates_arquivo
-    combobox.place(x=50, y=50)
-
-    botao_enviar = ttk.Button(
-        root, text="Enviar", bootstyle="sucess", command=on_enviar_click
-    )
-    botao_enviar.place(x=50, y=80)
-
-    root.mainloop()
-    return template_selecionado.get()"""
 
 
 def EnviaNewsLetterFromDataBase(inquerylist: list) -> None:

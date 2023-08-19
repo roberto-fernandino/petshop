@@ -1,0 +1,48 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw; }
+  body hr {
+    color: #45d045;
+    margin-top: 150px; }
+
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center; }
+  .chart-container .chart-display {
+    margin-top: 120px;
+    display: flex;
+    max-width: 500px;
+    flex-wrap: wrap;
+    justify-content: center; }
+
+h1 {
+  color: gray;
+  /* Cor cinza */
+  font-weight: 800;
+  /* Negrito */
+  font-size: 32px;
+  /* Tamanho da fonte */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
+  /* Letras maiúsculas */
+  letter-spacing: 1px;
+  /* Espaçamento entre as letras */ }
+
+@media (max-width: 768px) {
+  .chart-container .chart-display canvas {
+    height: 355px;
+    width: 355px;
+    margin-left: 20px;
+    display: block;
+    box-sizing: border-box; } }

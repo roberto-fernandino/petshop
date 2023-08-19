@@ -1,0 +1,68 @@
+{% extends 'index/base2.html' %} {% block title %} Dashboard {% endblock %} 
+{% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'dashboard/style.css' %}" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="chart-container">
+    <div class="chart-display">
+        <h1>Atendimentos</h1>
+        <canvas
+        id="status"
+        style="height: 150px; width: 350px; margin-left: 20px"
+        ></canvas>
+      <script>
+        const ctx1 = document.getElementById('status');
+        const labels1 = JSON.parse('{{labels_atendimento|safe}}')
+        const data1 = JSON.parse('{{data_atendimento|safe}}')
+
+        new Chart(ctx1, {
+          type: 'pie',
+          data: {
+            labels: labels1,
+            datasets: [{
+              label: '# Status',
+              data: data1,
+              borderWidth: 1,
+              backgroundColor: ['#45d045','#FF0000'],
+            }]
+          },
+
+          options: {
+            responsive: true
+          }
+        });
+      </script>
+    </div>
+    <div class="chart-display">
+        <h1>Carrinhos</h1>
+        <canvas
+        id="carrinho_preco"
+        style="height: 150px; width: 350px; margin-left: 20px"
+        ></canvas>  
+      <script>
+        const ctx2 = document.getElementById('carrinho_preco');
+        const labels2 = JSON.parse('{{labels_carrinho_preco|safe}}')
+        const data2 = JSON.parse('{{data_carrinho_preco|safe}}')
+
+        new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: labels2,
+            datasets: [{
+              label: '# carrinhos',
+              data: data2,
+              borderWidth: 1,
+              barPercentage: 0.3
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+          }
+        });
+      </script>
+    </div>
+</div>
+{% endblock %}

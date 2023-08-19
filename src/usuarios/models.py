@@ -9,8 +9,8 @@ from loja.models import Produto
 # Status atendimentos
 
 STATUS_CHOISES = [
-    ("p", "pendente"),
-    ("r", "respondida"),
+    ("p", "Pendente"),
+    ("r", "Respondida"),
 ]
 
 

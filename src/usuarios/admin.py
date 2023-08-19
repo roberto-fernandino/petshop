@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
 from usuarios.models import Account, Atendimentos, UserCart, UserCartItems
-from usuarios.mail import EnviaNewsLetterFromDataBase
+from usuarios.mail import EnviaNewsLetterFromDataBase, EnviarNewsletter
 
 # Register your models here.
 
@@ -23,6 +23,12 @@ def envia_newsletter(modeladmin, request, queryset):
         inquery_users.append((email, nome))
     EnviaNewsLetterFromDataBase(inquery_users)
 
+
+@admin.action(description="Envia newsletter para todos emails condizentes")
+def envia_newsletter_para_condizentes(modeladmin, request):
+    EnviarNewsletter()
+
+
 class AtendimentoAdmin(admin.ModelAdmin):
     list_display = ["nome", "assunto", "email","status", "data", "is_newsletter"]
     ordering = ["data"]
@@ -31,7 +37,7 @@ class AtendimentoAdmin(admin.ModelAdmin):
         ("Atendimento", {"fields": ["status", "assunto", "message"]}),
         ("Email Preferences", {"fields": ['is_newsletter']}),
     ]
-    actions = [set_respondidos, envia_newsletter]
+    actions = [set_respondidos, envia_newsletter, envia_newsletter_para_condizentes]
     list_filter = ["is_newsletter", "data"]
 
 
