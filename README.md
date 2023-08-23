@@ -15,7 +15,7 @@ This application provides a platform to manage a pet shop's inventory and custom
 
 Clone this repository to your local machine.
 
-### Step 2: Create a Conda Environment
+### Step 2: Create a Conda Environment OR Create your Enviroment with requiriments.txt
 
 Navigate to the project directory and create a Conda environment using the provided \`environment.yml\` file.
 
@@ -23,12 +23,22 @@ Navigate to the project directory and create a Conda environment using the provi
 conda env create -f environment.yml
 ```
 
-### Step 3: Activate the Conda Environment
+Navigatr to the project directory and create a enviroment using the provided \`requirements.txt\` file.
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3: Activate the Conda Environment or your preferred enviroment
 
 Activate the Conda environment with the following command:
 
 ```bash
 conda activate petshop
+```
+
+```bash
+python -m venv venv
 ```
 
 ### Step 4: Apply Migrations
