@@ -28,13 +28,13 @@ class Atendimentos(models.Model):
         return f"Nome: {self.nome} -- Assunto: {self.assunto}  -- Status: {self.get_status_display()}"
 
 
-# Overriding Default Account Manager
 class EmailErrorsLog(models.Model):
     email = models.EmailField(max_length=150)
     log = models.CharField(max_length=255, blank=False, null=True, default="None")
     error_date = models.DateTimeField(auto_now_add=True)
 
 
+# Overriding Default Account Manager
 class AccountManager(BaseUserManager):
     def create_user(
         self,

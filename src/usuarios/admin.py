@@ -37,7 +37,7 @@ class AtendimentoAdmin(admin.ModelAdmin):
         ("Atendimento", {"fields": ["status", "assunto", "message"]}),
         ("Email Preferences", {"fields": ['is_newsletter']}),
     ]
-    actions = [set_respondidos, envia_newsletter, envia_newsletter_para_condizentes]
+    actions = [set_respondidos, envia_newsletter]
     list_filter = ["is_newsletter", "data"]
 
 
